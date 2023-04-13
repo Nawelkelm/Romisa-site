@@ -1763,6 +1763,10 @@ ul.valores-ul {
   text-decoration: none;
   color: #000;
 }
+.marcas-text-solo a {
+  text-decoration: none;
+  color: #000;
+}
 
 .marcas-text3 a {
   text-decoration: none;
@@ -1775,6 +1779,9 @@ ul.valores-ul {
 }
 
 .marcas-text2 a:hover {
+  color: #000;
+}
+.marcas-text-solo a:hover {
   color: #000;
 }
 
@@ -1792,6 +1799,12 @@ ul.valores-ul {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 18px;
   color: #000;
+}
+.marcas-text-solo {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #000;
+  margin-top: 75px;
 }
 
 .marcas-text3 {
@@ -1817,6 +1830,11 @@ ul.valores-ul {
   display: flex;
   justify-content: start;
   margin: -91px 81px;
+}
+.marcas-grid-text-solo {
+  display: flex;
+  justify-content: start;
+  margin: -91px 222px;
 }
 
 .marcas-grid-text4 {
@@ -1860,6 +1878,12 @@ ul.valores-ul {
 
 .marcas-grid-img2 {
   display: inherit;
+  align-items: center;
+  justify-content: center;
+  margin: 107px;
+}
+.marcas-grid-img-solo {
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 107px;
@@ -1919,19 +1943,36 @@ ul.valores-ul {
   border-radius: 50%;
   width: 30%;
 }
-
-@media only screen and (max-width: 777px) {
+@media only screen and (min-width: 1300px) {
+  .marcas-grid-text-solo {
+    display: flex;
+    justify-content: start;
+    margin: -91px 216px;
+  }
+}
+@media only screen and (max-width: 990px) {
   .marcas-grid-img2 {
     display: inherit;
     align-items: center;
     justify-content: center;
     margin: 15px 113px 0px 17px;
   }
+  .marcas-grid-img-solo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 24px 24px 17px;
+  }
 
   .marcas-grid-text3 {
     display: flex;
     justify-content: space-evenly;
     margin: 9px 300px 90px auto;
+  }
+  .marcas-grid-text-solo {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 9px 11px 90px auto;
   }
 
   .marcas-grid-text4 {
@@ -2034,6 +2075,14 @@ ul.valores-ul {
     padding-left: 49px;
     font-size: 11px;
   }
+  .marcas-text-solo a {
+    align-content: center;
+    text-decoration: none;
+    color: #b00;
+    margin: 10px 0px 20px -50px;
+    padding-left: 49px;
+    font-size: 11px;
+  }
 
   .marcas-text3 a {
     text-decoration: none;
@@ -2051,6 +2100,9 @@ ul.valores-ul {
   }
 
   .marcas-text2 a:hover {
+    color: #000;
+  }
+  .marcas-text-solo a:hover {
     color: #000;
   }
 
@@ -2081,6 +2133,13 @@ ul.valores-ul {
     padding-left: 0px;
     padding-right: 0px;
   }
+  .marcas-text-solo {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #000;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 
   .marcas-text3 {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -2103,6 +2162,11 @@ ul.valores-ul {
   }
 
   .marcas-grid-text3 {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 9px auto 55px auto;
+  }
+  .marcas-grid-text-solo {
     display: flex;
     justify-content: space-evenly;
     margin: 9px auto 55px auto;
@@ -2144,6 +2208,12 @@ ul.valores-ul {
     align-items: center;
     justify-content: center;
     margin: 4px auto;
+  }
+  .marcas-grid-img-solo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px auto 20px;
   }
 
   .marcas-grid-img3 {

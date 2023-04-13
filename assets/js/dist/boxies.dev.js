@@ -206,7 +206,11 @@ var funcion3 = function funcion3() {
         var display = 'contents';
         $('.box2').css('display', display);
       });
-      $('.box3').mouseleave(function () {
+      $('.box3').setInterval(function () {
+        mouseleave;
+      }, interval);
+
+      (function () {
         var display = 'none';
         $('.box3').css('display', display);
       });

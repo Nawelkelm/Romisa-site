@@ -222,7 +222,10 @@ const funcion3 = () => {
         $('.box2').css('display', display);
       });
 
-      $('.box3').mouseleave(function () {
+      $('.box3').setInterval(() => {
+        mouseleave;
+      }, interval);
+      (function () {
         var display = 'none';
         $('.box3').css('display', display);
       });
