@@ -1,0 +1,63 @@
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+#contenedor_carga {
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  z-index: 100000;
+}
+#carga {
+  border: 15px solid #ccc;
+  border-top-color: #e60003;
+  border-top-style: groove;
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-animation: girar 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  -o-animation: girar 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  animation: girar 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  z-index: 1000000;
+}
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media only screen and (max-width: 600px) {
+  #carga {
+    border: 15px solid #ccc;
+    border-top-color: #e60003;
+    border-top-style: groove;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 2300px;
+    margin: 333px auto;
+    -webkit-animation: girar 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+    -o-animation: girar 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+    animation: girar 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+    z-index: 1000000;
+  }
+}

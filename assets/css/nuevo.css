@@ -1,0 +1,149 @@
+/* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Kalam&display=swap');
+
+/* Reseting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #222;
+}
+
+.container {
+    overflow: auto;
+}
+
+.cards {
+    overflow: auto;
+    min-height: 550px;
+}
+
+.card {
+    background: #fff;
+    background: linear-gradient(to right, #474747, #222);
+    min-width: 300px;
+    height: 380px;
+    border-radius: 10px;
+    box-shadow: -5px 5px 25px #0000009d;
+    padding: 20px;
+    border: none;
+    transition: all .3s ease-in-out;
+}
+.space-tittle{
+	margin-bottom: -80px;
+padding-top: 30px;
+}
+.card .text-grey {
+    color: #ccc;
+    font-weight: 500;
+}
+
+.card .light-grey {
+    color: #aaa;
+    font-weight: 300;
+}
+
+.card .fs-5 {
+    font-size: 1.15rem !important;
+}
+
+.card a {
+    color: #fff;
+    text-decoration: none;
+
+}
+.card a :hover {
+	text-decoration-color: red;
+}
+.card .imgint{
+	
+	margin: 20px auto;
+	width: 220px;
+	height: 200px;
+	padding: 10px;
+	overflow: auto;
+	resize: both;
+	display: contents;
+	
+}
+.card .imgint img{
+width: 13rem;
+}
+
+.card .profile img {
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 5px 15px rgba(26, 25, 25, 0.329);
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card:not(:first-child) {
+    margin-left: -8rem;
+}
+
+.cards::-webkit-scrollbar {
+    height: 10px;
+}
+
+.cards::-webkit-scrollbar-track {
+    background: inherit;
+}
+
+.cards::-webkit-scrollbar-thumb {
+    background-color: #3a3a3a;
+    background: linear-gradient(to right, #ff002b, #ffffff);
+    /* background: ; */
+    border-radius: 10px;
+}
+
+
+.card:hover,
+.card:focus-within {
+    transform: translateY(-1rem) rotateZ(5deg);
+}
+
+.card:hover~.card,
+.card:focus-within~.card {
+    transform: translateX(8rem);
+}
+
+.card .designation {
+    display: inline;
+    border-radius: 10px;
+    padding: 4px 10px;
+    border: 1px solid #ddd;
+}
+@media only screen and (max-width: 920px){
+	.card { 
+background: #fff;
+    background: linear-gradient(to right, #474747, #222);
+    min-width: 300px;
+    height: 246px;
+    border-radius: 10px;
+    box-shadow: -5px 5px 25px #0000009d;
+    padding: 20px;
+    border: none;
+    transition: all .3s ease-in-out;
+} 
+.card .profile img {
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 5px 15px rgb(26 25 25 / 33%);
+    object-fit: cover;
+	border-radius: 50%;
+}
+.cards {
+    overflow: auto;
+    min-height: 360px;
+}
+	.card .imgint img{
+width: 7rem;
+}
+	
+
+}

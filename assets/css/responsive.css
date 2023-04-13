@@ -1,0 +1,126 @@
+/* Media Queries para Diseño Responsive */
+@media (max-width: 576px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    body {
+        position: relative;
+    }
+
+    figure.logo {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #hiddenLogo img {
+        display: none;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .nav-item a.btn {
+        margin: 8px;
+    }
+
+    .mainCarousel {
+        margin-top: 0px;
+    }
+    .mainCarousel2 {
+        margin-top: 0px;
+    }
+
+    footer.navbar { 
+        height: 110px;
+    }
+
+    .footerText {
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        margin-left: 30px;
+    }
+
+    .formBoxDiv {
+        padding: 0;
+    }
+
+    .contact-Text {
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        font-weight: 200;
+        font-size: 36px;
+        color: #000000;
+        margin: 0;   
+    }
+    
+    .contactText {
+        font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+        margin: 0 0 20px 0;
+    }
+
+    #hiddenLogo {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sf-menu a {
+        margin-left: 10px;
+    }
+
+    .clients-area-text {
+        font-size: 30px;
+    }
+
+    .footer-social-media {
+        display: none;
+    }
+
+    .banner-text {
+        font-size: 25px;
+    }
+
+    .features-title {
+        border: 2px solid #FF4646;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 25px;
+    }
+
+    .contact-Text {
+        font-size: 26px;
+        font-weight: 400;
+    }
+
+    .mainContact {
+        margin-top: 10px;
+    }
+
+    .footerSubLinks {
+        text-align: justify;
+    }
+
+    .footerMainText {
+        text-align: left;
+    }
+
+}
+
+@media (max-width: 768px) {
+    figure.logo {
+        display: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (min-width: 576px) {
+    .navbarXl {
+        margin-left: 70px;
+    }
+}
+/* FIN Media Queries para Diseño Responsive */

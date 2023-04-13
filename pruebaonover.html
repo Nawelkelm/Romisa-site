@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>The 5 Mouseover Tips</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <style type="text/css">
+      * {
+        font-family: 'Varela Round', sans-serif;
+      }
+      .container {
+        width: 400px;
+        margin: 50px auto;
+      }
+      h1 {
+        text-align: center;
+      }
+      li {
+        font-size: 20px;
+        background-color: whitesmoke;
+        margin-top: 30px;
+        padding: 20px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function changeColor(obj) {
+        if (obj.style.color == 'orange') {
+          obj.style.color = 'black';
+        } else {
+          obj.style.color = 'orange';
+        }
+      }
+
+      function changeBgColor(obj, colorName) {
+        obj.style.backgroundColor = colorName;
+      }
+
+      function changeText(obj, text) {
+        obj.innerText = text;
+      }
+
+      function scaleUp(obj, size) {
+        obj.style.fontSize = size;
+      }
+
+      function showSix() {
+        var element = document.getElementById('six');
+
+        if (element.style.visibility == 'hidden') {
+          //element.style.display = "block";
+          element.style.visibility = 'visible';
+        } else {
+          //element.style.display = "none";
+          element.style.visibility = 'hidden';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>The 5 Mouseover Tips</h1>
+      <br />
+      <ol>
+        <li onmouseover="changeColor(this)" onmouseout="changeColor(this)">
+          Change text color.
+        </li>
+        <li
+          onmouseover="changeBgColor(this,'skyblue')"
+          onmouseout="changeBgColor(this, 'whitesmoke')"
+        >
+          Change background color.
+        </li>
+        <li
+          onmouseover="changeText(this,'Hello!')"
+          onmouseout="changeText(this,'Change text.')"
+        >
+          Change text.
+        </li>
+        <li
+          onmouseover="scaleUp(this,'30px')"
+          onmouseout="scaleUp(this,'20px')"
+        >
+          Scale up!
+        </li>
+        <li onmouseover="showSix();" onmouseout="showSix()">Show 6th row.</li>
+        <li id="six" style="visibility: hidden; background: rgb(255, 0, 0)">
+          This is 6th.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
