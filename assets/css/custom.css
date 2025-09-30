@@ -142,7 +142,7 @@ body {
 }
 
 a .fab {
-  color: #777;
+  color: #ffffff;
 }
 
 .bg-white {
@@ -438,6 +438,16 @@ a .fab {
   font-weight: 700;
   text-shadow: 3px 0px 4px white;
 }
+.caption-title-center {
+  margin-right: auto;
+  margin-left: 14vw;
+  max-width: 40vw;
+  margin-bottom: 4vw;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: 2vw;
+  font-weight: 700;
+  text-shadow: 3px 0px 4px white;
+}
 
 .caption-title {
   margin-right: auto;
@@ -479,6 +489,16 @@ a .fab {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 2.4vw;
     font-weight: 700;
+  }
+  .caption-title-center {
+    margin-right: auto;
+    margin-left: 14vw;
+    max-width: 40vw;
+    margin-bottom: -1.99vw;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 2.5vw;
+    font-weight: 700;
+    text-shadow: 3px 0px 4px white;
   }
 
   .caption-title {
@@ -810,7 +830,7 @@ a .fab {
   border: 0px solid black;
   z-index: -1;
   width: 100%;
-  height: 9vh;
+  height: 7vh;
   object-fit: cover;
   transition: 0.5s;
   display: block;
@@ -2213,7 +2233,7 @@ ul.valores-ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 4px auto 20px;
+    margin: 4px auto 43px;
   }
 
   .marcas-grid-img3 {
@@ -2722,12 +2742,12 @@ ul.valores-ul {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: 200;
   font-size: 26px;
-  color: #eeeeec;
+  color: #000000;
 }
 
 .footerSecondaryText {
   font-family: 'Montserrat';
-  color: #eeeeec;
+  color: #000000;
   font-size: 12px;
   line-height: 2;
   word-spacing: 5px;
@@ -2736,21 +2756,21 @@ ul.valores-ul {
 
 .footerContactText {
   font-family: 'Montserrat';
-  color: #eeeeec;
+  color: #000000;
   font-size: 12px;
   line-height: 2;
 }
 
 .footer-container {
-  background-color: #4c575b;
+  background-color: #e2e2e2;
 }
 
 .newsletter-control {
   height: 45px;
   width: 100%;
-  border: 1px solid #979998;
-  background: #4c575b;
-  color: #a8a8a8;
+  border: 1px solid #000000;
+  background: #b8b8b8;
+  color: #000000;
   background-color: transparent;
   resize: none;
   outline: none;
@@ -2758,7 +2778,7 @@ ul.valores-ul {
 
 .btn-primaryg {
   background: #2a3235 !important;
-  color: #fff !important;
+  color: #ffffff !important;
   height: 47px;
   width: 100%;
 }
@@ -2767,16 +2787,16 @@ ul.valores-ul {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-size: 14px;
-  color: #eeeeec;
+  color: #000000;
 }
 
 .footerSubLinks a {
   text-decoration: none;
-  color: #eeeeec;
+  color: #000000;
 }
 
 .footerSubLinks a:hover {
-  color: #fff;
+  color: #000000;
 }
 
 .bottom-footer {
@@ -2788,7 +2808,7 @@ ul.valores-ul {
 }
 
 .bottom-footer-text {
-  color: #eeeeec;
+  color: #ffffff;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 14px;
   font-weight: 200;

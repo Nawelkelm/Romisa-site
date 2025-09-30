@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RO.MI.SA -  Festo Energy Saving Services</title>
+    <meta name="description" content="El Dinero se Fuga con el Aire. Hasta el 30% del aire comprimido en una planta se desperdicia por fugas invisibles.Festo Energy Saving Services le da la transparencia para detener la pérdida."/>
+    <meta name="keywords" content="Festo, Energy Saving Services, aire comprimido, fugas, eficiencia energética. Transparencia y ahorro de un vistazo: Con el Portal Energy Saving Services y la app, puede optimizar los sistemas y eliminar fugas de forma estructurada."/>
+    <meta name="author" content="RO.MI.SA">
+    <meta name="topics" content="Fugas de aire, Eficiencia energética, Optimización de sistemas"/>
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="BGeAc21R7J36vTtecNUWKo7VC4pmPceaOhZCkRLmmu8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+   
+    <!-- Iconos Favicon -->
+      <link rel="shortcut icon" href="assets/img/android-chrome-256x256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    
+   <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            color: #0079C2;
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+    </style>
+    <!-- 
+    Plan de Narrativa y Estructura:
+    1. Héroe: Captar la atención con el problema del coste del aire comprimido.
+    2. El Problema: Visualizar las fugas como pérdidas económicas.
+    3. La Solución: Un diagrama de flujo del proceso del portal.
+    4. Beneficios Clave: Destacar las ventajas principales en tarjetas.
+    5. La Prueba (Datos): Gráficos que demuestran el impacto y el potencial de ahorro.
+    6. Funciones Avanzadas: Mencionar características adicionales como los QR.
+    7. Llamada a la Acción: Invitar a contactar con el servicio.
+    -->
+    <!-- 
+    Selección de Visualizaciones:
+    - Dato: Coste oculto de las fugas. Objetivo: Informar. Visualización: "Single Big Number" con texto grande. Método: HTML/Tailwind.
+    - Dato: Proceso del portal. Objetivo: Organizar. Visualización: Diagrama de flujo. Método: HTML/CSS estructurado con Flexbox (NO SVG, NO MERMAID JS).
+    - Dato: Composición del coste energético. Objetivo: Comparar. Visualización: Gráfico de Donut. Método: Chart.js/Canvas.
+    - Dato: Potencial de ahorro. Objetivo: Comparar. Visualización: Gráfico de Barras. Método: Chart.js/Canvas.
+    - Dato: Progreso de reparaciones. Objetivo: Cambio. Visualización: Gráfico de Líneas. Método: Chart.js/Canvas.
+    - Confirmación: NI Mermaid JS NI SVG fueron utilizados en este artefacto.
+    -->
+    <!-- Palette Name: Brilliant Blues -->
+     <!-- Agrega esto en tu <head> -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<header class="bg-white shadow" x-data="{ mobile:false, openMain:null, openSecond:null, openThird:null }" @click.outside="openMain=openSecond=openThird=null">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between py-4">
+      <div class="flex items-center space-x-4">
+        <a href="romisa.html" class="hidden md:block"><img src="./assets/img/romisa-logo-original.png" class="h-12"></a>
+        <a href="romisa.html" class="block md:hidden"><img src="./assets/img/romisa-logo-original.png" class="h-12"></a>
+      </div>
+
+      <button @click="mobile = !mobile" class="md:hidden text-gray-600">
+        <svg class="h-6 w-6"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+      <div :class="{ 'block': mobile, 'hidden': !mobile }" class="w-full md:flex md:items-center md:w-auto">
+        <ul class="md:flex md:space-x-6">
+
+          <li><a href="romisa.html" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">INICIO</a></li>
+          <li><a href="nosotros.html" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">QUIÉNES SOMOS</a></li>
+
+          <!-- DIVISIONES -->
+          <li class="relative" @mouseenter="openMain='div'" @mouseleave="openMain=null">
+            <button @click="openMain = openMain==='div' ? null : 'div'"
+              class="px-4 py-2 flex items-center hover:text-red-600 hover:bg-red-100">
+              DIVISIONES <span class="text-sm ml-1">▾</span>
+            </button>
+
+            <ul x-show="openMain==='div'" x-transition class="absolute left-0 top-full bg-white border rounded shadow-md w-64 z-50">
+              <!-- TRANSMISIÓN INDUSTRIAL -->
+              <li class="relative" @mouseenter="openSecond='trans'" @mouseleave="openSecond=null">
+                <button @click="openSecond = openSecond==='trans'?null:'trans'"
+                  class="px-4 py-2 flex justify-between w-full hover:text-red-600 hover:bg-red-100">
+                  TRANSMISIÓN INDUSTRIAL <span class="text-sm ml-1">▾</span>
+                </button>
+
+                <ul x-show="openSecond==='trans'" x-transition class="absolute left-full top-0 ml-1 bg-white border rounded shadow-md w-64">
+                  <template x-for="itm in ['RODAMIENTOS','CADENAS','PIÑONES','POLEAS','CORREAS','ACOPLES','CONOS','VIBRADORES','REDUCTORES','MOTORES','BANDAS TRANSPORTADORAS','PLÁSTICOS INDUSTRIALES']" :key="itm">
+                    <li class="relative" @mouseenter="openThird=itm" @mouseleave="openThird=null">
+                      <button @click="openThird = openThird===itm?null:itm"
+                        class="px-4 py-2 flex justify-between w-full hover:text-red-600 hover:bg-red-100">
+                        <span x-text="itm"></span> <span class="text-sm ml-1">▾</span>
+                      </button>
+                      <ul x-show="openThird===itm" x-transition class="absolute left-full top-0 ml-1 bg-white border rounded shadow-md w-56">
+                        <template x-if="itm==='RODAMIENTOS'">
+                          <li><a href="https://ntnamericas.com/product-overview/" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">CATÁLOGO OFICIAL</a></li>
+                        </template>
+                        <template x-if="['CADENAS','PIÑONES','POLEAS','CORREAS','ACOPLES','PLÁSTICOS INDUSTRIALES'].includes(itm)">
+                          <li><a :href="itm==='POLEAS'?'https://poleasrp.com/':itm.startsWith('CORREAS')?'https://megadynegroup.com/ar':itm.startsWith('ACOPLES')?'https://www.gummiitalia.it/es':'https://www.iwis.com/de-de/produkte-services'"
+                               class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">CATÁLOGO OFICIAL</a></li>
+                          <li><a href="#" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">CATÁLOGO GENERAL</a></li>
+                        </template>
+                        <template x-if="itm==='CONOS'">
+                          <li><a href="https://www.newrank.com.ar/index_html_files/CONOS%20TLK.pdf" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">CATÁLOGO OFICIAL</a></li>
+                        </template>
+                        <template x-if="itm==='VIBRADORES'">
+                          <li><a href="https://www.vibromaq.com.ar/Catalogos/Motovibradores_informacion_tecnica.pdf" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">CATÁLOGO OFICIAL</a></li>
+                        </template>
+                        <template x-if="['REDUCTORES','MOTORES'].includes(itm)">
+                          <li><a href="https://www.stmteam.com.ar/productos/" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">CATÁLOGO OFICIAL</a></li>
+                        </template>
+                        <template x-if="itm==='BANDAS TRANSPORTADORAS'">
+                          <li><a href="#" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">CATÁLOGO OFICIAL</a></li>
+                        </template>
+                      </ul>
+                    </li>
+                  </template>
+                </ul>
+              </li>
+
+              <!-- FLUIDOS Y SELLADOS -->
+              <li class="relative" @mouseenter="openSecond='fluidos'" @mouseleave="openSecond=null">
+                <button @click="openSecond = openSecond==='fluidos'?null:'fluidos'"
+                  class="px-4 py-2 flex justify-between w-full hover:text-red-600 hover:bg-red-100">
+                  FLUÍDOS Y SELLADOS <span class="text-sm ml-1">▾</span>
+                </button>
+                <ul x-show="openSecond==='fluidos'" x-transition class="absolute left-full top-0 ml-1 bg-white border rounded shadow-md w-56">
+                  <template x-for="opt in ['NEUMÁTICA','VÁLVULA','GRASAS ALTA PERFORMANCE','SELLADO','ADHESIVOS','MANGUERAS','RETENES','BOMBAS','VÁLVULAS HIDRÁULICAS']" :key="opt">
+                    <li><a :href="`fluidos.html${opt==='NEUMÁTICA'?'':'#'+opt.replace(/ /g,'').toLowerCase()}`" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100" x-text="opt"></a></li>
+                  </template>
+                </ul>
+              </li>
+
+              <!-- SOLDADURA Y CORTE -->
+              <li class="relative" @mouseenter="openSecond='soldadura'" @mouseleave="openSecond=null">
+                <button @click="openSecond = openSecond==='soldadura'?null:'soldadura'"
+                  class="px-4 py-2 flex justify-between w-full hover:text-red-600 hover:bg-red-100">
+                  SOLDADURA Y CORTE <span class="text-sm ml-1">▾</span>
+                </button>
+                <ul x-show="openSecond==='soldadura'" x-transition class="absolute left-full top-0 ml-1 bg-white border rounded shadow-md w-56">
+                  <template x-for="opt in ['CONSUMIBLES','EQUIPOS','PLASMA','CORTE Y FRESADO DE METALES','CORTE DE MADERA']" :key="opt">
+                    <li><a :href="opt==='CONSUMIBLES'?'soldadura.html':`soldadura.html#${opt.replace(/ /g,'').toLowerCase()}`" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100" x-text="opt"></a></li>
+                  </template>
+                </ul>
+              </li>
+
+              <!-- FERRETERÍA -->
+              <li class="relative" @mouseenter="openSecond='ferreteria'" @mouseleave="openSecond=null">
+                <button @click="openSecond = openSecond==='ferreteria'?null:'ferreteria'"
+                  class="px-4 py-2 flex justify-between w-full hover:text-red-600 hover:bg-red-100">
+                  FERRETERÍA <span class="text-sm ml-1">▾</span>
+                </button>
+                <ul x-show="openSecond==='ferreteria'" x-transition class="absolute left-full top-0 ml-1 bg-white border rounded shadow-md w-56">
+                  <li class="relative" @mouseenter="openThird='buloneria'" @mouseleave="openThird=null">
+                    <button @click="openThird = openThird==='buloneria'?null:'buloneria'"
+                      class="px-4 py-2 flex justify-between w-full hover:text-red-600 hover:bg-red-100">
+                      BULONERÍA <span class="text-sm ml-1">▾</span>
+                    </button>
+                    <ul x-show="openThird==='buloneria'" x-transition class="absolute left-full top-0 ml-1 bg-white border rounded shadow-md w-48">
+                      <template x-for="opt in ['TORNILLOS','PRISIONEROS','VARILLA ROSCADA','TUERCA','ANILLO DE SEGURIDAD','ALLEN','TIRAFONDO','ARANDELA PLANA‑GROWER']" :key="opt">
+                        <li><a href="ferreteria.html" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100" x-text="opt"></a></li>
+                      </template>
+                    </ul>
+                  </li>
+                  <template x-for="other in ['STARRETT','MEDICIÓN','PINTURERÍA','HERRAMIENTAS','LUBRICANTES Y LIMPIADORES','ADHESIVOS']" :key="other">
+                    <li><a :href="`ferreteria.html#${other.replace(/ /g,'').toLowerCase()}`" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100" x-text="other"></a></li>
+                  </template>
+                </ul>
+              </li>
+
+              <!-- INFORMÁTICA -->
+              <li class="relative" @mouseenter="openSecond='informatica'" @mouseleave="openSecond=null">
+                <button @click="openSecond = openSecond==='informatica'?null:'informatica'"
+                  class="px-4 py-2 flex justify-between w-full hover:text-red-600 hover:bg-red-100">
+                  INFORMÁTICA <span class="text-sm ml-1">▾</span>
+                </button>
+                <ul x-show="openSecond==='informatica'" x-transition class="absolute left-full top-0 ml-1 bg-white border rounded shadow-md w-56 max-h-96 overflow-auto">
+                  <template x-for="opt in ['IMPRESIÓN','COMPONENTES','PERIFÉRICOS','ALMACENAMIENTO','IMAGEN','CONECTIVIDAD','SEGURIDAD','CONECTORES','AUDIO']" :key="opt">
+                    <li><a :href="`informatica.html#${opt.replace(/ /g,'').toLowerCase()}`" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100" x-text="opt"></a></li>
+                  </template>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="contacto.html" class="px-4 py-2 block hover:text-red-600 hover:bg-red-100">CONTACTO</a></li>
+          <li><a href="https://ecommerce.romisa.com.ar/public/login.php" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 block">INGRESO CLIENTES</a></li>
+        </ul>
+
+        <ul class="flex space-x-4 ml-auto">
+          <li><a href="https://facebook.com" class="text-blue-600 hover:text-red-600 hover:bg-red-100 px-2 block"><i class="fa fa-facebook fa-lg"></i></a></li>
+          <li><a href="https://instagram.com" class="text-pink-500 hover:text-red-600 hover:bg-red-100 px-2 block"><i class="fa insta-icon fa-md"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Section 1: Hero -->
+        <header class="text-center py-6">
+            <img src="/assets/img/marcas/festo.png" alt="Festo Logo" class="mx-auto mb-8 w-40 md:w-56">
+            <h1 class="text-4xl md:text-6xl font-black text-[#004AAD] mb-4">El Dinero se Fuga con el Aire</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Hasta el 30% del aire comprimido en una planta se desperdicia por fugas invisibles. El <span class="font-bold text-[#0079C2]">Portal Festo Energy Saving Services</span> le da la transparencia para detener la pérdida.</p>
+        </header>
+
+        <!-- Section 2: The Problem -->
+        <section class="my-12">
+            <div class="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-[#004AAD] mb-4">¿Dónde está el Problema?</h2>
+                <p class="text-gray-600 mb-6">Las fugas de aire comprimido son silenciosas, invisibles y constantes. Cada pequeña fuga es una pérdida continua de energía y dinero, 24 horas al día, 7 días a la semana.</p>
+                <div class="flex justify-center items-center space-x-4 text-2xl md:text-4xl font-bold text-red-500">
+                    <span>💨</span>
+                    <span>💸</span>
+                    <span>💨</span>
+                    <span>💸</span>
+                    <span>💨</span>
+                    <span>💸</span>
+                </div>
+                <p class="mt-4 text-lg font-semibold text-red-600">¡Cada fuga es una fuga de beneficios!</p>
+            </div>
+        </section>
+
+        <!-- Section 3: The Solution Flowchart -->
+        <section class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#004AAD] mb-8">Nuestra Solución en 4 Pasos Sencillos</h2>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-0">
+                <!-- Step 1 -->
+                <div class="text-center p-4">
+                    <div class="bg-white rounded-full shadow-md w-32 h-32 flex items-center justify-center text-4xl font-bold text-[#0079C2] mx-auto">1</div>
+                    <h3 class="font-bold mt-4">Localizar y Documentar</h3>
+                    <p class="text-sm text-gray-600">Encontramos fugas con equipos de detección y las documentamos con la app móvil.</p>
+                </div>
+                <div class="flow-arrow hidden md:block mx-4">→</div>
+                <div class="flow-arrow block md:hidden my-2">↓</div>
+                <!-- Step 2 -->
+                <div class="text-center p-4">
+                    <div class="bg-white rounded-full shadow-md w-32 h-32 flex items-center justify-center text-4xl font-bold text-[#0079C2] mx-auto">2</div>
+                    <h3 class="font-bold mt-4">Digitalizar</h3>
+                    <p class="text-sm text-gray-600">Sincronice los datos recopilados con el portal al instante.</p>
+                </div>
+                <div class="flow-arrow hidden md:block mx-4">→</div>
+                <div class="flow-arrow block md:hidden my-2">↓</div>
+                <!-- Step 3 -->
+                <div class="text-center p-4">
+                    <div class="bg-white rounded-full shadow-md w-32 h-32 flex items-center justify-center text-4xl font-bold text-[#0079C2] mx-auto">3</div>
+                    <h3 class="font-bold mt-4">Analizar</h3>
+                    <p class="text-sm text-gray-600">Calcule ahorros potenciales y priorice las reparaciones.</p>
+                </div>
+                 <div class="flow-arrow hidden md:block mx-4">→</div>
+                 <div class="flow-arrow block md:hidden my-2">↓</div>
+                <!-- Step 4 -->
+                <div class="text-center p-4">
+                    <div class="bg-white rounded-full shadow-md w-32 h-32 flex items-center justify-center text-4xl font-bold text-[#0079C2] mx-auto">4</div>
+                    <h3 class="font-bold mt-4">Actuar y Monitorear</h3>
+                    <p class="text-sm text-gray-600">Gestione reparaciones y mida el progreso en tiempo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Key Benefits -->
+        <section class="my-16">
+             <h2 class="text-3xl font-bold text-center text-[#004AAD] mb-8">Sus Ventajas de un Vistazo</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <span class="text-5xl">💰</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-[#004AAD]">Calcule su Ahorro</h3>
+                    <p class="text-gray-600">Determine su potencial de ahorro realista y tome el control de sus costes.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <span class="text-5xl">📊</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-[#004AAD]">Justifique Inversiones</h3>
+                    <p class="text-gray-600">Aporte transparencia a sus decisiones con cálculos detallados de amortización.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <span class="text-5xl">📱</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-[#004AAD]">Digitalice el Proceso</h3>
+                    <p class="text-gray-600">Obtenga una visión general del estado de sus reparaciones en tiempo real.</p>
+                </div>
+                 <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <span class="text-5xl">🔧</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-[#004AAD]">Supervise Reparaciones</h3>
+                    <p class="text-gray-600">Cree listas de repuestos y vea exactamente dónde se necesitan con ayuda de QR.</p>
+                </div>
+             </div>
+        </section>
+
+        <!-- Section 5: Data Visualizations -->
+        <section class="my-16">
+            <h2 class="text-3xl font-bold text-center text-[#004AAD] mb-8">El Impacto en Números</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Chart 1: Donut Chart -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#004AAD]">Coste Energético Típico de una Planta</h3>
+                    <p class="text-center text-sm text-gray-600 mb-4">Las fugas de aire comprimido representan una porción sorprendentemente grande de los costes energéticos totales, un objetivo perfecto para la optimización.</p>
+                    <div class="chart-container">
+                        <canvas id="costoEnergeticoChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Bar Chart -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#004AAD]">Potencial de Ahorro Anual</h3>
+                     <p class="text-center text-sm text-gray-600 mb-4">Al eliminar las fugas detectadas, el ahorro en la factura energética puede ser sustancial, demostrando un rápido retorno de la inversión.</p>
+                    <div class="chart-container">
+                        <canvas id="potencialAhorroChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 3: Line Chart -->
+                <div class="bg-white rounded-lg shadow-lg p-6 md:col-span-2">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#004AAD]">Reducción de Fugas a lo Largo del Tiempo</h3>
+                    <p class="text-center text-sm text-gray-600 mb-4 max-w-2xl mx-auto">El portal le permite monitorizar el progreso de las reparaciones y ver cómo el volumen de fugas disminuye con el tiempo, asegurando que los esfuerzos de ahorro se mantengan.</p>
+                    <div class="chart-container">
+                        <canvas id="reduccionFugasChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Call to Action -->
+        <footer class="text-center py-12 mt-8 bg-white rounded-lg shadow-lg">
+            <h2 class="text-4xl font-black text-[#004AAD] mb-4">¿Interesado en Optimizar su Sistema?</h2>
+            <p class="text-lg text-gray-600 mb-8">Nuestro equipo de expertos está listo para ayudarle a lograr la máxima eficiencia en sus sistemas de aire comprimido.</p>
+            <a href="https://api.whatsapp.com/send?phone=5493764280451&text=Hola!!!,%20necesito%20consultar:%20" class="bg-[#0079C2] text-white font-bold py-4 px-8 rounded-lg hover:bg-[#004AAD] transition-colors text-xl shadow-md" target="_blank">Contacte con Nosotros</a>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapLabel(str) {
+            const maxLength = 16;
+            if (str.length <= maxLength) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        // Chart 1: Costo Energetico (Donut)
+        const ctx1 = document.getElementById('costoEnergeticoChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['Producción', 'Iluminación', 'HVAC', 'Fugas de Aire Comprimido', 'Otros'],
+                datasets: [{
+                    label: 'Coste Energético',
+                    data: [45, 15, 20, 15, 5],
+                    backgroundColor: ['#004AAD', '#0079C2', '#00AEEF', '#FF6384', '#89D6F7'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...commonTooltipOptions,
+                plugins: {
+                    ...commonTooltipOptions.plugins,
+                    legend: {   
+                        position: 'bottom',
+                    },
+                }
+            }
+        });
+
+        // Chart 2: Potencial Ahorro (Bar)
+        const ctx2 = document.getElementById('potencialAhorroChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Coste Anual'],
+                datasets: [{
+                    label: 'Antes del Portal',
+                    data: [50000],
+                    backgroundColor: '#FF6384',
+                    borderColor: '#FF6384',
+                    borderWidth: 1
+                }, {
+                    label: 'Potencial Después',
+                    data: [35000],
+                    backgroundColor: '#4BC0C0',
+                    borderColor: '#4BC0C0',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...commonTooltipOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value / 1000 + 'k';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 3: Reduccion Fugas (Line)
+        const ctx3 = document.getElementById('reduccionFugasChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                datasets: [{
+                    label: 'Volumen de Fuga (L/min)',
+                    data: [2500, 2200, 1800, 1300, 900, 500],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 174, 239, 0.2)',
+                    borderColor: '#00AEEF',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...commonTooltipOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

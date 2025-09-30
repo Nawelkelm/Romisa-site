@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romisa - Sitio en Mantenimiento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0B3C5D;
+            --secondary-color: #1D7AB1;
+            --accent-color: #328CC1;
+            --text-color: #ffffff;
+            --bg-color: #0A2B42;
+            --border-color: #1D7AB1;
+            --gradient-start: #0B3C5D;
+            --gradient-end: #328CC1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-color);
+            color: var(--text-color);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233d4b53' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-in;
+            background: linear-gradient(135deg, rgba(11, 60, 93, 0.95), rgba(29, 122, 177, 0.95));
+            padding: 2.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 8px 8px 0 0;
+        }
+
+        .logo {
+            width: 217px;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 0 8px rgba(243, 156, 18, 0.3));
+            transition: filter 0.3s ease;
+        }
+
+        .logo:hover {
+            filter: drop-shadow(0 0 12px rgba(243, 156, 18, 0.5));
+        }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            color: var(--secondary-color);
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        .maintenance-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border: 3px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .maintenance-image:hover {
+            transform: scale(1.02);
+        }
+
+        p {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            background: rgba(43, 58, 66, 0.8);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .contact-info::before {
+            content: "⚙️";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            background: var(--bg-color);
+            padding: 5px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+        }
+
+        .social-links {
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            background: rgba(61, 75, 83, 0.7);
+            border: 1px solid var(--border-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .logo {
+                width: 150px;
+            }
+
+            .contact-info {
+                padding: 1.5rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Reemplazar con el logo de romisa.com.ar -->
+        <img src="assets/img/romisa-logo-original.png" alt="Logo Romisa" class="logo">
+        
+        <h1>Sitio en Mantenimiento</h1>
+        
+        <!-- Reemplazar con imagen de mantenimiento de romisa.com.ar -->
+        <img src="assets/img/sitiomantenimiento.png" alt="En mantenimiento" class="maintenance-image">
+        
+        <p>Estamos trabajando para mejorar tu experiencia. Disculpá las molestias temporarias.</p>
+        
+        <div class="contact-info">
+            <p>Para consultas urgentes:</p>
+            <p>📞 Tel: +54 11 1234-5678</p>
+            <p>📞 Cel: +54 9 3764 28-0451</p>
+            <p>✉️ Email: info@romisa.com.ar</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://facebook.com/romisaferreteriaindustrial" target="_blank">Facebook</a>
+            <a href="https://instagram.com/romisaferreteriaindustrial" target="_blank">Instagram</a>
+            <a href="https://linkedin.com/company/romisaferreteriaindustrial" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</body>
+</html>

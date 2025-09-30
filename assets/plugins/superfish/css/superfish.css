@@ -62,7 +62,7 @@
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 .sf-menu li {
   white-space: nowrap; /* no need for Supersubs plugin */

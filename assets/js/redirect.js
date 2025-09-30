@@ -1,4 +1,4 @@
 
   function redireccionar() {
-    setTimeout("location.href='index.html'", 5000);
+    setTimeout("location.href='romisa.html'", 5000);
   }

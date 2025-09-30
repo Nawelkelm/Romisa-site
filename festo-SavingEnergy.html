@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RO.MI.SA -  Festo Energy Saving Services</title>
+    <meta name="description" content="El Dinero se Fuga con el Aire. Descubre como ahorrar mucho dinero de manera eficiente."/>
+    <meta name="keywords" content="Festo, Energy Saving Services, aire comprimido, fugas, eficiencia energética. Transparencia y ahorro de un vistazo: Con el Portal Energy Saving Services y la app, puede optimizar los sistemas y eliminar fugas de forma estructurada."/>
+    <meta name="author" content="RO.MI.SA">
+    <meta name="topics" content="Fugas de aire, Eficiencia energética, Optimización de sistemas"/>
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="BGeAc21R7J36vTtecNUWKo7VC4pmPceaOhZCkRLmmu8" />
+
+    
+    <!-- Etiquetas Open Graph para vista previa en redes -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="RO.MI.SA - Servicio de Sustentabililidad." />
+<meta property="og:description" content="El Dinero se Fuga con el Aire. Descubre como ahorrar mucho dinero de manera eficiente." />
+<meta property="og:url" content="https://www.romisa.com.ar/festo-SavingEnergy.html" />
+<meta property="og:image" content="https://www.romisa.com.ar/assets/img/logo-romisafesto-og.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="RO.MI.SA" />
+
+    <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/plugins/glide/dist/css/glide.core.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/glide/dist/css/glide.theme.min.css" />
+    <link rel="stylesheet" href="./assets/css/hover.css" />
+    <link rel="stylesheet" href="./assets/plugins/superfish/css/superfish.css" />
+ <!-- Font Awesome for the WhatsApp icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- CSS del sitio + FontAwesome para Iconos -->
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+      <link rel="stylesheet" href="./assets/css/loader.css" />
+    <script src="https://kit.fontawesome.com/a5c59cf2a1.js" crossorigin="anonymous"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Iconos Favicon -->
+      <link rel="shortcut icon" href="assets/img/android-chrome-256x256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Equivalent to gray-100 */
+            color: #343a40; /* Equivalent to gray-800 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            color: #0079C2; /* Specific blue from palette */
+            font-size: 2.5rem;
+            line-height: 1;
+        }
+        .festo-blue-dark {
+            color: #004AAD; /* Specific dark blue from palette */
+        }
+        .festo-blue-medium {
+            background-color: #0079C2; /* Specific medium blue from palette */
+        }
+        .festo-blue-light {
+            background-color: #00AEEF; /* Specific light blue from palette */
+        }
+        .festo-red {
+            background-color: #FF6384; /* Specific red from palette */
+        }
+        .festo-green {
+            background-color: #4BC0C0; /* Specific green from palette */
+        }
+        .festo-light-blue {
+            background-color: #89D6F7; /* Specific light blue from palette */
+        }
+
+        /* Custom button style for Festo */
+        .btn-festo-primary {
+            background-color: #0079C2; /* Festo medium blue */
+            border-color: #0079C2;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-festo-primary:hover {
+            background-color: #004AAD; /* Festo dark blue for hover */
+            border-color: #004AAD;
+        }
+
+        /* WhatsApp container and button */
+        .whatsapp-container {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 100;
+        }
+        .whatsapp-float {
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* WhatsApp message dialogue box - always visible on load */
+        .whatsapp-message {
+            position: absolute;
+            right: 70px; /* Positioned to the left of the button */
+            bottom: 36px;
+            width: 250px;
+            background-color: #fff;
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 11px 4px 15px 2px #00000040;
+            color: #343a40;
+            font-size: 1rem;
+            text-align: left;
+            /* Make it visible by default */
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            transform-origin: bottom right;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        }
+        .whatsapp-message::after {
+            content: '';
+            position: absolute;
+            right: -10px; /* Position the arrow to the right */
+            bottom: 10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #fff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        /* Responsive adjustment for mobile */
+        @media (max-width: 767.98px) {
+            .whatsapp-container {
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+            .whatsapp-message {
+                right: 60px;
+                width: 200px;
+                bottom: 5px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <!-- 
+    Plan de Narrativa y Estructura:
+    1. Héroe: Captar la atención con el problema del costo del aire comprimido.
+    2. El Problema: Visualizar las fugas como pérdidas económicas.
+    3. La Solución: Un diagrama de flujo del proceso del portal.
+    4. Beneficios Clave: Destacar las ventajas principales en tarjetas.
+    5. La Prueba (Datos): Gráficos que demuestran el impacto y el potencial de ahorro.
+    6. Funciones Avanzadas: Mencionar características adicionales como los QR.
+    7. Llamada a la Acción: Invitar a contactar con el servicio.
+    -->
+    <!-- 
+    Selección de Visualizaciones:
+    - Dato: Costo oculto de las fugas. Objetivo: Informar. Visualización: "Single Big Number" con texto grande. Método: HTML/Bootstrap.
+    - Dato: Proceso del portal. Objetivo: Organizar. Visualización: Diagrama de flujo. Método: HTML/CSS estructurado con Flexbox (NO SVG, NO MERMAID JS).
+    - Dato: Composición del costo energético. Objetivo: Comparar. Visualización: Gráfico de Donut. Método: Chart.js/Canvas.
+    - Dato: Potencial de ahorro. Objetivo: Comparar. Visualización: Gráfico de Barras. Método: Chart.js/Canvas.
+    - Dato: Progreso de reparaciones. Objetivo: Cambio. Visualización: Gráfico de Líneas. Método: Chart.js/Canvas.
+    - Confirmación: NI Mermaid JS NI SVG fueron utilizados en este artefacto.
+    -->
+    <!-- Palette Name: Brilliant Blues -->
+</head>
+<body onload="contenedorCarga();">
+
+    <div id="contenedor_carga"></div>
+          <div id="carga"></div>
+          
+    <div id="navbar-container"></div>
+
+  <script>
+      fetch('navbarromisa.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbar-container').innerHTML = data;
+              jQuery('ul.sf-menu').superfish();  // Inicializar después de cargar el menú
+          });
+  </script>
+      <!-- Fin de Barra de Navegacion -->
+
+    <div class="container my-4 my-md-5">
+
+        <!-- Section 1: Hero -->
+        <header class="text-center py-4">
+            <img src="assets/img/marcas/festo.png" alt="Festo Logo" class="mx-auto mb-4 img-fluid" style="max-width: 160px;">
+            <h1 class="display-4 fw-bold festo-blue-dark mb-3">El Dinero se Fuga con el Aire</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">Hasta el 30% del aire comprimido en una planta se desperdicia por fugas invisibles. El <span class="fw-bold" style="color: #0079C2;">Portal Festo Energy Saving Services</span> le da la transparencia para detener la pérdida.</p>
+        </header>
+
+        <!-- Section: Image Banner (relocated) -->
+        <div class="w-100 my-5 overflow-hidden">
+            <img src="https://www.romisa.com.ar/sandbox/assets/img/Energy_Saving_Services_-_Leckageortung_und_-beseitigung_fix1920x880.webp" 
+                 alt="Servicio de Detección de Fugas de Aire Comprimido de Festo" 
+                 class="img-fluid w-100" 
+                 style="height: auto; object-fit: cover;">
+        </div>
+
+        <!-- Section 2: The Problem -->
+        <section class="my-5">
+            <div class="card shadow-lg p-4 p-md-5 mx-auto text-center" style="max-width: 900px;">
+                <h2 class="h3 fw-bold festo-blue-dark mb-4">¿Dónde está el Problema?</h2>
+                <p class="text-muted mb-4">Las fugas de aire comprimido son silenciosas, invisibles y constantes. Cada pequeña fuga es una pérdida continua de energía y dinero, 24 horas al día, 7 días a la semana.</p>
+                <div class="d-flex justify-content-center align-items-center mb-3" style="font-size: 2.5rem; font-weight: bold; color: #dc3545;">
+                    <span>💨</span>
+                    <span>💸</span>
+                    <span>💨</span>
+                    <span>💸</span>
+                    <span>💨</span>
+                    <span>💸</span>
+                </div>
+                <p class="mt-3 h5 fw-semibold text-danger">¡Cada fuga es una fuga de beneficios!</p>
+            </div>
+        </section>
+
+        <!-- Section 3: The Solution Flowchart -->
+        <section class="my-5">
+            <h2 class="h3 fw-bold text-center festo-blue-dark mb-4">Nuestra Solución en 4 Pasos Sencillos</h2>
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 gap-md-0">
+                <!-- Step 1 -->
+                <div class="text-center p-3">
+                    <div class="bg-white rounded-circle shadow d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; font-size: 2.5rem; font-weight: bold; color: #0079C2;">1</div>
+                    <h3 class="h5 fw-bold mt-3">Localizar y Documentar</h3>
+                    <p class="text-muted small">Encontramos fugas con equipos de detección y las documentamos con la app móvil.</p>
+                </div>
+                <div class="flow-arrow d-none d-md-block mx-3">→</div>
+                <div class="flow-arrow d-block d-md-none my-2">↓</div>
+                <!-- Step 2 -->
+                <div class="text-center p-3">
+                    <div class="bg-white rounded-circle shadow d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; font-size: 2.5rem; font-weight: bold; color: #0079C2;">2</div>
+                    <h3 class="h5 fw-bold mt-3">Digitalizar</h3>
+                    <p class="text-muted small">Sincronice los datos recopilados con el portal al instante.</p>
+                </div>
+                <div class="flow-arrow d-none d-md-block mx-3">→</div>
+                <div class="flow-arrow d-block d-md-none my-2">↓</div>
+                <!-- Step 3 -->
+                <div class="text-center p-3">
+                    <div class="bg-white rounded-circle shadow d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; font-size: 2.5rem; font-weight: bold; color: #0079C2;">3</div>
+                    <h3 class="h5 fw-bold mt-3">Analizar</h3>
+                    <p class="text-muted small">Calcule ahorros potenciales y priorice las reparaciones.</p>
+                </div>
+                 <div class="flow-arrow d-none d-md-block mx-3">→</div>
+                 <div class="flow-arrow d-block d-md-none my-2">↓</div>
+                <!-- Step 4 -->
+                <div class="text-center p-3">
+                    <div class="bg-white rounded-circle shadow d-flex align-items-center justify-content-center mx-auto" style="width: 120px; height: 120px; font-size: 2.5rem; font-weight: bold; color: #0079C2;">4</div>
+                    <h3 class="h5 fw-bold mt-3">Actuar y Monitorear</h3>
+                    <p class="text-muted small">Gestione reparaciones y mida el progreso en tiempo real.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Key Benefits -->
+        <section class="my-5">
+             <h2 class="h3 fw-bold text-center festo-blue-dark mb-4">Sus Ventajas de un Vistazo</h2>
+             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card shadow-sm p-4 text-center">
+                        <span style="font-size: 3.5rem;">💰</span>
+                        <h3 class="h5 fw-bold mt-3 mb-2 festo-blue-dark">Calcule su Ahorro</h3>
+                        <p class="text-muted">Determine su potencial de ahorro realista y tome el control de sus costos.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm p-4 text-center">
+                        <span style="font-size: 3.5rem;">📊</span>
+                        <h3 class="h5 fw-bold mt-3 mb-2 festo-blue-dark">Justifique Inversiones</h3>
+                        <p class="text-muted">Aporte transparencia a sus decisiones con cálculos detallados de amortización.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm p-4 text-center">
+                        <span style="font-size: 3.5rem;">📱</span>
+                        <h3 class="h5 fw-bold mt-3 mb-2 festo-blue-dark">Digitalice el Proceso</h3>
+                        <p class="text-muted">Obtenga una visión general del estado de sus reparaciones en tiempo real.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm p-4 text-center">
+                        <span style="font-size: 3.5rem;">🔧</span>
+                        <h3 class="h5 fw-bold mt-3 mb-2 festo-blue-dark">Supervise Reparaciones</h3>
+                        <p class="text-muted">Cree listas de repuestos y vea exactamente dónde se necesitan con ayuda de QR.</p>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Section 5: Data Visualizations -->
+        <section class="my-5">
+            <h2 class="h3 fw-bold text-center festo-blue-dark mb-4">El Impacto en Números</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <!-- Chart 1: Donut Chart -->
+                <div class="col">
+                    <div class="card shadow-lg p-4">
+                        <h3 class="h5 fw-bold text-center mb-3 festo-blue-dark">Costo Energético Típico de una Planta</h3>
+                        <p class="text-center small text-muted mb-3">Las fugas de aire comprimido representan una porción sorprendentemente grande de los costos energéticos totales, un objetivo perfecto para la optimización.</p>
+                        <div class="chart-container">
+                            <canvas id="costoEnergeticoChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Bar Chart -->
+                <div class="col">
+                    <div class="card shadow-lg p-4">
+                        <h3 class="h5 fw-bold text-center mb-3 festo-blue-dark">Potencial de Ahorro Anual</h3>
+                        <p class="text-center small text-muted mb-3">Al eliminar las fugas detectadas, el ahorro en la factura energética puede ser sustancial, demostrando un rápido retorno de la inversión.</p>
+                        <div class="chart-container">
+                            <canvas id="potencialAhorroChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 3: Line Chart -->
+                <div class="col-12">
+                    <div class="card shadow-lg p-4">
+                        <h3 class="h5 fw-bold text-center mb-3 festo-blue-dark">Reducción de Fugas a lo Largo del Tiempo</h3>
+                        <p class="text-center small text-muted mb-3 mx-auto" style="max-width: 800px;">El portal le permite monitorizar el progreso de las reparaciones y ver cómo el volumen de fugas disminuye con el tiempo, asegurando que los esfuerzos de ahorro se mantengan.</p>
+                        <div class="chart-container">
+                            <canvas id="reduccionFugasChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Call to Action -->
+        <div class="text-center py-5 mt-5 card shadow-lg">
+            <h2 class="h3 fw-bold festo-blue-dark mb-3">¿Interesado en Optimizar su Sistema?</h2>
+            <p class="lead text-muted mb-4">Nuestro equipo de expertos está listo para ayudarle a lograr la máxima eficiencia en sus sistemas de aire comprimido.</p>
+            <div class="d-grid col-md-6 mx-auto">
+                <a href="https://api.whatsapp.com/send?phone=5493764280451&text=Hola%20te%20hablo%20desde%20la%20web,%20necesito%20consultar%20sobre%20Festo%20Energy%20Saving%20" class="btn btn-festo-primary btn-lg rounded-4 shadow-lg" style="background-color: #0079C2;">Contacte con Nosotros</a>
+            </div>
+        </div>
+          <!-- Floating WhatsApp container with button and message -->
+    <div class="whatsapp-container">
+        <!-- Message Dialogue Box -->
+        <div class="whatsapp-message">
+            <p class="my-0">¿Estás interesado en ahorrar? Contactate con nosotros</p>
+        </div>
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/5493764280451?text=Hola%20te%20hablo%20desde%20la%20web,%20necesito%20consultar%20sobre%20Festo%20Energy%20Saving%20" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    </div>
+<!-- Inicio de Footer -->
+          <footer>
+        <div class="container-fluid footer-container">
+        <div class="row">
+          <div class="col col-lg-3 mt-3" style="border-right: 1px solid #7D8588;">
+            <img src="./assets/img/romisa-logo-original.png" width="200" height="35" alt=""/>
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-md-3 col-12 mt-3">
+            <p class="footerMainText">Newsletter</p>
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="footerContactText">Suscr&iacute;base a nuestro portal de noticias y reciba las &uacute;ltimas novedades en productos.</p>
+              </div>
+            </div>
+            <div class="row">
+              <form onsubmit="return doSubscribe();">
+                <div class="mb-3">
+                  <input type="email" id="subscriberEmail" class="newsletter-control" placeholder="E-mail" required>
+                </div>
+                <div class="mb-3">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primaryg">Suscribirse</button>
+                    <p id="subscribe-message"></p>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col col-lg-3 mt-3 text-end"  style="border-right: 1px solid #7D8588;">
+            <p class="footerMainText">Navegaci&oacute;n</p>
+            <p class="footerSubLinks"><a href="index.html">INICIO</a></p>
+            <p class="footerSubLinks"><a href="nosotros.html">QUI&Eacute;NES SOMOS</a></p>
+            <p class="footerSubLinks"><a href="divisiones.html">DIVISIONES</a></p>
+            <p class="footerSubLinks"><a href="contacto.html">CONTACTO</a></p>
+            <p class="footerSubLinks"><a href="novedades.html">LISTAS DE PRECIOS</a></p>
+          </div>
+          <div class="col col-lg-3 mt-3">
+            <p class="footerMainText">Contacto</p>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-map-marker-alt" style="color: #000000"></i>  Av. Francisco de Haro 4447
+                  Posadas, Misiones, 3300
+                  Argentina
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-envelope" style="color: #000000"></i> ventas@romisa.com.ar</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-phone" style="color: #000000"></i> +54 (3764) 457900 L&iacute;neas Rotativas</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="footer-social-media">
+              <div class="col-lg-2">
+                <a href="https://www.facebook.com/romisaferreteriaindustrial"><i class="fab fa-facebook-f fa-lg" style="color: #000000"></i></a>
+              </div>
+              <div class="col-lg-2">
+                <a href="https://www.instagram.com/romisaferreteriaindustrial"><i class="fab fa-instagram fa-lg" style="color: #000000"></i></a>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="bottom-footer">
+            <p class="bottom-footer-text">&copy; ROMISA <script>document.write(new Date().getFullYear())</script> - Todos los derechos reservados.</p>
+          </div>
+        </div>
+    
+      </footer>
+
+<!-- Fin de Footer -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+<!-- jQuery & Scripts de la Página  -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./assets/plugins/glide/dist/glide.min.js"></script>
+  <script src="./assets/plugins/glide/dist/glide.js"></script>
+  <script src="./assets/plugins/superfish/superfish.js"></script>
+  <script src="./assets/js/sticky-header.js"></script>
+  <script src="./assets/js/hideContactButton.js"></script>
+  <script src="./assets/js/hideWhatsapp.js"></script>
+  <script src="./assets/js/custom.js"></script>
+  <script src="./assets/js/hiderecordatorio.js"></script>
+              
+    <script>
+        function wrapLabel(str) {
+            const maxLength = 16;
+            if (str.length <= maxLength) {
+                return str;
+            }
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            }
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const commonTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        // Chart 1: Costo Energetico (Donut)
+        const ctx1 = document.getElementById('costoEnergeticoChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['Producción', 'Iluminación', 'HVAC', 'Fugas de Aire Comprimido', 'Otros'],
+                datasets: [{
+                    label: 'Costo Energético',
+                    data: [45, 15, 20, 15, 5],
+                    backgroundColor: ['#004AAD', '#0079C2', '#00AEEF', '#FF6384', '#89D6F7'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...commonTooltipOptions,
+                plugins: {
+                    ...commonTooltipOptions.plugins,
+                    legend: {
+                        position: 'bottom',
+                    },
+                }
+            }
+        });
+
+        // Chart 2: Potencial Ahorro (Bar)
+        const ctx2 = document.getElementById('potencialAhorroChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Costo Anual'],
+                datasets: [{
+                    label: 'Antes del Portal',
+                    data: [50000],
+                    backgroundColor: '#FF6384',
+                    borderColor: '#FF6384',
+                    borderWidth: 1
+                }, {
+                    label: 'Potencial Después',
+                    data: [35000],
+                    backgroundColor: '#4BC0C0',
+                    borderColor: '#4BC0C0',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...commonTooltipOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value / 1000 + 'k';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chart 3: Reduccion Fugas (Line)
+        const ctx3 = document.getElementById('reduccionFugasChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+                datasets: [{
+                    label: 'Volumen de Fuga (L/min)',
+                    data: [2500, 2200, 1800, 1300, 900, 500],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 174, 239, 0.2)',
+                    borderColor: '#00AEEF',
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...commonTooltipOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    <script>
+          function contenedorCarga(){
+              var contenedor = document.getElementById('contenedor_carga');
+              var conteiner = document.getElementById('carga');
+              contenedor.style.visibility = 'hidden';
+              contenedor.style.opacity = '0';
+              conteiner.style.visibility = 'hidden';
+              conteiner.style.opacity = '0';
+                
+          }
+  </script>
+    <script>
+      
+    //   Superfish
+    jQuery(document).ready(function() {
+    jQuery('ul.sf-menu').superfish();
+    });
+  </script>
+
+  <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+    })
+  </script>
+  <script>
+    var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+      trigger: 'focus'
+    })
+  </script>
+</body>
+</html>
