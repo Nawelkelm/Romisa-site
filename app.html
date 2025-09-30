@@ -7,6 +7,16 @@
     <meta name="author" content="">
     <title>RO.MI.SA | Prueba</title>    
   </head>
+  <div id="navbar-container"></div>
+
+  <script>
+      fetch('navbarromisa.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbar-container').innerHTML = data;
+              jQuery('ul.sf-menu').superfish();  // Inicializar después de cargar el menú
+          });
+  </script>
   <body onload="rotacionDeContenido();"> 
  		<div>
             <h2 id="mensajecambio"></h2>

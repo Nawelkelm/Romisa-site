@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags requeridos. Aptos para SEO-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="RO.MI.SA - Formulario de alta de clientes"/>
+    <meta name="description" content="Date de Alta con nosotros y disfruta de los beneficios de ser nuestro Cliente"/>
+    <meta name="keywords" content="proveedor de rodamientos, romisa, Romisa, rodamientos, misiones, sociedad anonima, proveedor de rodamientos, rodamientos misiones sociedad anonima, elite, iwis, RP Poleas, MEGADYNE, Gummi, Acoples, TOLLOK, Vibromaq, STM Team, NTH Grilon, repuesto, transmision industrial, industrial, industria, cadenas, pinones, poleas, correas, acoples, conos, motovibradores, reductores, motores, bandas, bandas transportadoras, plastico industrial, ntn, grillon, fluidos y sellados, sellados, neumatica, valvulas, sellados, adhesivos, mangueras, retenes, manometros, termometro, valvulas, bombas, soldadura, soldador, consumibles, alambres, electrodos, varillas, equipos, plasma, corte, fresado, metales, corte de madera, corte de metal, ferreteria, bulloneria, torrnillos, prisioneros, varillas roscadas, tuercas, anillo de seguridad, tirafondos, arandelas planas, grower, medicion, reglas, calibres, escuadras, micrometro, cinta metrica,  pintureria, pintura por litro, pintura en aerosol, pinceles y rodillos, maquinas para pintar, herramientas, herramientas de mano, HERRAMIENTAS HIDRÁULICAS" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="./assets/css/nuevo.css"/> 
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+      <link rel="stylesheet" href="./assets/css/loader.css" />
+    <script src="https://kit.fontawesome.com/a5c59cf2a1.js" crossorigin="anonymous"></script>
+
+    <!-- Iconos Favicon -->
+    <link rel="shortcut icon" href="assets/img/android-chrome-256x256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- Bootstrap CSS, GlideJS, Superfish & Hover-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/plugins/glide/dist/css/glide.core.min.css" />
+    <link rel="stylesheet"  href="./assets/plugins/glide/dist/css/glide.theme.min.css" />
+    <link rel="stylesheet" href="./assets/css/hover.css" />
+    <link rel="stylesheet" href="./assets/plugins/superfish/css/superfish.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
+ <!-------canonical index-->
+ <link rel="canonical" href="https://www.romisa.com.ar/altaclientes.html" />
+
+    <!-- Inicio Contenido web -->
+    <title>RO.MI.SA - Formulario de alta / modificación de clientes</title>
+  </head>
+  <div id="navbar-container"></div>
+
+  <script>
+      fetch('navbarromisa.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbar-container').innerHTML = data;
+              jQuery('ul.sf-menu').superfish();  // Inicializar después de cargar el menú
+          });
+  </script>
+    <!-- Fin de Barra de Navegacion -->
+  <body onload="contenedorCarga();"> 
+       <!-----loader----->
+         <div id="contenedor_carga"></div>
+          <div id="carga"></div>
+          
+       
+      <!-- Inicio Boton Float recordatorio -->
+         <a href="romisa.html#sec-f286" data-page-id="224234906" class="btn-flotante ocultar" id="ocultar">ingresa a nuestra tienda virtual</a>
+      <!-- Fin Boton Float recordatorio -->
+ 
+<!-- Inicio Boton Float Whatsapp -->
+    <a href="https://api.whatsapp.com/send?phone=5493764280451&text=Hola!!!,%20necesito%20consultar:%20" class="whatsapp-float" target="_blank" id="hiddenWhatsapp">
+      <i class="fa fa-whatsapp my-float"></i>
+      </a>	
+    <!-- Fin Boton Float WhatsApp -->
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Alta de Clientes</title>
+    
+</head>
+<body>
+  <div class="body">
+    <h6>Formulario Alta / Modificación de Clientes</h6>
+
+    <!-- Nueva sección de selección de tipo de cliente -->
+    <div class="client-type-section">
+      <h5 class="text-center mb-4">¿YA SOS CLIENTE EN ROMISA? <span class="required-field">*</span></h5>
+      <div class="client-type-buttons">
+        <button type="button" id="newClient" class="client-btn" onclick="setClientType('nuevo')"> No soy Cliente</button>
+        <button type="button" id="existingClient" class="client-btn" onclick="setClientType('registrado')">Ya soy Cliente</button>
+      </div>
+      <div id="clientTypeError" class="error-message" style="display: none; color: #e74c3c; margin-top: 10px;">
+        Por favor, seleccione si es Cliente Nuevo o Cliente Registrado
+      </div>
+    </div>
+<form name="alta_cliente" action="procesar_formulario.php" method="post" class="animated-form" onsubmit="return validateForm()">    <input type="hidden" id="tipo_cliente" name="tipo_cliente" value="">
+    <div id="clientTypeMessage" class="alert alert-info" style="display: none;"></div>
+        <div class="section">
+            <div class="section-title">1. DATOS DEL CLIENTE</div>
+            <div class="fields-note"><i class="fas fa-info-circle"></i> Campos obligatorios (*)</div>
+            <label for="razon_social">(*) Razón Social:</label>
+            <input class="text-box" type="text" id="razon_social" name="razon_social" required>
+            <label class="labeldoc" for="cuit">(*) CUIT/CUIL/DNI:</label>
+            <div class="text-box-tipo">
+            <select class="select" name="doc_tipo" id="doc_tipo" Size="0" required>
+                <option value="">Tipo Documento</option> 
+                <option value="DNI"> DNI </option>  
+                <option value="CUIT"> CUIT </option>  
+                <option value="CUIL"> CUIL </option>  
+            </select>
+            <input type="text" id="cuit" name="cuit" placeholder="SIN GUIONES/PUNTOS" required> 
+            </div>
+            <label for="nombre_comercial">(*) Nombre comercial (Fantasía):</label>
+            <input class="text-box" type="text" id="nombre_comercial" name="nombre_comercial" required>
+            <label class="" for="otro_rubro">(*) Actividad a la que se dedica:</label>
+            
+            <input class="text-box" type="text" id="otro_rubro" name="otro_rubro" required>
+            <label for="direccion_comercial">(*) Dirección Comercial:</label>
+            <input  class="text-box" type="text" id="direccion_comercial" name="direccion_comercial" placeholder="Dirección" required>
+            <div class="address-fields">
+                <input type="text" id="localidad_comercial" name="localidad_comercial" placeholder="Localidad" required>
+                
+                <select class="select" id="provincia_comercial" name="provincia_comercial" placeholder="Provincia" Size="0" required>
+                    <option value=""> -Provincia- </option>  
+                    <option value="Buenos Aires"> Buenos Aires </option>  
+                    <option value="Catamarca"> Catamarca </option>  
+                    <option value="Chaco"> Chaco </option>  
+                    <option value="Chubut"> Chubut </option>
+                    <option value="C&oacute;rdoba"> Córdoba </option>
+                    <option value="Corrientes"> Corrientes </option>
+                    <option value="Entre R&iacute;os"> Entre Ríos </option>
+                    <option value="Formosa"> Formosa </option>
+                    <option value="Jujuy"> Jujuy </option>
+                    <option value="La Pampa"> La Pampa </option>
+                    <option value="La Rioja"> La Rioja </option>
+                    <option value="Mendoza"> Mendoza </option>
+                    <option value="Misiones"> Misiones </option>
+                    <option value="Neuqu&eacute;n"> Neuquén </option>
+                    <option value="R&iacute;o Negro"> Río Negro </option>  
+                    <option value="Salta"> Salta </option>  
+                    <option value="San Juan"> San Juan </option>  
+                    <option value="San Luis"> San Luis </option>  
+                    <option value="Santa Cruz"> Santa Cruz </option>  
+                    <option value="Santa Fe"> Santa Fe </option>  
+                    <option value="Santiago del Estero"> Santiago del Estero </option>  
+                    <option value="Tierra del Fuego"> Tierra del Fuego </option>  
+                    <option value="Tucum&aacute;n"> Tucumán </option>  
+                  </select>  
+                  <input type="text" name="codigo_postal_comercial" placeholder="Código Postal" required>
+            </div>  
+           
+            <label for="direccion_entrega">(*) Dirección de entrega de mercadería:</label>
+            
+                <input class="text-box" type="text" id="direccion_entrega" name="direccion_entrega" placeholder="Dirección de entrega" required>
+                
+                <div class="address-fields">
+                <input type="text" id="localidad_entrega" name="localidad_entrega" placeholder="Localidad" required>
+                <select class="select" id="provincia_entrega" name="provincia_entrega" placeholder="Provincia" Size="0" required>
+                  <option value=""> -Provincia- </option>  
+                  <option value="Buenos Aires"> Buenos Aires </option>  
+                  <option value="Catamarca"> Catamarca </option>  
+                  <option value="Chaco"> Chaco </option>  
+                  <option value="Chubut"> Chubut </option>
+                  <option value="C&oacute;rdoba"> Córdoba </option>
+                  <option value="Corrientes"> Corrientes </option>
+                  <option value="Entre R&iacute;os"> Entre Ríos </option>
+                  <option value="Formosa"> Formosa </option>
+                  <option value="Jujuy"> Jujuy </option>
+                  <option value="La Pampa"> La Pampa </option>
+                  <option value="La Rioja"> La Rioja </option>
+                  <option value="Mendoza"> Mendoza </option>
+                  <option value="Misiones"> Misiones </option>
+                  <option value="Neuqu&eacute;n"> Neuquén </option>
+                  <option value="R&iacute;o Negro"> Río Negro </option>  
+                  <option value="Salta"> Salta </option>  
+                  <option value="San Juan"> San Juan </option>  
+                  <option value="San Luis"> San Luis </option>  
+                  <option value="Santa Cruz"> Santa Cruz </option>  
+                  <option value="Santa Fe"> Santa Fe </option>  
+                  <option value="Santiago del Estero"> Santiago del Estero </option>  
+                  <option value="Tierra del Fuego"> Tierra del Fuego </option>  
+                  <option value="Tucum&aacute;n"> Tucumán </option>  
+                  </select>  
+                <input type="text" name="codigo_postal_entrega" placeholder="Código Postal" required>
+            </div>
+            
+            
+            <label for="correo">(*) Correo:</label>
+            <input class="text-box" type="text" id="correo" name="correo" required>
+            
+            <label for="telefono">(*) Teléfono:</label>
+            <input class="text-box" type="tel" id="telefono" name="telefono" required>
+            
+            <label for="persona_solicitante">(*) Persona Solicitante:</label>
+            <input class="text-box" type="text" id="persona_solicitante" name="persona_solicitante" required>
+        </div>
+
+       
+        <input type="submit" value="Enviar Formulario" class="submit-btn">
+    </form>
+  </div>
+
+    <!-- Inicio Banner Area Clientes -->
+    <div class="container-fluid" style="background-color: #f6f6f6; height: 130px;">
+      <div class="container">
+        <div class="clients-area">
+          <div class="row">
+            <div class="col-lg-12 col-sm-12">
+              <p class="clients-area-text">
+                INGRESO CLIENTES
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="clients-area-btn">
+              <a href="https://ecommerce.romisa.com.ar/public/login.php" target="_blank" class="btn btn-dark">INICIAR SESI&Oacute;N</a>
+              <a href="https://ecommerce.romisa.com.ar/public/contactenos.php" target="_blank" class="btn btn-secondary">¿NO SOS CLIENTE?</a>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Fin Banner Area Clientes -->
+    
+    <!-- Inicio de Footer -->
+      
+    <footer>
+        <div class="container-fluid footer-container">
+        <div class="row">
+          <div class="col col-lg-3s mt-3" style="border-right: 1px solid #7D8588;">
+            <img src="./assets/img/romisa-logo-original.png" width="200" height="35" alt=""/>
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-md-3 col-12 mt-3">
+            <p class="footerMainText">Newsletter</p>
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="footerContactText">Suscr&iacute;base a nuestro portal de noticias y reciba las &uacute;ltimas novedades en productos.</p>
+              </div>
+            </div>
+            <div class="row">
+              <form onsubmit="return doSubscribe();">
+                <div class="mb-3">
+                  <input type="email" id="subscriberEmail" class="newsletter-control" placeholder="E-mail" required>
+                </div>
+                <div class="mb-3">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primaryg">Suscribirse</button>
+                    <p id="subscribe-message"></p>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col col-lg-3 mt-3 text-end"  style="border-right: 1px solid #7D8588;">
+            <p class="footerMainText">Navegaci&oacute;n</p>
+            <p class="footerSubLinks"><a href="index.html">INICIO</a></p>
+            <p class="footerSubLinks"><a href="nosotros.html">QUI&Eacute;NES SOMOS</a></p>
+            <p class="footerSubLinks"><a href="divisiones.html">DIVISIONES</a></p>
+            <p class="footerSubLinks"><a href="contacto.html">CONTACTO</a></p>
+            <p class="footerSubLinks"><a href="novedades.html">LISTAS DE PRECIOS</a></p>
+          </div>
+          <div class="col col-lg-3 mt-3">
+            <p class="footerMainText">Contacto</p>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-map-marker-alt" style="color: #000000"></i>  Av. Francisco de Haro 4447
+                  Posadas, Misiones, 3300
+                  Argentina
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-envelope" style="color: #000000"></i> ventas@romisa.com.ar</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-phone" style="color: #000000"></i> +54 (3764) 457900 L&iacute;neas Rotativas</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="footer-social-media">
+              <div class="col-lg-2">
+                <a href="https://www.facebook.com/romisaferreteriaindustrial"><i class="fab fa-facebook-f fa-lg" style="color: #000000"></i></a>
+              </div>
+              <div class="col-lg-2">
+                <a href="https://www.instagram.com/romisaferreteriaindustrial"><i class="fab fa-instagram fa-lg" style="color: #000000"></i></a>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="bottom-footer">
+            <p class="bottom-footer-text">&copy; ROMISA <script>document.write(new Date().getFullYear())</script> - Todos los derechos reservados.</p>
+          </div>
+        </div>
+    
+      </footer>
+          
+
+    <!-- Fin de Footer -->
+
+    <!-- Bootstrap Bundle Javascript --> 
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+<!-- jQuery & Scripts de la Página  -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./assets/plugins/glide/dist/glide.min.js"></script>
+  <script src="./assets/plugins/glide/dist/glide.js"></script>
+  <script src="./assets/plugins/superfish/superfish.js"></script>
+  <script src="./assets/js/sticky-header.js"></script>
+  <script src="./assets/js/hideContactButton.js"></script>
+  <script src="./assets/js/hideWhatsapp.js"></script>
+  <script src="./assets/js/custom.js"></script>
+  <script src="./assets/js/main.js"></script>
+<script src="./assets/js/hiderecordatorio.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+  <script src="assets/js/validarcelda.js"></script>
+ 
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FV3ZHF0P11"></script>
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.93/build/spline-viewer.js"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FV3ZHF0P11');
+</script>     
+			<script>
+
+          function contenedorCarga(){
+              var contenedor = document.getElementById('contenedor_carga');
+              var conteiner = document.getElementById('carga');
+              contenedor.style.visibility = 'hidden';
+              contenedor.style.opacity = '0';
+              conteiner.style.visibility = 'hidden';
+              conteiner.style.opacity = '0';
+                
+          }
+  </script>
+<script>
+function validateForm() {
+    const tipoCliente = document.getElementById('tipo_cliente').value;
+    const errorDiv = document.getElementById('clientTypeError');
+    
+    if (!tipoCliente) {
+        // Muestra el error
+        errorDiv.style.display = 'block';
+        // Hace scroll hacia el error para que el usuario lo vea
+        errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Detiene el envío del formulario
+        return false; 
+    }
+    
+    // Si todo está bien, oculta el error y permite el envío
+    errorDiv.style.display = 'none';
+    return true; 
+}
+
+
+        function setClientType(type) {
+    document.getElementById('clientTypeError').style.display = 'none';
+            // Establecer el valor en el campo oculto
+            document.getElementById('tipo_cliente').value = type;
+            const messageDiv = document.getElementById('clientTypeMessage');
+            const form = document.querySelector('form[name="alta_cliente"]');
+            
+            // Validar que se haya seleccionado un tipo de cliente antes de enviar
+            form.addEventListener('submit', function(e) {
+                const tipoCliente = document.getElementById('tipo_cliente').value;
+                if (!tipoCliente) {
+                    e.preventDefault();
+                    alert('Por favor, seleccione si es No es Cliente o Cliente Registrado');
+                    return false;
+                }
+            });
+    
+    // Remover clase selected de todos los botones
+    document.querySelectorAll('.client-btn').forEach(btn => {
+        btn.classList.remove('selected');
+    });
+    
+    // Agregar clase selected al botón clickeado
+    if (type === 'nuevo') {
+        document.getElementById('newClient').classList.add('selected');
+        messageDiv.innerHTML = 'Voy a registrarme por primera vez';
+        messageDiv.className = 'alert alert-success';
+    } else {
+        document.getElementById('existingClient').classList.add('selected');
+        messageDiv.innerHTML = 'Voy a actualizar mis datos';
+        messageDiv.className = 'alert alert-info';
+    }
+    
+    messageDiv.style.display = 'block';
+    form.style.display = 'block';
+    
+    // Scroll suave hasta el formulario
+    messageDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+  <script>
+      
+    //   Superfish
+    jQuery(document).ready(function() {
+    jQuery('ul.sf-menu').superfish();
+    });
+  </script> 
+
+
+    <style>
+      .body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0px auto;
+        padding: 10px 20px;
+        font-size: 15px;
+      }
+      h6 {
+          text-align: center;
+          color: #333;
+      }
+      .section {
+          margin-bottom: 20px;
+          border: 1px solid #ddd;
+          padding: 15px;
+          width: 100%;
+          align-items: center;
+        
+      }
+      .text-box{
+       margin-left: 5%;
+      }
+      .text-box-tipo{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 10px;
+        width: 95.5%;
+        margin-left: 5%;  
+      }
+      .section-title {
+          background-color: #f44336;
+          color: white;
+          padding: 5px 10px;
+          margin: -15px -15px 15px -15px;
+      }
+      .fields-note {
+          font-size: 0.8em;
+          color: #666;
+          text-align: right;
+      }
+      label {
+          width: 80%;
+          padding: 12px 11px;
+           margin: -6px 0;
+           box-sizing: border-box;
+           font: 0.9em "typewriter", sans-serif;
+      }
+      .labeldoc{
+        margin: 3px 8px;
+    padding: 0px 4px;
+      }
+      input[type="text"], input[type="email"], input[type="tel"] {
+          
+        width: 87%;
+    padding: 1%;
+    margin-bottom: 8px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+      }
+      .address-fields {
+        display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    width: 70%;
+    margin-left: 5%;
+    margin-bottom: 2px;
+      }
+      .checkbox-group {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+      }
+      .checkbox-option {
+          display: grid;
+          grid-template-columns: repeat(1, 0.5fr);
+          gap: 10px;
+          font-size: 35px;
+          font-weight: bold;
+          line-height: 8%;
+        
+          
+      }
+      .select {
+        width: 100%;
+    padding: 6px;
+    margin-bottom: 9px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    color: #716767;
+      }
+      .select-repo{
+          width: 25%;
+          display: grid;
+          padding: 8px;
+          margin-bottom: 18px;
+          margin-left: 34px;
+          margin-top: 15px;
+
+
+      }
+      .submit-btn {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-left: 20%;
+      }
+      .submit-btn:hover {
+          background-color: #45a049;
+      }
+      .client-type-section {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.client-type-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.client-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 200px;
+    font-weight: 600;
+}
+
+.client-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: 0.5s;
+}
+
+.client-btn:hover:before {
+    left: 100%;
+}
+
+#newClient {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#existingClient {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.client-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.client-btn.selected {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+#newClient.selected {
+    background-color: #c0392b;
+    border: 2px solid #ffffff;
+}
+
+#existingClient.selected {
+    background-color: #27ae60;
+    border: 2px solid #ffffff;
+}
+
+.alert {
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    font-weight: 500;
+    animation: slideIn 0.3s ease-out;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+  </style>      
+  </body>  
+  <!-- Fin de contenido del sitio web. -->
+</html>
+<!--------──█─▄▀█──█▀▄─█──
+          ─▐▌──────────▐▌─
+          ─█▌▀▄──▄▄──▄▀▐█─
+          ▐██──▀▀──▀▀──██▌
+          ████▄──▐▌──▄████ - Nagel---->

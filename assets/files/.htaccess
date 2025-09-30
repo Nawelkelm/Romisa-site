@@ -1,0 +1,13 @@
+# Permitir acceso a archivos PDF
+<FilesMatch "\.pdf$">
+    Header set Content-Type application/pdf
+    Header set Content-Disposition inline
+</FilesMatch>
+
+# Permitir el acceso desde cualquier origen (CORS)
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+
+# Asegurar que los archivos PDF se sirvan correctamente
+AddType application/pdf .pdf

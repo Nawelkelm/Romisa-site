@@ -15,8 +15,9 @@ $animation-offset: 80px;
 .card {
   font-family: 'Lato', sans-serif;
   background: #eee;
-  padding: 100px 60px;
+  padding: 40px 60px;
   animation: fade-in 3s ease-in-out forwards;
+  margin: 20px 20px;
 }
 strong {
   font-weight: 900;
@@ -25,7 +26,7 @@ strong {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 20%;
 
   .canvas + .canvas {
     margin-left: 40px;
@@ -59,6 +60,7 @@ strong {
   stroke-dashoffset: 2000;
   animation: erase-line 1s ease-in-out forwards;
 }
+
 .canvas_img-wrapper {
   position: absolute;
   display: flex;
@@ -86,7 +88,7 @@ strong {
 .canvas_copy {
   position: absolute;
   bottom: 0;
-  left: 85%;
+  left: auto;
   text-transform: uppercase;
   color: #da2727;
   z-index: 100;

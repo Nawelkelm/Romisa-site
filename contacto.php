@@ -2,7 +2,7 @@
   
 if($_POST) {
     $nombre_cliente = "";
-    $apellido_cliente = "";
+    $nombre_solicitante = "";
     $email_cliente = "";
     $nombre_empresa = "";
     $rubro_empresa = "";
@@ -10,19 +10,18 @@ if($_POST) {
     $mensaje_cliente = "";
     $email_body = "<div>";
       
+    if(isset($_POST['nombre_solicitante'])) {
+        $nombre_nolicitante = filter_var($_POST['nombre_solicitante'], FILTER_SANITIZE_STRING);
+        $email_body .= "<div>
+                           <label><b>Nombre del Solicitante:</b></label>&nbsp;<span>".$nombre_solicitante."</span>
+                        </div>";
+    }
     if(isset($_POST['nombre_cliente'])) {
         $nombre_cliente = filter_var($_POST['nombre_cliente'], FILTER_SANITIZE_STRING);
         $email_body .= "<div>
                            <label><b>Nombre:</b></label>&nbsp;<span>".$nombre_cliente."</span>
                         </div>";
     }
-    if(isset($_POST['apellido_cliente'])) {
-        $apellido_cliente = filter_var($_POST['apellido_cliente'], FILTER_SANITIZE_STRING);
-        $email_body .= "<div>
-                           <label><b>Apellido:</b></label>&nbsp;<span>".$apellido_cliente."</span>
-                        </div>";
-    }
- 
     if(isset($_POST['email_cliente'])) {
         $email_cliente = str_replace(array("\r", "\n", "%0a", "%0d"), '', $_POST['email_cliente']);
         $email_cliente = filter_var($email_cliente, FILTER_VALIDATE_EMAIL);

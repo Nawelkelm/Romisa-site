@@ -88,27 +88,28 @@ function rotacionDeContenido() {
     texto7 = '';
     vinculo3 = 'https://fluke.com.ar/categoria/medicion-de-temperatura';
   } else {
-    texto = 'Conoce nuestra marca destacada Festo!';
+    texto = 'Somos proveedores oficiales de Starrett!';
     imagen =
-      'url(https://romisa.com.ar/sandbox/romisite/assets/img/festovuvs.webp)';
-    texto2 = 'Electroválvulas';
-    texto3 = 'VUVS-LT25-M52-MD-G14-F8';
+      'url(https://romisa.com.ar/assets/img/marcas/starret-paginaweb.png)';
+    texto2 = 'Discos';
+    texto3 = 'Abrazivos, Flaps y de Corte';
     vinculo =
-      'https://www.festo.com/ar/es/p/electrovalvula-id_VUVS/?q=vuvs~:festoSortOrderScored';
+      'https://catalogos.starrett.com.br/view/772983559/';
     vinculo2 =
-      'https://www.festo.com/ar/es/a/download-document/datasheet/153053/?fwacid=f8ef87ee73063cd8';
+      'https://catalogos.starrett.com.br/view/891837468/';
     imagen2 =
-      'https://www.festo.com/media/pim/087/D15000100121087_1056x1024.jpg';
+      'https://romisa.com.ar/assets/img/marcas/starrett-disco.png';
     imagen3 =
-      'https://www.festo.com/media/pim/886/D15000100133886_1056x1024.jpg';
-    texto4 = 'Racor rápido roscado';
-    texto5 = 'L-QSL-3/8-12';
+      'https://romisa.com.ar/assets/img/marcas/starrett-medicion.png';
+    texto4 = 'Elementos de Medición';
+    texto5 = 'Calibres, Micrómetros y más';
     vinculo3 =
-      'https://www.festo.com/cat/es-ar_ar/data/doc_ES/PDF/ES/DSBC_ES.PDF';
+      'https://catalogos.starrett.com.br/view/891339323/';
     imagen4 =
-      'https://www.festo.com/cat/xdki/data/PIC/DC18E6D51B704A1CA9739AABE6E29E06.jpg';
-    texto6 = 'Cilindro normalizado';
-    texto7 = 'DSBC-50-100-PPVA-N3';
+      'https://romisa.com.ar/assets/img/marcas/starrett-maq-corte.png';
+    texto6 = 'Maquinas de Sierra Sin Fin';
+    texto7 = 'Sierra Sin Fin y Accesorios';
+  
   }
 
   document.images['cambioConteImg'].src = imagen2;

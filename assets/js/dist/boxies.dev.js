@@ -1,171 +1,52 @@
 "use strict";
 
 var anchoVentana = window.innerWidth;
+var display;
 
 var funcion1 = function funcion1() {
-  $(document).ready(function () {
-    // Change background image of a div by mouseover on the box
-    $('.box').mouseover(function () {
-      $('.boxi').show(200);
-      var display = 'none';
-      $('.box').css('display', display); //var display = "block";
-      //     $(".boxi").css("display", display);
+  var boxes = [{
+    box: '.box',
+    boxi: '.boxi'
+  }, {
+    box: '.box2',
+    boxi: '.box3'
+  }, {
+    box: '.box4',
+    boxi: '.box5'
+  }, {
+    box: '.box6',
+    boxi: '.box7'
+  }, {
+    box: '.box8',
+    boxi: '.box9'
+  }, {
+    box: '.box10',
+    boxi: '.box11'
+  }, {
+    box: '.box12',
+    boxi: '.box13'
+  }, {
+    box: '.box14',
+    boxi: '.box15'
+  }, {
+    box: '.box16',
+    boxi: '.box17'
+  }, {
+    box: '.box18',
+    boxi: '.box19'
+  }, {
+    box: '.box20',
+    boxi: '.box21'
+  }];
+  boxes.forEach(function (box) {
+    document.querySelector;
+    document.querySelector(box.box).addEventListener('mouseover', function () {
+      document.querySelector(box.box).style.display = 'none';
+      document.querySelector(box.boxi).style.display = 'block';
     });
-    $('.boxi').mouseleave(function () {
-      var display = 'none';
-      $('.boxi').css('display', display); //$(".boxi").hide(1000);
-    });
-    $('.boxi').mouseleave(function () {
-      var display = 'contents';
-      $('.box').css('display', display);
-    });
-    $(document).ready(function () {
-      $('.box2').mouseover(function () {
-        var display = 'none'; //$(".box3").css("display", display);
-
-        $('.box3').show(200);
-      });
-      $('.box2').mouseover(function () {
-        var display = 'none';
-        var display2 = 'contents';
-        $('.box2').css('display', display);
-        $('.boxi').css('display', display);
-        $('.box').css('display', display2);
-      });
-      $('.box3').mouseleave(function () {
-        var display = 'contents';
-        $('.box2').css('display', display);
-      });
-      $('.box3').mouseleave(function () {
-        var display = 'none';
-        $('.box3').css('display', display); //  $(".box3").hide(1000);
-      });
-    });
-    $('.box4').mouseover(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box5').show(200); // $(".box5").css("display", display);
-
-      $('.box4').css('display', display2);
-      $('.box3').css('display2', display); // $(".box5").slideUp(2000);
-    });
-    $('.box5').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box4').css('display', display);
-      $('.box5').css('display', display2);
-    });
-    $('.box6').mouseover(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box7').show(200); // $(".box5").css("display", display);
-
-      $('.box6').css('display', display2);
-      $('.box5').css('display2', display); // $(".box5").slideUp(2000);
-    });
-    $('.box7').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box6').css('display', display);
-      $('.box7').css('display', display2);
-    });
-    $('.box8').mouseover(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box9').show(200); // $(".box5").css("display", display);
-
-      $('.box8').css('display', display2);
-      $('.box7').css('display2', display); // $(".box5").slideUp(2000);
-    });
-    $('.box9').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box8').css('display', display);
-      $('.box9').css('display', display2);
-    });
-    $('.box10').mouseover(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box11').show(200); // $(".box5").css("display", display);
-
-      $('.box10').css('display', display2);
-      $('.box9').css('display2', display); // $(".box5").slideUp(2000);
-    });
-    $('.box11').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box10').css('display', display);
-      $('.box11').css('display', display2);
-    });
-    $('.box12').mouseover(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box13').show(200); // $(".box5").css("display", display);
-
-      $('.box12').css('display', display2);
-      $('.box11').css('display2', display); // $(".box5").slideUp(2000);
-    });
-    $('.box13').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box12').css('display', display);
-      $('.box13').css('display', display2);
-    });
-    $('.box14').mouseover(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box15').show(200); // $(".box5").css("display", display);
-
-      $('.box14').css('display', display2);
-      $('.box13').css('display2', display); // $(".box5").slideUp(2000);
-    });
-    $('.box15').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box14').css('display', display);
-      $('.box15').css('display', display2);
-    });
-    $('.box16').mouseover(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box17').show(200); // $(".box5").css("display", display);
-
-      $('.box16').css('display', display2);
-      $('.box15').css('display2', display); // $(".box5").slideUp(2000);
-    });
-    $('.box17').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box16').css('display', display);
-      $('.box17').css('display', display2);
-    });
-    $('.box18').mouseover(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box19').show(200); // $(".box5").css("display", display);
-
-      $('.box18').css('display', display2);
-      $('.box17').css('display2', display); // $(".box5").slideUp(2000);
-    });
-    $('.box19').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box18').css('display', display);
-      $('.box19').css('display', display2);
-    });
-    $('.box20').mouseover(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box21').show(200); // $(".box5").css("display", display);
-
-      $('.box20').css('display', display2);
-      $('.box19').css('display2', display); // $(".box5").slideUp(2000);
-    });
-    $('.box21').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box20').css('display', display);
-      $('.box21').css('display', display2);
+    document.querySelector(box.boxi).addEventListener('mouseleave', function () {
+      document.querySelector(box.boxi).style.display = 'none';
+      document.querySelector(box.box).style.display = 'block';
     });
   });
 };
@@ -175,153 +56,44 @@ var funcion2 = function funcion2() {
 };
 
 var funcion3 = function funcion3() {
-  $(document).ready(function () {
-    // Change background image of a div by mouseover on the box
-    $('.box').mouseover(function () {
-      var display = 'none';
-      $('.boxi').css('display', display);
-    });
-    $('.box').mouseover(function () {
-      var display = 'contents';
-      $('.box').css('display', display);
-    });
-    $('.boxi').mouseleave(function () {
-      var display = 'none';
-      $('.boxi').css('display', display);
-    });
-    $('.boxi').mouseleave(function () {
-      var display = 'contents';
-      $('.box').css('display', display);
-    });
-    $(document).ready(function () {
-      $('.box2').mouseover(function () {
-        var display = 'none';
-        $('.box3').css('display', display);
-      });
-      $('.box2').mouseover(function () {
-        var display = 'contents';
-        $('.box2').css('display', display);
-      });
-      $('.box3').mouseleave(function () {
-        var display = 'contents';
-        $('.box2').css('display', display);
-      });
-      $('.box3').setInterval(function () {
-        mouseleave;
-      }, interval);
+  var boxes = Array.from(document.getElementsByClassName('box'));
+  var boxis = Array.from(document.getElementsByClassName('boxi'));
+  var boxElements = [];
 
-      (function () {
-        var display = 'none';
-        $('.box3').css('display', display);
+  for (var i = 2; i <= 21; i++) {
+    boxElements.push(document.getElementsByClassName("box".concat(i))[0]);
+  }
+
+  boxes.forEach(function (box) {
+    box.addEventListener('mouseover', function () {
+      boxis.forEach(function (boxi) {
+        boxi.style.display = 'none';
+      });
+      box.style.display = 'contents';
+    });
+  });
+  boxis.forEach(function (boxi) {
+    boxi.addEventListener('mouseleave', function () {
+      boxis.forEach(function (boxi) {
+        boxi.style.display = 'contents';
+      });
+      boxes.forEach(function (box) {
+        box.style.display = 'none';
       });
     });
-    $('.box4').mouseover(function () {
-      var display = 'none';
-      var display2 = 'contents';
-      $('.box5').css('display', display);
-      $('.box4').css('display', display2);
+  });
+  boxElements.forEach(function (boxElement, index) {
+    boxElement.addEventListener('mouseover', function () {
+      var nextBoxElement = boxElements[index + 1];
+      var currentBoxElement = boxElements[index];
+      nextBoxElement.style.display = 'none';
+      currentBoxElement.style.display = 'contents';
     });
-    $('.box5').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box4').css('display', display);
-      $('.box5').css('display', display2);
-    });
-    $('.box6').mouseover(function () {
-      var display = 'none';
-      var display2 = 'contents';
-      $('.box7').css('display', display);
-      $('.box6').css('display', display2);
-    });
-    $('.box7').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box6').css('display', display);
-      $('.box7').css('display', display2);
-    });
-    $('.box8').mouseover(function () {
-      var display = 'none';
-      var display2 = 'contents';
-      $('.box9').css('display', display);
-      $('.box8').css('display', display2);
-    });
-    $('.box9').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box8').css('display', display);
-      $('.box9').css('display', display2);
-    });
-    $('.box10').mouseover(function () {
-      var display = 'none';
-      var display2 = 'contents';
-      $('.box11').css('display', display);
-      $('.box10').css('display', display2);
-    });
-    $('.box11').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box10').css('display', display);
-      $('.box11').css('display', display2);
-    });
-    $('.box12').mouseover(function () {
-      var display = 'none';
-      var display2 = 'contents';
-      $('.box13').css('display', display);
-      $('.box12').css('display', display2);
-    });
-    $('.box13').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box12').css('display', display);
-      $('.box13').css('display', display2);
-    });
-    $('.box14').mouseover(function () {
-      var display = 'none';
-      var display2 = 'contents';
-      $('.box15').css('display', display);
-      $('.box14').css('display', display2);
-    });
-    $('.box15').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box14').css('display', display);
-      $('.box15').css('display', display2);
-    });
-    $('.box16').mouseover(function () {
-      var display = 'none';
-      var display2 = 'contents';
-      $('.box17').css('display', display);
-      $('.box16').css('display', display2);
-    });
-    $('.box17').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box16').css('display', display);
-      $('.box17').css('display', display2);
-    });
-    $('.box18').mouseover(function () {
-      var display = 'none';
-      var display2 = 'contents';
-      $('.box19').css('display', display);
-      $('.box18').css('display', display2);
-    });
-    $('.box19').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box18').css('display', display);
-      $('.box19').css('display', display2);
-    });
-    $('.box20').mouseover(function () {
-      var display = 'none';
-      var display2 = 'contents';
-      $('.box21').css('display', display);
-      $('.box20').css('display', display2);
-    });
-    $('.box21').mouseleave(function () {
-      var display = 'contents';
-      var display2 = 'none';
-      $('.box20').css('display', display);
-      $('.box21').css('display', display2);
+    boxElement.addEventListener('mouseleave', function () {
+      var nextBoxElement = boxElements[index + 1];
+      var currentBoxElement = boxElements[index];
+      currentBoxElement.style.display = 'contents';
+      nextBoxElement.style.display = 'none';
     });
   });
 };
@@ -331,10 +103,16 @@ window.onresize = function () {
   console.log(anchoVentana);
 };
 
-if (anchoVentana > 1000) {
-  funcion1();
-} else if (anchoVentana > 750 && anchoVentana < 1000) {
-  funcion2();
-} else {
-  funcion3();
+switch (true) {
+  case anchoVentana > 1000:
+    funcion1();
+    break;
+
+  case anchoVentana > 750 && anchoVentana < 1000:
+    funcion2();
+    break;
+
+  default:
+    funcion3();
+    break;
 }

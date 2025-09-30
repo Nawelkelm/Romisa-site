@@ -10,6 +10,7 @@ const config = {
     },
   },
 };
+
 new Glide('.glide', config).mount();
 
 //   Mostrar logo pequeño al scrollear hacia arriba
@@ -20,23 +21,43 @@ $(window).scroll(function () {
     $('#hiddenButton').fadeOut('fast');
   }
 });
+
 //   Newsletter
 function doSubscribe() {
   var subscriberEmail = document.getElementById('subscriberEmail').value;
+
+  // Suggestion 2: Add basic email validation before sending the request
+  if (!validateEmail(subscriberEmail)) {
+    document.getElementById('subscribe-message').innerHTML =
+      'Please enter a valid email address.';
+    return false;
+  }
 
   var ajax = new XMLHttpRequest();
   ajax.open('POST', 'newsletter.php', true);
   ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   ajax.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById('subscribe-message').innerHTML =
-        'Gracias por suscribirse.';
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        document.getElementById('subscribe-message').innerHTML =
+          'Gracias por suscribirse, para más detalles contactese a nuestro whatsapp de ventas.';
+      } else {
+        // Suggestion 1: Add error handling in the 'onreadystatechange' callback to handle potential errors in the AJAX request
+        document.getElementById('subscribe-message').innerHTML =
+          'Ha ocurrido un error. Porfavor intente más tarde.';
+      }
     }
   };
 
   ajax.send('subscriberEmail=' + subscriberEmail);
   return false;
+}
+
+// Suggestion 2: Add basic email validation before sending the request
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(email);
 }
 
 // Sticky Header
@@ -121,3 +142,23 @@ $(window).scroll(function () {
     $('#hiddenWhatsapp').fadeOut('fast');
   }
 });
+
+/*recursividad del navbar*/
+customElements.define(
+  'nav-html',
+  class extends HTMLElement {
+    constructor() {
+      super();
+    }
+    connectedCallback() {
+      fetch(this.getAttribute('src'))
+        .then((r) => r.text())
+        .then((t) => {
+          let parser = new DOMParser();
+          let html = parser.parseFromString(t, 'text/html');
+          this.innerHTML = html.body.innerHTML;
+        })
+        .catch((e) => console.error(e));
+    }
+  }
+);

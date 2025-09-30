@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Festo: Automatización Eléctrica vs. Neumática - Guía y Comparación</title>
+    <meta name="description" content="Explora y compara los sistemas de automatización eléctrica y neumática de Festo. Esta guía interactiva detalla su funcionamiento, componentes y te ayuda a elegir la mejor solución para tus aplicaciones industriales.">
+    <meta name="keywords" content="Festo automatización, automatización eléctrica vs. neumática, sistemas de automatización industrial, Festo Electric Automation, Festo Neumatic, comparación servomotor vs. cilindro neumático, selección tecnología automatización, ventajas de la automatización eléctrica, aplicaciones de la neumática industrial">
+    <meta name="author" content="RO.MI.SA">
+    <meta name="topics" content="Fugas de aire, Eficiencia energética, Optimización de sistemas"/>
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="BGeAc21R7J36vTtecNUWKo7VC4pmPceaOhZCkRLmmu8" />
+
+    
+    <!-- Etiquetas Open Graph para vista previa en redes -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="RO.MI.SA - Festo: Automatización Eléctrica vs. Neumática - Guía y Comparación" />
+<meta property="og:description" content="Explora y compara los sistemas de automatización eléctrica y neumática de Festo. Esta guía interactiva detalla su funcionamiento, componentes y te ayuda a elegir la mejor solución para tus aplicaciones industriales." />
+<meta property="og:url" content="https://www.romisa.com.ar/Festo-Automatizacion-electrica.html" />
+<meta property="og:image" content="https://www.romisa.com.ar/assets/img/festo-electric-automation-og.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:site_name" content="RO.MI.SA" />
+
+    <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/plugins/glide/dist/css/glide.core.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/glide/dist/css/glide.theme.min.css" />
+    <link rel="stylesheet" href="./assets/css/hover.css" />
+    <link rel="stylesheet" href="./assets/plugins/superfish/css/superfish.css" />
+ <!-- Font Awesome for the WhatsApp icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- CSS del sitio + FontAwesome para Iconos -->
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+      <link rel="stylesheet" href="./assets/css/loader.css" />
+    <script src="https://kit.fontawesome.com/a5c59cf2a1.js" crossorigin="anonymous"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Iconos Favicon -->
+      <link rel="shortcut icon" href="assets/img/android-chrome-256x256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            margin: auto;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .card {
+            background-color: #ffffff;
+            color: #212529;
+        }
+        .card-title {
+            color: #0073c4;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .nav-button {
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+            color: #212529;
+            border-color: #e9ecef;
+        }
+        .nav-button.active {
+            background-color: #0073c4;
+            color: white;
+            border-color: #0073c4;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .content-panel {
+            display: none;
+        }
+        .content-panel.active {
+            display: block;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .criteria-btn {
+            background-color: #e9ecef;
+            color: #495057;
+            border-color: #e9ecef;
+        }
+        .criteria-btn.active {
+            background-color: #0073c4;
+            color: white;
+        }
+
+
+
+
+        /* WhatsApp container and button */
+        .whatsapp-container {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            z-index: 100;
+        }
+        .whatsapp-float {
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* WhatsApp message dialogue box - always visible on load */
+        .whatsapp-message {
+            position: absolute;
+            right: 70px; /* Positioned to the left of the button */
+            bottom: 36px;
+            width: 250px;
+            background-color: #fff;
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 11px 4px 15px 2px #00000040;
+            color: #343a40;
+            font-size: 1rem;
+            text-align: left;
+            /* Make it visible by default */
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            transform-origin: bottom right;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        }
+        .whatsapp-message::after {
+            content: '';
+            position: absolute;
+            right: -10px; /* Position the arrow to the right */
+            bottom: 10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #fff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+
+        /* Responsive adjustment for mobile */
+        @media (max-width: 767.98px) {
+            .whatsapp-container {
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+            .whatsapp-message {
+                right: 60px;
+                width: 200px;
+                bottom: 5px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <!-- Chosen Palette: Professional Light & Blue -->
+    <!-- Application Structure Plan: Se ha diseñado una estructura de aplicación basada en tres pestañas de navegación principales (Eléctrica, Neumática, Comparativa) para emular un tríptico interactivo. Esta arquitectura permite al usuario enfocarse en una tecnología a la vez antes de pasar a una comparación directa y dinámica. El flujo es: 1. Aterrizaje y exploración de la tecnología por defecto (Eléctrica). 2. Cambio a la sección Neumática para entenderla de forma aislada. 3. Acceso a la sección Comparativa, donde un gráfico de radar y textos dinámicos permiten una exploración activa de las diferencias clave. Se eligió esta estructura para segmentar la información compleja en partes digeribles, mejorando la usabilidad y la retención del conocimiento. -->
+    <!-- Visualization & Content Choices: 1. Información: Componentes y aplicaciones de cada tecnología. -> Goal: Informar. -> Viz/Presentation: Tarjetas de contenido con iconos, listas e imágenes para un mayor impacto visual (HTML/Bootstrap). -> Interaction: Mínima, foco en la legibilidad. -> Justification: Presentación clara, estructurada y visualmente atractiva de las características principales. 2. Información: Comparación de 6 criterios clave (precisión, fuerza, etc.). -> Goal: Comparar. -> Viz/Presentation: Gráfico de radar (Chart.js en Canvas) y un bloque de texto dinámico. -> Interaction: El usuario hace clic en botones de criterios para actualizar el texto explicativo y enfocar su atención. -> Justification: El gráfico de radar ofrece una visión holística de las fortalezas y debilidades relativas, mientras que la interacción de clic permite profundizar en cada criterio sin sobrecargar al usuario. -> Library/Method: Chart.js, Vanilla JS. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body onload="contenedorCarga();">
+    <!--<div id="contenedor_carga"></div>-->
+    <!--<div id="carga"></div>-->
+    <div id="navbar-container"></div>
+    <script>
+      fetch('navbarromisa.html')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('navbar-container').innerHTML = data;
+              jQuery('ul.sf-menu').superfish();  // Inicializar después de cargar el menú
+          });
+  </script>
+      <!-- Fin de Barra de Navegacion -->
+
+    <div class="container py-4">
+        
+        <header class="text-center mb-5">
+            <div class="d-flex flex-column align-items-center mb-4">
+                <!-- Solo dejamos el logo de Festo en el header -->
+                <div class="mb-3">
+                    <img src="assets/img/marcas/festo-2.png" alt="Logo Festo" class="img-fluid" style="max-width: 200px;">
+                </div>
+            </div>
+            <h1 class="display-4 fw-bold">Automatización Industrial con Festo</h1>
+            <p class="lead text-muted">Explorando las soluciones Eléctricas y Neumáticas</p>
+        </header>
+
+        <nav class="d-flex flex-column flex-sm-row justify-content-center gap-2 gap-md-4 mb-5">
+            <button id="nav-electric" class="nav-button active w-100 w-sm-auto btn rounded-pill fw-semibold shadow-sm border">
+                1. Automatización Eléctrica
+            </button>
+            <button id="nav-pneumatic" class="nav-button w-100 w-sm-auto btn rounded-pill fw-semibold shadow-sm border">
+                2. Automatización Neumática
+            </button>
+            <button id="nav-comparison" class="nav-button w-100 w-sm-auto btn rounded-pill fw-semibold shadow-sm border">
+                3. Comparativa y Selección
+            </button>
+        </nav>
+
+        <main>
+            <!-- Panel 1: Eléctrica -->
+            <section id="panel-electric" class="content-panel active fade-in">
+                <div class="card p-4 p-md-5 rounded-3 shadow-sm border-0">
+                    <h2 class="card-title text-info mb-4">Automatización Eléctrica: Precisión y Flexibilidad</h2>
+                    <!-- Agregamos aquí la imagen de automatización eléctrica -->
+                    <div class="text-center my-4">
+                        <img src="assets/img/festo-electric-automation.jpg" alt="Festo Electric Automation" 
+                            class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
+                    </div>
+                    <p class="card-text mb-4 text-muted">
+                        La automatización eléctrica de Festo, también conocida como servocontrol, utiliza motores eléctricos, accionamientos y controladores para lograr un control del movimiento de alta precisión y complejidad. Es la solución ideal para aplicaciones que requieren flexibilidad, posicionamiento exacto y eficiencia energética.
+                    </p>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6">
+                            <h3 class="fw-semibold fs-5 mb-3 text-dark">Componentes Clave</h3>
+                            <ul class="list-unstyled space-y-3">
+                                <li class="d-flex align-items-start"><span class="me-3 text-info fs-4">⚡</span><div><strong class="fw-medium">Servomotores y Servoaccionamientos:</strong> El cerebro y músculo del sistema, proporcionando movimiento controlado con alta dinámica.</div></li>
+                                <li class="d-flex align-items-start"><span class="me-3 text-info fs-4">⚙️</span><div><strong class="fw-medium">Ejes y Cilindros Eléctricos:</strong> Convierten el movimiento rotativo del motor en un movimiento lineal preciso.</div></li>
+                                <li class="d-flex align-items-start"><span class="me-3 text-info fs-4">💻</span><div><strong class="fw-medium">Controladores y Software:</strong> Permiten la programación de secuencias de movimiento complejas y la sincronización de múltiples ejes.</div></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3 class="fw-semibold fs-5 mb-3 text-dark">Aplicaciones Típicas</h3>
+                            <ul class="list-unstyled space-y-3">
+                                <li class="d-flex align-items-center"><span class="me-3 text-info fs-5">✓</span>Montaje de componentes electrónicos.</li>
+                                <li class="d-flex align-items-center"><span class="me-3 text-info fs-5">✓</span>Manipulación y empaquetado en la industria farmacéutica.</li>
+                                <li class="d-flex align-items-center"><span class="me-3 text-info fs-5">✓</span>Sistemas de inspección y prueba de alta velocidad.</li>
+                                <li class="d-flex align-items-center"><span class="me-3 text-info fs-5">✓</span>Tareas de dosificación y llenado de precisión.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel 2: Neumática -->
+            <section id="panel-pneumatic" class="content-panel fade-in">
+                 <div class="card p-4 p-md-5 rounded-3 shadow-sm border-0">
+                    <h2 class="card-title text-info mb-4">Automatización Neumática: Potencia y Robustez</h2>
+                    <!-- Agregamos aquí la imagen de automatización neumática -->
+                    <div class="text-center my-4">
+                        <img src="assets/img/festo-pneumatic-automation.jpg" alt="Festo Pneumatic Automation" 
+                            class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
+                    </div>
+                    <p class="card-text mb-4 text-muted">
+                        La neumática utiliza aire comprimido como fuente de energía para generar movimiento. Las soluciones neumáticas de Festo son conocidas por su simplicidad, robustez y alta densidad de potencia, siendo una opción económica y fiable para una amplia gama de tareas de automatización.
+                    </p>
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6">
+                            <h3 class="fw-semibold fs-5 mb-3 text-dark">Componentes Clave</h3>
+                            <ul class="list-unstyled space-y-3">
+                                <li class="d-flex align-items-start"><span class="me-3 text-info fs-4">💨</span><div><strong class="fw-medium">Cilindros Neumáticos:</strong> Actuadores que generan movimiento lineal con gran fuerza.</div></li>
+                                <li class="d-flex align-items-start"><span class="me-3 text-info fs-4">밸</span><div><strong class="fw-medium">Válvulas y Terminales de Válvulas:</strong> Controlan la dirección y el flujo del aire comprimido hacia los cilindros.</div></li>
+                                <li class="d-flex align-items-start"><span class="me-3 text-info fs-4">🔧</span><div><strong class="fw-medium">Unidades de Mantenimiento:</strong> Preparan el aire comprimido (filtran, regulan, lubrican) para proteger los componentes.</div></li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3 class="fw-semibold fs-5 mb-3 text-dark">Aplicaciones Típicas</h3>
+                            <ul class="list-unstyled space-y-3">
+                                <li class="d-flex align-items-center"><span class="me-3 text-info fs-5">✓</span>Tareas de sujeción, prensado y remachado.</li>
+                                <li class="d-flex align-items-center"><span class="me-3 text-info fs-5">✓</span>Manipulación simple ("Pick & Place").</li>
+                                <li class="d-flex align-items-center"><span class="me-3 text-info fs-5">✓</span>Automatización en la industria alimentaria y de bebidas.</li>
+                                <li class="d-flex align-items-center"><span class="me-3 text-info fs-5">✓</span>Operaciones en entornos hostiles o con riesgo de explosión.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Panel 3: Comparativa -->
+            <section id="panel-comparison" class="content-panel fade-in">
+                <div class="card p-4 p-md-5 rounded-3 shadow-sm border-0">
+                    <h2 class="card-title text-info mb-2">Comparativa: ¿Eléctrica o Neumática?</h2>
+                    <p class="card-text mb-4 text-muted">
+                        La elección correcta depende de los requisitos específicos de su aplicación. Utilice el gráfico y las descripciones a continuación para comparar las tecnologías. Haga clic en un criterio para ver más detalles.
+                    </p>
+                    
+                    <div class="chart-container mb-4">
+                        <canvas id="comparisonChart"></canvas>
+                    </div>
+
+                    <div class="text-center mb-4">
+                        <p class="fw-semibold text-dark">Seleccione un criterio para analizar:</p>
+                        <div id="criteria-buttons" class="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                            <button class="criteria-btn btn rounded-pill fw-medium active">Precisión</button>
+                            <button class="criteria-btn btn rounded-pill fw-medium">Fuerza</button>
+                            <button class="criteria-btn btn rounded-pill fw-medium">Velocidad</button>
+                            <button class="criteria-btn btn rounded-pill fw-medium">Coste Inicial</button>
+                            <button class="criteria-btn btn rounded-pill fw-medium">Coste Operativo</button>
+                            <button class="criteria-btn btn rounded-pill fw-medium">Complejidad</button>
+                        </div>
+                    </div>
+
+                    <div id="comparison-text-container" class="bg-light p-4 rounded-3 border border-secondary min-h-[100px]">
+                        <h3 id="comparison-title" class="fw-bold fs-5 mb-2">Precisión</h3>
+                        <p id="comparison-text" class="text-muted">
+                            La automatización eléctrica es superior para el control preciso de la posición, la velocidad y la fuerza. Permite detenerse en múltiples puntos de la carrera con alta repetibilidad. La neumática es ideal para movimientos simples de punto a punto (final de carrera) y su precisión es limitada por la compresibilidad del aire.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        <div class="whatsapp-container">
+        <!-- Message Dialogue Box -->
+        <div class="whatsapp-message">
+            <p class="my-0">¿Estás interesado en ahorrar? Contactate con nosotros</p>
+        </div>
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/5493764280451?text=Hola%20te%20hablo%20desde%20la%20web,%20necesito%20consultar%20sobre%20Festo%20Automatización%20Electrica%20" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    </div>
+    
+<!-- Inicio de Footer -->
+          <footer>
+        <div class="container-fluid footer-container">
+        <div class="row">
+          <div class="col col-lg-3 mt-3" style="border-right: 1px solid #7D8588;">
+            <img src="./assets/img/romisa-logo-original.png" width="200" height="35" alt=""/>
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-md-3 col-12 mt-3">
+            <p class="footerMainText">Newsletter</p>
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="footerContactText">Suscr&iacute;base a nuestro portal de noticias y reciba las &uacute;ltimas novedades en productos.</p>
+              </div>
+            </div>
+            <div class="row">
+              <form onsubmit="return doSubscribe();">
+                <div class="mb-3">
+                  <input type="email" id="subscriberEmail" class="newsletter-control" placeholder="E-mail" required>
+                </div>
+                <div class="mb-3">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primaryg">Suscribirse</button>
+                    <p id="subscribe-message"></p>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col col-lg-3 mt-3 text-end"  style="border-right: 1px solid #7D8588;">
+            <p class="footerMainText">Navegaci&oacute;n</p>
+            <p class="footerSubLinks"><a href="index.html">INICIO</a></p>
+            <p class="footerSubLinks"><a href="nosotros.html">QUI&Eacute;NES SOMOS</a></p>
+            <p class="footerSubLinks"><a href="divisiones.html">DIVISIONES</a></p>
+            <p class="footerSubLinks"><a href="contacto.html">CONTACTO</a></p>
+            <p class="footerSubLinks"><a href="novedades.html">LISTAS DE PRECIOS</a></p>
+          </div>
+          <div class="col col-lg-3 mt-3">
+            <p class="footerMainText">Contacto</p>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-map-marker-alt" style="color: #000000"></i>  Av. Francisco de Haro 4447
+                  Posadas, Misiones, 3300
+                  Argentina
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-envelope" style="color: #000000"></i> ventas@romisa.com.ar</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-phone" style="color: #000000"></i> +54 (3764) 457900 L&iacute;neas Rotativas</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="footer-social-media">
+              <div class="col-lg-2">
+                <a href="https://www.facebook.com/romisaferreteriaindustrial"><i class="fab fa-facebook-f fa-lg" style="color: #000000"></i></a>
+              </div>
+              <div class="col-lg-2">
+                <a href="https://www.instagram.com/romisaferreteriaindustrial"><i class="fab fa-instagram fa-lg" style="color: #000000"></i></a>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="bottom-footer">
+            <p class="bottom-footer-text">&copy; ROMISA <script>document.write(new Date().getFullYear())</script> - Todos los derechos reservados.</p>
+          </div>
+        </div>
+    
+      </footer>
+
+<!-- Fin de Footer -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+  ></script>
+<!-- jQuery & Scripts de la Página  -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./assets/plugins/glide/dist/glide.min.js"></script>
+  <script src="./assets/plugins/glide/dist/glide.js"></script>
+  <script src="./assets/plugins/superfish/superfish.js"></script>
+  <script src="./assets/js/sticky-header.js"></script>
+  <script src="./assets/js/hideContactButton.js"></script>
+  <script src="./assets/js/hideWhatsapp.js"></script>
+  <script src="./assets/js/custom.js"></script>
+  <script src="./assets/js/hiderecordatorio.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navButtons = {
+                electric: document.getElementById('nav-electric'),
+                pneumatic: document.getElementById('nav-pneumatic'),
+                comparison: document.getElementById('nav-comparison'),
+            };
+
+            const contentPanels = {
+                electric: document.getElementById('panel-electric'),
+                pneumatic: document.getElementById('panel-pneumatic'),
+                comparison: document.getElementById('panel-comparison'),
+            };
+
+            let comparisonChart = null;
+
+            function switchTab(tabName) {
+                Object.values(navButtons).forEach(button => button.classList.remove('active'));
+                Object.values(contentPanels).forEach(panel => panel.classList.remove('active'));
+
+                navButtons[tabName].classList.add('active');
+                contentPanels[tabName].classList.add('active');
+                
+                if (tabName === 'comparison' && !comparisonChart) {
+                    initComparisonChart();
+                }
+            }
+
+            Object.keys(navButtons).forEach(key => {
+                navButtons[key].addEventListener('click', () => switchTab(key));
+            });
+            
+            const comparisonData = {
+                labels: ['Precisión', 'Fuerza', 'Velocidad', 'Coste Inicial', 'Coste Operativo', 'Complejidad'],
+                datasets: [
+                    {
+                        label: 'Eléctrica',
+                        data: [9, 6, 8, 3, 8, 7],
+                        backgroundColor: 'rgba(0, 115, 196, 0.2)',
+                        borderColor: '#0073c4',
+                        pointBackgroundColor: '#0073c4',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#0073c4'
+                    },
+                    {
+                        label: 'Neumática',
+                        data: [3, 9, 7, 8, 4, 3],
+                        backgroundColor: 'rgba(100, 100, 100, 0.2)',
+                        borderColor: '#646464',
+                        pointBackgroundColor: '#646464',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#646464'
+                    }
+                ]
+            };
+
+            const comparisonTexts = {
+                'Precisión': 'La automatización eléctrica es superior para el control preciso de la posición, la velocidad y la fuerza. Permite detenerse en múltiples puntos de la carrera con alta repetibilidad. La neumática es ideal para movimientos simples de punto a punto.',
+                'Fuerza': 'La neumática ofrece una alta densidad de fuerza en un tamaño compacto, siendo ideal para aplicaciones de prensado o sujeción. La tecnología eléctrica puede generar altas fuerzas, pero generalmente requiere actuadores más grandes y costosos.',
+                'Velocidad': 'Ambas tecnologías son rápidas. La neumática es excelente para movimientos de alta velocidad entre finales de carrera. La eléctrica destaca en aplicaciones que requieren un control preciso del perfil de velocidad (aceleración y deceleración).',
+                'Coste Inicial': 'Los componentes neumáticos suelen tener un coste de adquisición significativamente menor en comparación con los servomotores y controladores eléctricos, haciendo la inversión inicial más accesible.',
+                'Coste Operativo': 'La eléctrica es mucho más eficiente energéticamente. El coste de generar aire comprimido (incluyendo fugas) hace que la neumática sea más cara a largo plazo. La eléctrica solo consume energía cuando se mueve.',
+                'Complejidad': 'Para tareas simples, la neumática es más fácil de instalar y poner en marcha. La automatización eléctrica requiere más conocimientos de programación y configuración, pero ofrece una flexibilidad inmensa.'
+            };
+            
+            function initComparisonChart() {
+                const ctx = document.getElementById('comparisonChart').getContext('2d');
+                comparisonChart = new Chart(ctx, {
+                    type: 'radar',
+                    data: comparisonData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    color: '#212529',
+                                }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        label += context.raw;
+                                        return label + ' / 10';
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            r: {
+                                angleLines: {
+                                    color: '#e9ecef'
+                                },
+                                grid: {
+                                    color: '#e9ecef'
+                                },
+                                suggestedMin: 0,
+                                suggestedMax: 10,
+                                pointLabels: {
+                                    font: {
+                                        size: 12
+                                    },
+                                    color: '#495057'
+                                },
+                                ticks: {
+                                    color: '#212529',
+                                    backdropColor: 'transparent',
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const criteriaButtonsContainer = document.getElementById('criteria-buttons');
+            const comparisonTitle = document.getElementById('comparison-title');
+            const comparisonText = document.getElementById('comparison-text');
+            const criteriaButtons = criteriaButtonsContainer.querySelectorAll('.criteria-btn');
+
+            criteriaButtonsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('criteria-btn')) {
+                    const selectedCriterion = e.target.textContent;
+                    
+                    criteriaButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    
+                    e.target.classList.add('active');
+                    
+                    comparisonTitle.textContent = selectedCriterion;
+                    comparisonText.textContent = comparisonTexts[selectedCriterion];
+                }
+            });
+        });
+    </script>
+</body>
+</html>

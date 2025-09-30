@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Meta tags requeridos. Aptos para SEO-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="RO.MI.SA - Catálogos"/>
+    <meta name="description" content="Catálogos de productos de RO.MI.SA - Rodamientos Misiones Sociedad Anónima"/>
+    <meta name="keywords" content="Catálogos, PDF, ATLAS, Acoples, BOVENAU, PENETRIT, CADENA, ELITE, VBFCLOVERPINONES, romisa, Romisa, rodamientos, misiones"/>
+    <!----autor y copyright---->
+    <meta name="author" content="Nawelkelm" />
+    <meta name="copyright" content="RomiSa" />
+    <meta name="robots" content= "follow">
+      
+    <!-- CSS del sitio + FontAwesome para Iconos -->
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <link rel="stylesheet" href="./assets/css/nuevo.css"/> 
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/loader.css" />
+    <script src="https://kit.fontawesome.com/a5c59cf2a1.js" crossorigin="anonymous"></script>
+
+    <!-- Iconos Favicon -->
+    <link rel="shortcut icon" href="assets/img/android-chrome-256x256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- Bootstrap CSS, GlideJS, Superfish & Hover-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./assets/plugins/glide/dist/css/glide.core.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/glide/dist/css/glide.theme.min.css" />
+    <link rel="stylesheet" href="./assets/css/hover.css" />
+    <link rel="stylesheet" href="./assets/plugins/superfish/css/superfish.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
+    
+    <!-- PDF.js para visualizar PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script>
+      // Configuración de PDF.js
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    </script>
+
+    <style>
+      .pdf-container {
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+      .pdf-thumbnail {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        margin-bottom: 20px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        height: 250px;
+        background-color: #f8f9fa;
+      }
+      .pdf-thumbnail:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      }
+      .pdf-thumbnail img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-bottom: 1px solid #dee2e6;
+      }
+      .pdf-title {
+        padding: 10px;
+        text-align: center;
+        font-weight: 500;
+        color: #333;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .pdf-viewer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        z-index: 1000;
+        padding: 20px;
+      }
+      .pdf-viewer-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .pdf-controls {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px 5px 0 0;
+      }
+      .pdf-iframe {
+        flex-grow: 1;
+        border: none;
+        background-color: #fff;
+        border-radius: 0 0 5px 5px;
+      }
+      .close-btn {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .download-btn {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 3px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .pdf-title-viewer {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #333;
+      }
+      .section-title h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+      }
+      .section-title h2:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #007bff;
+      }
+
+      /* Estilos para el selector de vista */
+      .view-selector {
+        margin-bottom: 30px;
+      }
+      
+      .view-selector .btn {
+        padding: 10px 20px;
+        border-radius: 0;
+        transition: all 0.3s ease;
+      }
+      
+      .view-selector .btn:first-child {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      
+      .view-selector .btn:last-child {
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      
+      .view-selector .btn.active {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        box-shadow: 0 0 0 0.2rem rgba(0,86,179,.25);
+      }
+
+      /* Transiciones suaves para las secciones */
+      .section-catalogos,
+      .section-info-tecnica {
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Estilos para vista única */
+      .single-view .section-catalogos,
+      .single-view .section-info-tecnica {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      /* Estilos para secciones ocultas */
+      .hide-catalogos .section-catalogos,
+      .hide-info-tecnica .section-info-tecnica {
+        display: none;
+      }
+
+      /* Estilos para todas las vistas */
+      .section-all,
+      .section-catalogos,
+      .section-info-tecnica {
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Vista "Todo el contenido" */
+      .all-view .section-all {
+        display: block;
+      }
+
+      .all-view .section-title-individual,
+      .all-view .search-individual,
+      .all-view #no-results-catalogos,
+      .all-view #no-results-info,
+      .all-view .single-view-message {
+        display: none !important;
+      }
+
+      .all-view .section-catalogos,
+      .all-view .section-info-tecnica {
+        margin-top: 20px;
+      }
+
+      #no-results-global {
+        margin-bottom: 2rem;
+      }
+
+      /* Estilos para mensajes de no resultados */
+      [id^="no-results-"] {
+        display: none;
+      }
+
+      /* Vista individual */
+      .single-view .section-all {
+        display: none !important;
+      }
+
+      .single-view .section-title-individual,
+      .single-view .search-individual {
+        display: block;
+      }
+
+      /* Ocultar secciones específicas */
+      .hide-catalogos .section-catalogos {
+        display: none !important;
+      }
+
+      .hide-info-tecnica .section-info-tecnica {
+        display: none !important;
+      }
+
+      /* Ajustes de ancho para vistas individuales */
+      .single-view .section-catalogos.col-md-12,
+      .single-view .section-info-tecnica.col-md-12 {
+        padding: 0 2rem;
+      }
+    </style>
+
+    <!-- Título de la página -->
+    <title>RO.MI.SA - Catálogos</title>
+  </head>
+  <body>
+    <!-- Loader -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+    <script>
+      fetch('navbarromisa.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+        });
+    </script>
+
+    <!-- Contenido principal -->
+    <div class="container-fluid pdf-container">
+      <!-- Selector de vista -->
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <div class="btn-group view-selector" role="group" aria-label="Selector de vista">
+            <button type="button" class="btn btn-primary active" data-view="all">Todo el contenido</button>
+            <button type="button" class="btn btn-primary" data-view="catalogos">Catálogos</button>
+            <button type="button" class="btn btn-primary" data-view="info-tecnica">Información Técnica</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Título y buscador global -->
+      <div class="row section-all">
+        <div class="col-12">
+          <div class="section-title">
+            <h2>Todo el contenido</h2>
+          </div>
+          
+          <!-- Buscador global -->
+          <div class="row mb-4">
+            <div class="col-md-6 mx-auto">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                <input type="text" id="search-all" class="form-control" placeholder="Buscar en todo el contenido...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Mensaje global para cuando no hay resultados -->
+          <div id="no-results-global" class="row" style="display: none;">
+            <div class="col-12">
+              <div class="alert alert-info text-center">
+                <h4 class="mb-0">No se encontraron documentos que coincidan con la búsqueda</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Sección de Catálogos -->
+        <div class="col-md-6 section-catalogos">
+          <div class="section-title section-title-individual">
+            <h2>Catálogos</h2>
+          </div>
+          
+          <!-- Buscador de catálogos (visible solo en vista individual) -->
+          <div class="row mb-4 search-individual">
+            <div class="col-md-8 mx-auto">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                <input type="text" id="search-catalog" class="form-control" placeholder="Buscar catálogo por nombre...">
+              </div>
+            </div>
+          </div>
+          
+          <div class="row" id="catalogos-gallery">
+            <!-- Los catálogos se cargarán dinámicamente aquí -->
+          </div>
+          
+          <!-- Mensaje cuando no hay resultados (solo para vista individual) -->
+          <div id="no-results-catalogos" class="text-center mt-4 single-view-message" style="display: none;">
+            <h4>No se encontraron catálogos con ese nombre</h4>
+          </div>
+        </div>
+
+        <!-- Sección de Información Técnica -->
+        <div class="col-md-6 section-info-tecnica">
+          <div class="section-title section-title-individual">
+            <h2>Información Técnica</h2>
+          </div>
+          
+          <!-- Buscador de información técnica (visible solo en vista individual) -->
+          <div class="row mb-4 search-individual">
+            <div class="col-md-8 mx-auto">
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                <input type="text" id="search-info" class="form-control" placeholder="Buscar información técnica por nombre...">
+              </div>
+            </div>
+          </div>
+          
+          <div class="row" id="info-tecnica-gallery">
+            <!-- La información técnica se cargará dinámicamente aquí -->
+          </div>
+          
+          <!-- Mensaje cuando no hay resultados (solo para vista individual) -->
+          <div id="no-results-info" class="text-center mt-4 single-view-message" style="display: none;">
+            <h4>No se encontró información técnica con ese nombre</h4>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Visor de PDF -->
+    <div class="pdf-viewer" id="pdf-viewer">
+      <div class="pdf-viewer-content">
+        <div class="pdf-controls">
+          <h3 class="pdf-title-viewer" id="current-pdf-title">Título del PDF</h3>
+          <div>
+            <a href="#" class="download-btn" id="download-pdf" download>Descargar</a>
+            <button class="close-btn" id="close-pdf">Cerrar</button>
+          </div>
+        </div>
+        <iframe class="pdf-iframe" id="pdf-iframe" type="application/pdf"></iframe>
+      </div>
+    </div>
+
+    <!-- Mensaje de error para PDFs -->
+    <div id="pdf-error" class="alert alert-danger" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000;">
+      <p>No se pudo cargar el PDF. Intente descargarlo directamente.</p>
+      <button class="btn btn-primary mt-2" onclick="this.parentElement.style.display='none';">Cerrar</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>
+      // Variables para almacenar los PDFs
+      let catalogos = [];
+      let infoTecnica = [];
+      
+      async function loadPdfList() {
+        try {
+          const response = await fetch('get_pdf_files.php');
+          if (!response.ok) {
+            throw new Error('Error al cargar la lista de PDFs');
+          }
+          const data = await response.json();
+          catalogos = data.catalogos;
+          infoTecnica = data.infoTecnica;
+        } catch (error) {
+          console.error('Error:', error);
+          // Mostrar mensaje de error en ambas galerías
+          const galleries = ['catalogos-gallery', 'info-tecnica-gallery'];
+          galleries.forEach(galleryId => {
+            document.getElementById(galleryId).innerHTML = `
+              <div class="col-12 text-center">
+                <div class="alert alert-danger" role="alert">
+                  Error al cargar los documentos. Por favor, intente nuevamente más tarde.
+                </div>
+              </div>
+            `;
+          });
+        }
+      }
+
+      // Función para generar vista previa de PDF
+      async function generatePdfThumbnail(pdfUrl) {
+        try {
+          // Cargar el documento PDF
+          const loadingTask = pdfjsLib.getDocument(pdfUrl);
+          const pdf = await loadingTask.promise;
+          
+          // Obtener la primera página
+          const page = await pdf.getPage(1);
+          
+          // Configurar el canvas para la vista previa
+          const viewport = page.getViewport({ scale: 0.5 });
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+          
+          // Renderizar la página en el canvas
+          await page.render({
+            canvasContext: context,
+            viewport: viewport
+          }).promise;
+          
+          return canvas.toDataURL();
+        } catch (error) {
+          console.error('Error al generar la vista previa:', error);
+          return null;
+        }
+      }
+
+      // Función para cargar los PDFs en la galería
+      async function loadPdfGallery() {
+        // Cargar catálogos
+        await loadGallerySection('catalogos-gallery', catalogos, 'catálogos');
+        
+        // Cargar información técnica
+        await loadGallerySection('info-tecnica-gallery', infoTecnica, 'documentos técnicos');
+      }
+
+      async function loadGallerySection(galleryId, files, sectionName) {
+        const gallery = document.getElementById(galleryId);
+        gallery.innerHTML = ''; // Limpiar galería
+        
+        // Mostrar loader
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'text-center w-100 my-5';
+        loadingDiv.innerHTML = `<div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+        <p class="mt-2">Generando vistas previas de los ${sectionName}...</p>`;
+        gallery.appendChild(loadingDiv);
+        
+        // Verificar que haya PDFs para mostrar
+        if (!files || files.length === 0) {
+          gallery.innerHTML = `
+            <div class="col-12">
+              <div class="alert alert-info text-center" role="alert">
+                No se encontraron ${sectionName} disponibles.
+              </div>
+            </div>
+          `;
+          return;
+        }
+        
+        // Procesar cada PDF
+        for (const pdf of files) {
+          // Generar vista previa
+          const thumbnailUrl = await generatePdfThumbnail(pdf.file);
+          
+          const col = document.createElement('div');
+          col.className = 'col-md-4 col-sm-6 catalog-item';
+          col.dataset.name = pdf.name.toLowerCase();
+          
+          col.innerHTML = `
+            <div class="pdf-thumbnail" data-pdf="${pdf.file}" data-title="${pdf.name}">
+              <img src="${thumbnailUrl || './assets/img/prod-1.jpg'}" alt="${pdf.name}">
+              <div class="pdf-title">${pdf.name}</div>
+            </div>
+          `;
+          
+          gallery.appendChild(col);
+        }
+        
+        // Eliminar el loader
+        if (loadingDiv.parentNode === gallery) {
+          gallery.removeChild(loadingDiv);
+        }
+        
+        // Agregar eventos de clic a las miniaturas
+        document.querySelectorAll('.pdf-thumbnail').forEach(thumbnail => {
+          thumbnail.addEventListener('click', function() {
+            const pdfFile = this.getAttribute('data-pdf');
+            const pdfTitle = this.getAttribute('data-title');
+            openPdfViewer(pdfFile, pdfTitle);
+          });
+        });
+        
+        // Configurar el buscador
+        setupSearch();
+      }
+      
+      // Configurar la funcionalidad de búsqueda
+      function setupSearch() {
+        const searchInput = document.getElementById('search-catalog');
+        const noResults = document.getElementById('no-results');
+        
+        searchInput.addEventListener('input', function() {
+          const searchTerm = this.value.toLowerCase().trim();
+          const items = document.querySelectorAll('.catalog-item');
+          let hasResults = false;
+          
+          items.forEach(item => {
+            const name = item.dataset.name;
+            if (name.includes(searchTerm)) {
+              item.style.display = 'block';
+              hasResults = true;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+          
+          // Mostrar mensaje si no hay resultados
+          noResults.style.display = hasResults ? 'none' : 'block';
+        });
+      }
+
+      // Función para abrir el visor de PDF
+      function openPdfViewer(pdfFile, pdfTitle) {
+        const pdfViewer = document.getElementById('pdf-viewer');
+        const pdfIframe = document.getElementById('pdf-iframe');
+        const pdfTitleElement = document.getElementById('current-pdf-title');
+        const downloadBtn = document.getElementById('download-pdf');
+        
+        // Asegurar que la URL del PDF sea absoluta
+        const absolutePdfUrl = new URL(pdfFile, window.location.href).href;
+        
+        // Configurar el visor
+        pdfIframe.src = absolutePdfUrl;
+        pdfTitleElement.textContent = pdfTitle;
+        
+        // Configurar el botón de descarga
+        downloadBtn.href = absolutePdfUrl;
+        downloadBtn.setAttribute('download', pdfTitle + '.pdf');
+        downloadBtn.onclick = function(e) {
+          e.preventDefault();
+          // Crear un link temporal para la descarga
+          const tempLink = document.createElement('a');
+          tempLink.href = absolutePdfUrl;
+          tempLink.setAttribute('download', pdfTitle + '.pdf');
+          tempLink.setAttribute('target', '_blank');
+          document.body.appendChild(tempLink);
+          tempLink.click();
+          document.body.removeChild(tempLink);
+        };
+        
+        pdfViewer.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Evitar scroll en el fondo
+      }
+
+      // Función para cerrar el visor de PDF
+      document.getElementById('close-pdf').addEventListener('click', function() {
+        const pdfViewer = document.getElementById('pdf-viewer');
+        const pdfIframe = document.getElementById('pdf-iframe');
+        
+        pdfViewer.style.display = 'none';
+        pdfIframe.src = '';
+        document.body.style.overflow = 'auto'; // Restaurar scroll
+      });
+
+      // Función para manejar la selección de vista
+      function handleViewSelection(viewType) {
+        const container = document.querySelector('.pdf-container');
+        const buttons = document.querySelectorAll('.view-selector .btn');
+        
+        // Remover clases activas de todos los botones
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        // Activar el botón seleccionado
+        document.querySelector(`[data-view="${viewType}"]`).classList.add('active');
+        
+        // Remover todas las clases de vista previas y agregar la nueva
+        container.classList.remove('single-view', 'hide-catalogos', 'hide-info-tecnica', 'all-view');
+        
+        // Limpiar todos los campos de búsqueda
+        document.getElementById('search-all').value = '';
+        document.getElementById('search-catalog').value = '';
+        document.getElementById('search-info').value = '';
+        
+        // Mostrar todos los items
+        document.querySelectorAll('.catalog-item').forEach(item => {
+          item.style.display = 'block';
+        });
+        
+        // Ocultar todos los mensajes
+        document.querySelectorAll('[id^="no-results-"]').forEach(msg => {
+          msg.style.display = 'none';
+          msg.classList.remove('show');
+        });
+        
+        // Aplicar las clases según la vista seleccionada
+        switch(viewType) {
+          case 'catalogos':
+            container.classList.add('single-view', 'hide-info-tecnica');
+            // Ajustar el ancho de la sección de catálogos
+            document.querySelector('.section-catalogos').classList.add('col-md-12');
+            document.querySelector('.section-catalogos').classList.remove('col-md-6');
+            break;
+          case 'info-tecnica':
+            container.classList.add('single-view', 'hide-catalogos');
+            // Ajustar el ancho de la sección de información técnica
+            document.querySelector('.section-info-tecnica').classList.add('col-md-12');
+            document.querySelector('.section-info-tecnica').classList.remove('col-md-6');
+            break;
+          case 'all':
+            container.classList.add('all-view');
+            // Restablecer los anchos originales
+            document.querySelector('.section-catalogos').classList.remove('col-md-12');
+            document.querySelector('.section-catalogos').classList.add('col-md-6');
+            document.querySelector('.section-info-tecnica').classList.remove('col-md-12');
+            document.querySelector('.section-info-tecnica').classList.add('col-md-6');
+            // Asegurar que los mensajes específicos estén ocultos en la vista "Todo"
+            document.querySelectorAll('.single-view-message').forEach(msg => {
+              msg.style.display = 'none';
+            });
+            break;
+        }
+      }
+
+      // Función para buscar en todas las secciones
+      function searchAll(searchTerm) {
+        const catalogosItems = document.querySelectorAll('#catalogos-gallery .catalog-item');
+        const infoItems = document.querySelectorAll('#info-tecnica-gallery .catalog-item');
+        let hasResults = false;
+        
+        searchTerm = searchTerm.toLowerCase().trim();
+
+        // Si no hay término de búsqueda, mostrar todos los items y ocultar mensajes
+        if (searchTerm === '') {
+          catalogosItems.forEach(item => item.style.display = 'block');
+          infoItems.forEach(item => item.style.display = 'block');
+          document.querySelectorAll('[id^="no-results-"]').forEach(msg => {
+            msg.style.display = 'none';
+          });
+          return;
+        }
+
+        // Función para buscar en una colección de items
+        function searchInItems(items) {
+          items.forEach(item => {
+            if (!item.dataset.name) return;
+            const name = item.dataset.name.toLowerCase();
+            if (name.includes(searchTerm)) {
+              item.style.display = 'block';
+              hasResults = true;
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        }
+        
+        // Buscar en ambas secciones
+        searchInItems(catalogosItems);
+        searchInItems(infoItems);
+        
+        const container = document.querySelector('.pdf-container');
+        const isAllView = container.classList.contains('all-view');
+        
+        // Primero, ocultar todos los mensajes
+        document.querySelectorAll('[id^="no-results-"]').forEach(msg => {
+          msg.style.display = 'none';
+        });
+        
+        // Mostrar el mensaje apropiado según la vista
+        if (isAllView) {
+          // En vista "Todo el contenido", solo mostrar el mensaje global si no hay resultados
+          const noResultsGlobal = document.getElementById('no-results-global');
+          noResultsGlobal.style.display = !hasResults ? 'block' : 'none';
+        } else {
+          // En vistas individuales, mostrar los mensajes específicos
+          if (container.classList.contains('hide-info-tecnica')) {
+            // Vista de catálogos
+            const noResultsCatalogos = document.getElementById('no-results-catalogos');
+            const hasCatalogResults = Array.from(catalogosItems).some(item => item.style.display !== 'none');
+            noResultsCatalogos.style.display = !hasCatalogResults ? 'block' : 'none';
+          } else if (container.classList.contains('hide-catalogos')) {
+            // Vista de información técnica
+            const noResultsInfo = document.getElementById('no-results-info');
+            const hasInfoResults = Array.from(infoItems).some(item => item.style.display !== 'none');
+            noResultsInfo.style.display = !hasInfoResults ? 'block' : 'none';
+          }
+        }
+      }
+
+      // Cargar la galería cuando el documento esté listo
+      document.addEventListener('DOMContentLoaded', async function() {
+        try {
+          // Cargar primero la lista de PDFs
+          await loadPdfList();
+          
+          // Luego cargar la galería
+          await loadPdfGallery();
+          
+          // Configurar los botones de selección de vista
+          document.querySelectorAll('.view-selector .btn').forEach(button => {
+            button.addEventListener('click', function() {
+              handleViewSelection(this.dataset.view);
+            });
+          });
+
+          // Configurar el buscador global
+          const searchAllInput = document.getElementById('search-all');
+          if (searchAllInput) {
+            searchAllInput.addEventListener('input', function() {
+              searchAll(this.value);
+            });
+          }
+
+          // Iniciar la página en la vista "Todo"
+          handleViewSelection('all');
+          
+          // Ocultar el loader cuando la página esté cargada
+          setTimeout(function() {
+            document.querySelector('body').classList.add('loaded');
+          }, 1000);
+        } catch (error) {
+          console.error('Error al inicializar la página:', error);
+          // Mostrar mensaje de error al usuario
+          document.querySelector('.pdf-container').innerHTML = `
+            <div class="alert alert-danger text-center" role="alert">
+              Hubo un error al cargar la página. Por favor, intente nuevamente más tarde.
+            </div>
+          `;
+        }
+      });
+    </script>
+  </body>
+</html>
