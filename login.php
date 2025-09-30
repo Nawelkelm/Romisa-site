@@ -61,16 +61,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo json_encode([
                     'success' => true,
                     'message' => 'Inicio de sesión exitoso',
-                    'csrf_token' => $newToken
+                    'csrf_token' => $newToken,
+                    'redirect' => 'pruebalistas.html'
                 ]);
                 exit;
-                ];
-                // Redirigir a la página protegida
-                header('Location: pruebalistas.html');
-                exit();
             } else {
-                echo "Error: Correo electrónico o contraseña incorrectos.";  
-                header('Location: login-lista.html');
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Correo electrónico o contraseña incorrectos'
+                ]);
+                exit;
             }
         } else {
             echo "Por favor, completa todos los campos.";
