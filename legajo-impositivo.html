@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Legajo Impositivo - ROMISA</title>
+    <meta name="description" content="Legajo impositivo de ROMISA - Documentación sobre nuestra situación tributaria, retenciones y percepciones."/>
+      
+    <!-- CSS del sitio + FontAwesome para Iconos -->
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <link rel="stylesheet" href="./assets/css/nuevo.css"/> 
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/loader.css" />
+    <link rel="stylesheet" href="./assets/css/hover.css" />
+
+    <!-- Iconos Favicon -->
+    <link rel="shortcut icon" href="assets/img/android-chrome-256x256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  
+    <!-- jQuery y Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a5c59cf2a1.js" crossorigin="anonymous"></script>
+
+    <!-- Superfish -->
+    <link rel="stylesheet" href="./assets/plugins/superfish/css/superfish.css">
+    <script src="./assets/plugins/superfish/hoverIntent.js"></script>
+    <script src="./assets/plugins/superfish/superfish.min.js"></script>
+    <style>
+        .legajo-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        .legajo-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .btn-legajo {
+            background-color: #2A3235 !important;
+            color: #FFFFFF !important;
+            padding: 0 30px;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            height: 50px;
+            min-width: 220px;
+            white-space: nowrap;
+            font-family: Montserrat, Arial, Helvetica, sans-serif;
+            text-align: center;
+            position: relative;
+        }
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: center;
+            width: 100%;
+        }
+        .btn-legajo {
+            padding: 0 30px;
+        }
+        .btn-legajo i {
+            font-size: 20px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+        }
+        .btn-legajo:hover {
+            background-color: #4C575B !important;
+            color: #FFFFFF !important;
+            text-decoration: none;
+        }
+        .btn-legajo i {
+            font-size: 20px;
+        }
+        .legajo-text {
+            line-height: 1.8;
+            color: #333;
+        }
+        .pdf-container {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 60px);
+            overflow: hidden;
+        }
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform-origin: top left;
+        }
+        .pdf-controls {
+            display: flex;
+            align-items: center;
+        }
+        .pdf-controls button {
+            padding: 0.25rem 0.5rem;
+        }
+        .pdf-controls button i {
+            font-size: 14px;
+        }
+        .pdf-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 576px) {
+            .btn-legajo {
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+            .pdf-buttons {
+                flex-direction: column;
+            }
+            .modal-header {
+                flex-wrap: wrap;
+            }
+            .pdf-controls {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 0.5rem;
+                margin-left: 0 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-container"></div>
+    <!-----loader----->
+    <div id="contenedor_carga">
+        <div id="carga"></div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="legajo-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="legajo-content">
+                        <h1 class="text-center mb-5">Legajo Impositivo</h1>
+                        <div class="legajo-text">
+                            <p class="mb-4">
+                                Ponemos a disposición de proveedores y clientes nuestro Legajo Impositivo actualizado. El mismo contiene información acerca de nuestra situación tributaria frente a los distintos impuestos y regímenes de retención y percepción, tanto nacionales como provinciales. Adjuntamos la documentación respaldatoria correspondiente.
+                            </p>
+                            <p class="mb-4">
+                                En caso de ser proveedor de nuestra empresa, este Legajo es de utilidad para determinar las retenciones que aplicaremos al momento del pago de facturas o las percepciones que se deberán incluir en ellas.
+                            </p>
+                            <p class="mb-4">
+                                En caso de ser cliente, le será de utilidad para determinar las percepciones que aplicaremos en nuestra facturación y las retenciones que pueden aplicarnos al momento del pago de las mismas.
+                            </p>
+                           
+                            <p class="mb-5">
+                                Toda la información contenida en el presente Legajo es de actualización constante; por esta razón, le recomendamos revisarlo periódicamente para contar con la última versión del mismo.
+                            </p>
+                            <div class="text-center">
+                                <div class="pdf-buttons">
+                                    <button class="btn btn-legajo mb-3 me-3" onclick="viewPdf()">
+                                        <span class="btn-content">
+                                            <i class="fas fa-eye"></i>
+                                            <span>Ver Legajo</span>
+                                        </span>
+                                    </button>
+                                    <a href="assets/files/Legajo Impositivo ROMISA 2025.pdf" download class="btn btn-legajo mb-3">
+                                        <span class="btn-content">
+                                            <i class="fas fa-download"></i>
+                                            <span>Descargar PDF</span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para visualización del PDF -->
+    <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pdfModalLabel">Legajo Impositivo ROMISA</h5>
+                    <div class="pdf-controls me-auto ms-3">
+                        <button class="btn btn-sm btn-outline-secondary me-2" onclick="zoomIn()">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary me-2" onclick="zoomOut()">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="resetZoom()">
+                            <i class="fas fa-undo"></i>
+                        </button>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="pdf-container">
+                        <iframe id="pdfViewer" class="pdf-viewer" src=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid footer-container">
+        <div class="row">
+          <div class="col col-lg-3s mt-3" style="border-right: 1px solid #7D8588;">
+            <img src="./assets/img/romisa-logo-original.png" width="200" height="35" alt=""/>
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col col-md-3 col-12 mt-3">
+            <p class="footerMainText">Newsletter</p>
+            <div class="row">
+              <div class="col-lg-12">
+                <p class="footerContactText">Suscr&iacute;base a nuestro portal de noticias y reciba las &uacute;ltimas novedades en productos.</p>
+              </div>
+            </div>
+            <div class="row">
+              <form onsubmit="return doSubscribe();">
+                <div class="mb-3">
+                  <input type="email" id="subscriberEmail" class="newsletter-control" placeholder="E-mail" required>
+                </div>
+                <div class="mb-3">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primaryg">Suscribirse</button>
+                    <p id="subscribe-message"></p>
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col col-lg-3 mt-3 text-end"  style="border-right: 1px solid #7D8588;">
+            <p class="footerMainText">Navegaci&oacute;n</p>
+            <p class="footerSubLinks"><a href="index.html">INICIO</a></p>
+            <p class="footerSubLinks"><a href="nosotros.html">QUI&Eacute;NES SOMOS</a></p>
+            <p class="footerSubLinks"><a href="divisiones.html">DIVISIONES</a></p>
+            <p class="footerSubLinks"><a href="contacto.html">CONTACTO</a></p>
+            <p class="footerSubLinks"><a href="novedades.html">NOVEDADES</a></p>
+          </div>
+          <div class="col col-lg-3 mt-3">
+            <p class="footerMainText">Contacto</p>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-map-marker-alt" style="color: #000000"></i>  Av. Francisco de Haro 4447
+                  Posadas, Misiones, 3300
+                  Argentina
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-envelope" style="color: #000000"></i> ventas@romisa.com.ar</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <p class="footerContactText"><i class="fas fa-phone" style="color: #000000"></i> +54 (3764) 457900 L&iacute;neas Rotativas</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="footer-social-media">
+              <div class="col-lg-2">
+                <a href="https://www.facebook.com/romisaferreteriaindustrial"><i class="fab fa-facebook-f fa-lg" style="color: #000000"></i></a>
+              </div>
+              <div class="col-lg-2">
+                <a href="https://www.instagram.com/romisaferreteriaindustrial"><i class="fab fa-instagram fa-lg" style="color: #000000"></i></a>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="bottom-footer">
+            <p class="bottom-footer-text">&copy; ROMISA <script>document.write(new Date().getFullYear())</script> - Todos los derechos reservados.</p>
+          </div>
+        </div>
+      </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/sticky-header.js"></script>
+    <script>
+        // Inicialización cuando el documento está listo
+        $(window).on('load', function() {
+            // Ocultar el loader cuando todo esté cargado
+            var contenedor = document.getElementById('contenedor_carga');
+            contenedor.style.visibility = 'hidden';
+            contenedor.style.opacity = '0';
+        });
+
+        $(document).ready(function() {
+            
+            // Cargar el navbar
+            fetch('navbarromisa.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    // Asegurarse de que jQuery y Superfish estén cargados
+                    if (typeof jQuery !== 'undefined' && typeof jQuery.fn.superfish !== 'undefined') {
+                        // Inicializar Superfish después de cargar el navbar
+                        $('.sf-menu').superfish({
+                            animation: {height: 'show'},
+                            delay: 100
+                        });
+                    }
+                    // Marcar el ítem activo después de cargar el navbar
+                    $('.nav-link').each(function() {
+                        if ($(this).attr('href') === 'legajo-impositivo.html') {
+                            $(this).addClass('active');
+                        }
+                    });
+                });
+        });
+
+        // Variables para el manejo del zoom del PDF
+        let currentZoom = 1;
+        const zoomStep = 0.25;
+        const maxZoom = 3;
+        const minZoom = 0.5;
+
+        // Función para visualizar el PDF en el modal
+        function viewPdf() {
+            const modal = new bootstrap.Modal(document.getElementById('pdfModal'));
+            const viewer = document.getElementById('pdfViewer');
+            viewer.src = 'assets/files/Legajo Impositivo ROMISA 2025.pdf';
+            modal.show();
+        }
+
+        // Funciones de zoom
+        function zoomIn() {
+            if (currentZoom < maxZoom) {
+                currentZoom += zoomStep;
+                updateZoom();
+            }
+        }
+
+        function zoomOut() {
+            if (currentZoom > minZoom) {
+                currentZoom -= zoomStep;
+                updateZoom();
+            }
+        }
+
+        function resetZoom() {
+            currentZoom = 1;
+            updateZoom();
+        }
+
+        function updateZoom() {
+            const viewer = document.getElementById('pdfViewer');
+            viewer.style.transform = `scale(${currentZoom})`;
+        }
+
+        // Limpiar el src del iframe cuando se cierra el modal
+        document.getElementById('pdfModal').addEventListener('hidden.bs.modal', function () {
+            document.getElementById('pdfViewer').src = '';
+            resetZoom();
+        });
+    </script>
+</body>
+
+</html>

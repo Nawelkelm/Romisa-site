@@ -2,7 +2,7 @@ function rotacionDeContenido() {
   // Formateamos la Fecha, por ejemplo "2022-06-29"
   var a = new Date();
   var min = a.getMinutes();
-  console.log(min);
+  
   if (min >= 1 && min <= 10) {
     texto = 'Conoce nuestra marca destacada Festo!';
     imagen =

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 /* INICIO Principal */
 body {
   margin: 0 !important;
@@ -223,8 +225,6 @@ a .fab {
 
 /* FIN  de certificado*/
 /* marcas carousel*/
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
 * {
   margin: 0;
   padding: 0;
