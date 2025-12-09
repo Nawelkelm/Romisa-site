@@ -22,11 +22,11 @@
 
     <!-- Iconos Favicon -->
     <link rel="shortcut icon" href="assets/img/android-chrome-256x256.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
   
@@ -42,21 +42,83 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
- <!-------canonical index-->
- <link rel="canonical" href="https://www.romisa.com.ar/index.html" />
+    <!-------canonical index-->
+    <link rel="canonical" href="https://www.romisa.com.ar/index.html" />
+
+    <!-- jQuery y plugins -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/plugins/superfish/hoverIntent.js"></script>
+    <script src="./assets/plugins/superfish/superfish.min.js"></script>
+
+    <style>
+      .image-viewer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        z-index: 1000;
+        padding: 20px;
+      }
+      .image-viewer-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .viewer-controls {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+      }
+      .viewer-image {
+        max-width: 90%;
+        max-height: 90vh;
+        object-fit: contain;
+      }
+      .close-btn {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .download-btn {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 3px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    </style>
 
     <!-- Inicio Contenido web -->
     <title>RO.MI.SA - Rodamientos Misiones Sociedad An&oacute;nima</title>
   </head>
-  <div id="navbar-container"> </div>
+  <body>
+    <div id="navbar-container"></div>
 
-<script>
-    fetch('navbarromisa.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
-            jQuery('ul.sf-menu').superfish();  // Inicializar después de cargar el menú
-        });
+    <script>
+      $(document).ready(function() {
+          fetch('navbarromisa.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('navbar-container').innerHTML = data;
+                  $('.sf-menu').superfish({
+                      animation: {height: 'show'},
+                      delay: 100
+                  });
+              });
+      });
 </script>
   <body onload="rotacionDeContenido(); contenedorCarga();"> 
        <!-----loader----->
@@ -265,15 +327,21 @@
         <p class="lead">Nuestros especialistas lo ayudaran a elegir cada vez con más seguridad el producto
           adecuado, incluso si se trata de soluciones para sectores especiales
           de la industria.</p>
-          <img src="/assets/img/marcas/festo.png" class="img-fluid festo-img" alt="...">
+          <img src="assets/img/marcas/festo.png" class="img-fluid festo-img" alt="...">
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-          <a href="https://romisa.com.ar/sandbox/romisite/assets/img/certifff.webp">
-          <button type="button" class="btn btn-danger btn-lg px-4 me-md-2 fw-bold">Certificado</button>
-        </a>        
- <!--<button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>---->
+          <button type="button" onclick="openImageViewer('https://romisa.com.ar/sandbox/romisite/assets/img/certifff.webp', 'Certificado Festo Official Partner')" class="btn btn-danger btn-lg px-4 me-md-2 fw-bold">Certificado</button>
         </div>
-        
+      </div>
 
+      <!-- Visor de Imagen -->
+      <div class="image-viewer" id="image-viewer">
+        <div class="image-viewer-content">
+          <img src="" alt="Certificado Festo" class="viewer-image" id="viewer-image">
+          <div class="viewer-controls">
+            <a href="#" class="download-btn" id="download-image" download>Descargar</a>
+            <button class="close-btn" id="close-viewer">Cerrar</button>
+          </div>
+        </div>
       </div>
       <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
             <img src="https://romisa.com.ar/sandbox/romisite/assets/img/officcialpart.webp" class="d-block w-100" alt="..." />
@@ -921,7 +989,7 @@
             <p class="footerSubLinks"><a href="nosotros.html">QUI&Eacute;NES SOMOS</a></p>
             <p class="footerSubLinks"><a href="divisiones.html">DIVISIONES</a></p>
             <p class="footerSubLinks"><a href="contacto.html">CONTACTO</a></p>
-            <p class="footerSubLinks"><a href="novedades.html">LISTAS DE PRECIOS</a></p>
+            <p class="footerSubLinks"><a href="novedades.html">NOVEDADES</a></p>
           </div>
           <div class="col col-lg-3 mt-3">
             <p class="footerMainText">Contacto</p>
@@ -1506,6 +1574,54 @@ width: 100%;
 <!-- jQuery & Scripts de la Página  -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./assets/plugins/glide/dist/glide.min.js"></script>
+
+  <script>
+    // Función para abrir el visor de imagen
+    function openImageViewer(imageUrl, imageTitle) {
+      const imageViewer = document.getElementById('image-viewer');
+      const viewerImage = document.getElementById('viewer-image');
+      const downloadBtn = document.getElementById('download-image');
+      
+      // Asegurar que la URL de la imagen sea absoluta
+      const absoluteImageUrl = new URL(imageUrl, window.location.href).href;
+      
+      // Configurar el visor
+      viewerImage.src = absoluteImageUrl;
+      viewerImage.alt = imageTitle;
+      
+      // Configurar el botón de descarga
+      downloadBtn.href = absoluteImageUrl;
+      downloadBtn.setAttribute('download', imageTitle + '.webp');
+      
+      imageViewer.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Evitar scroll en el fondo
+    }
+
+    // Función para cerrar el visor de imagen
+    document.getElementById('close-viewer').addEventListener('click', function() {
+      const imageViewer = document.getElementById('image-viewer');
+      const viewerImage = document.getElementById('viewer-image');
+      
+      imageViewer.style.display = 'none';
+      viewerImage.src = '';
+      document.body.style.overflow = 'auto'; // Restaurar scroll
+    });
+
+    // Configurar el botón de descarga
+    document.getElementById('download-image').addEventListener('click', function(e) {
+      e.preventDefault();
+      const viewerImage = document.getElementById('viewer-image');
+      const imageTitle = viewerImage.alt;
+      
+      const tempLink = document.createElement('a');
+      tempLink.href = viewerImage.src;
+      tempLink.setAttribute('download', imageTitle + '.webp');
+      tempLink.setAttribute('target', '_blank');
+      document.body.appendChild(tempLink);
+      tempLink.click();
+      document.body.removeChild(tempLink);
+    });
+  </script>
   <script src="./assets/plugins/glide/dist/glide.js"></script>
   <script src="./assets/plugins/superfish/superfish.js"></script>
   <script src="./assets/js/sticky-header.js"></script>
@@ -1547,10 +1663,17 @@ width: 100%;
   </script> 
 
   <script>
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl)
-    })
+    $(document).ready(function() {
+      // Initialize all popovers
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+      popoverTriggerList.forEach(function (popoverTriggerEl) {
+        new bootstrap.Popover(popoverTriggerEl)
+      });
+
+      // Initialize popovers with focus trigger
+      $('.popover-dismiss').popover({
+        trigger: 'focus'
+      });
 
   </script>    
   <script>

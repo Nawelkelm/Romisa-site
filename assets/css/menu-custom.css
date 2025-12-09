@@ -1,0 +1,43 @@
+/* Ajustes para el menú y las flechas */
+.sf-arrows .sf-with-ul {
+    padding-right: 2.5em !important;
+}
+
+.sf-arrows .sf-with-ul:after {
+    right: 1em !important;
+}
+
+/* Ajuste específico para "Quiénes Somos" en el navbar */
+.nav-link.sf-with-ul {
+    position: relative;
+    padding-right: 1.5em !important;
+}
+
+/* Ajuste del tamaño y posición de la flecha */
+.sf-arrows > li > .sf-with-ul:after {
+    border-width: 4px !important;
+    margin-top: -2px !important;
+    right: 0.5em !important;
+}
+
+/* Mejora de la visibilidad de los submenús */
+.sf-menu ul {
+    min-width: 12em;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 5px 0;
+}
+
+.sf-menu ul li {
+    background: white;
+}
+
+.sf-menu ul li a {
+    padding: 10px 15px;
+    color: #333;
+}
+
+.sf-menu ul li:hover {
+    background-color: #f8f9fa;
+}

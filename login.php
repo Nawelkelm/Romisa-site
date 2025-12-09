@@ -64,10 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'csrf_token' => $newToken
                 ]);
                 exit;
-                ];
                 // Redirigir a la página protegida
-                header('Location: pruebalistas.html');
-                exit();
+                // header('Location: pruebalistas.html');
+                // exit();
             } else {
                 echo "Error: Correo electrónico o contraseña incorrectos.";  
                 header('Location: login-lista.html');

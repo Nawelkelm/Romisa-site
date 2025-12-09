@@ -237,16 +237,16 @@
                     <label for="username" class="form-label">
                         <i class="fas fa-user me-2"></i>Usuario
                     </label>
-                    <input type="text" class="form-control" id="username" 
-                           placeholder="Ingrese su usuario" required>
+                    <input type="text" class="form-control" id="username" name="username"
+                           placeholder="Ingrese su usuario" required autocomplete="username">
                 </div>
                 <div class="mb-4">
                     <label for="password" class="form-label">
                         <i class="fas fa-key me-2"></i>Contraseña
                     </label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="password" 
-                               placeholder="Ingrese su contraseña" required>
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="Ingrese su contraseña" required autocomplete="current-password">
                         <button class="btn btn-outline-secondary" type="button" onclick="togglePasswordVisibility()">
                             <i class="fas fa-eye"></i>
                         </button>
@@ -807,16 +807,16 @@
                         <form id="addUserForm" novalidate>
                             <div class="mb-3">
                                 <label for="newUsername" class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="newUsername" 
-                                    pattern="^[a-zA-Z0-9_]{4,20}$" required
+                                <input type="text" class="form-control" id="newUsername" name="newUsername"
+                                    pattern="^[a-zA-Z0-9_]{4,20}$" required autocomplete="username"
                                     onkeyup="validateField(this, 'El usuario debe tener entre 4 y 20 caracteres alfanuméricos')">
                                 <div class="validation-feedback text-danger"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="newPassword" class="form-label">Contraseña</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" id="newPassword" 
-                                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required
+                                    <input type="password" class="form-control" id="newPassword" name="newPassword"
+                                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" required autocomplete="new-password"
                                         onkeyup="validatePassword(this)">
                                     <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('newPassword')">
                                         <i class="fas fa-eye"></i>
@@ -833,7 +833,8 @@
                             <div class="mb-3">
                                 <label for="newPasswordConfirm" class="form-label">Confirmar Contraseña</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" id="newPasswordConfirm" required
+                                    <input type="password" class="form-control" id="newPasswordConfirm" name="newPasswordConfirm"
+                                        required autocomplete="new-password"
                                         onkeyup="validatePasswordMatch('newPassword', 'newPasswordConfirm')">
                                     <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('newPasswordConfirm')">
                                         <i class="fas fa-eye"></i>
@@ -843,7 +844,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="newNombre" class="form-label">Nombre Completo</label>
-                                <input type="text" class="form-control" id="newNombre" required
+                                <input type="text" class="form-control" id="newNombre" name="newNombre" required autocomplete="name"
                                     pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,100}$"
                                     onkeyup="validateField(this, 'Ingrese un nombre válido (solo letras)')">
                                 <div class="validation-feedback text-danger"></div>
@@ -873,15 +874,15 @@
                             <input type="hidden" id="editUserId">
                             <div class="mb-3">
                                 <label for="editUsername" class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="editUsername" 
-                                    pattern="^[a-zA-Z0-9_]{4,20}$" required>
+                                <input type="text" class="form-control" id="editUsername" name="editUsername"
+                                    pattern="^[a-zA-Z0-9_]{4,20}$" required autocomplete="username">
                                 <div class="validation-feedback text-danger"></div>
                             </div>
                             <div class="mb-3">
                                 <label for="editPassword" class="form-label">Nueva Contraseña (dejar en blanco para mantener la actual)</label>
                                 <div class="input-group">
-                                    <input type="password" class="form-control" id="editPassword"
-                                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$">
+                                    <input type="password" class="form-control" id="editPassword" name="editPassword"
+                                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$" autocomplete="new-password">
                                     <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('editPassword')">
                                         <i class="fas fa-eye"></i>
                                     </button>
@@ -890,8 +891,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="editNombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="editNombre" 
-                                    pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,100}$" required>
+                                <input type="text" class="form-control" id="editNombre" name="editNombre"
+                                    pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,100}$" required autocomplete="name">
                                 <div class="validation-feedback text-danger"></div>
                             </div>
                             <div class="alert alert-danger" id="editError" style="display: none;"></div>
@@ -1579,7 +1580,7 @@
                     <p class="footerSubLinks"><a href="nosotros.html">QUI&Eacute;NES SOMOS</a></p>
                     <p class="footerSubLinks"><a href="divisiones.html">DIVISIONES</a></p>
                     <p class="footerSubLinks"><a href="contacto.html">CONTACTO</a></p>
-                    <p class="footerSubLinks"><a href="novedades.html">LISTAS DE PRECIOS</a></p>
+                    <p class="footerSubLinks"><a href="novedades.html">NOVEDADES</a></p>
                 </div>
                 <div class="col col-lg-3 mt-3">
                     <p class="footerMainText">Contacto</p>

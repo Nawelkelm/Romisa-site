@@ -4,20 +4,28 @@ $transition-ease-in-out: all 0.25s ease-in-out 0s;
 $transition-cubic-bezier: all 0.75s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $animation-offset: 80px;
 
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+
 *,
 :after,
 :before {
   box-sizing: border-box;
 }
+
 .card {
   height: 100%;
-}
-.card {
   font-family: 'Lato', sans-serif;
   background: #eee;
   padding: 40px 60px;
   animation: fade-in 3s ease-in-out forwards;
   margin: 20px 20px;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 20px;
+    margin: 10px;
+  }
 }
 strong {
   font-weight: 900;
@@ -27,12 +35,24 @@ strong {
   align-items: center;
   justify-content: center;
   height: 20%;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-mobile) {
+    height: auto;
+  }
 
   .canvas + .canvas {
     margin-left: 40px;
     margin-bottom: 100px;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-left: 0;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
   }
 }
+
 .canvas {
   position: relative;
   display: block;
@@ -41,6 +61,12 @@ strong {
   padding: 20px;
   color: inherit;
   text-decoration: none;
+
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    height: 300px;
+    padding: 10px;
+  }
 }
 .canvas_border {
   position: absolute;
@@ -92,12 +118,27 @@ strong {
   text-transform: uppercase;
   color: #da2727;
   z-index: 100;
+
+  @media (max-width: $breakpoint-mobile) {
+    bottom: 10px;
+    left: 10px;
+  }
 }
+
 .canvas_copy--left {
   left: -25%;
+
+  @media (max-width: $breakpoint-mobile) {
+    left: 10px;
+  }
 }
+
 .canvas_copy_title {
   font-size: 62px;
+  
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 36px;
+  }
   display: block;
   transform: translateX(-#{$animation-offset});
   transition: $transition-cubic-bezier 0s;
@@ -141,29 +182,58 @@ strong {
 .canvas_copy_details {
   opacity: 0;
 }
-.canvas:hover {
-  .canvas_copy_title,
-  .canvas_copy_subtitle,
-  .canvas_copy_details,
-  .canvas_img {
-    opacity: 1;
+// Hover effects for desktop
+@media (min-width: $breakpoint-mobile) {
+  .canvas:hover {
+    .canvas_copy_title,
+    .canvas_copy_subtitle,
+    .canvas_copy_details,
+    .canvas_img {
+      opacity: 1;
+    }
+    .canvas_border,
+    .canvas_img-wrapper {
+      transform: rotate(-14deg) skew(-14deg) scale(0.96);
+    }
+    .canvas_img {
+      transform: scale3d(1, 1, 1);
+    }
+    .canvas_copy_title,
+    .canvas_copy_details {
+      transform: translateX(0);
+    }
+    .canvas_copy_subtitle {
+      transform: rotate(270deg) translateY(-100%) translateX(-115%);
+    }
+    .rect-gradient {
+      animation: draw-line 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    }
   }
-  .canvas_border,
-  .canvas_img-wrapper {
-    transform: rotate(-14deg) skew(-14deg) scale(0.96);
-  }
-  .canvas_img {
-    transform: scale3d(1, 1, 1);
-  }
-  .canvas_copy_title,
-  .canvas_copy_details {
-    transform: translateX(0);
-  }
-  .canvas_copy_subtitle {
-    transform: rotate(270deg) translateY(-100%) translateX(-115%);
-  }
-  .rect-gradient {
-    animation: draw-line 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+// Touch device handling
+@media (max-width: $breakpoint-mobile) {
+  .canvas {
+    .canvas_copy_title,
+    .canvas_copy_subtitle,
+    .canvas_copy_details,
+    .canvas_img {
+      opacity: 1;
+    }
+    .canvas_img {
+      transform: scale3d(0.8, 0.8, 0.8);
+    }
+    .canvas_copy_title,
+    .canvas_copy_details {
+      transform: translateX(0);
+    }
+    .canvas_copy_subtitle {
+      transform: none;
+      margin-bottom: 5px;
+    }
+    .rect-gradient {
+      animation: draw-line 3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    }
   }
 }
 
