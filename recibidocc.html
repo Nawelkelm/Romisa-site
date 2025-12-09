@@ -1,14 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
-<!-- Meta tags requeridos. Aptos para SEO-->
+<!--      <!-- Inicio Boton Float recordatorio -->
+         <a href="https://ecommerce.romisa.com.ar/new/public/productos.php" data-page-id="224234906" class="btn-flotante ocultar" id="ocultar" target="_blank">INGRESA A NUESTRA TIENDA VIRTUAL</a>
+      <!-- Fin Boton Float recordatorio -->ta tags requeridos. Aptos para SEO-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento."/>
-    <meta name="keywords" content="proveedor de rodamientos, romisa, Romisa, rodamientos, misiones, sociedad anonima, proveedor de rodamientos, rodamientos misiones sociedad anonima, elite, iwis, RP Poleas, MEGADYNE, Gummi, Acoples, TOLLOK, Vibromaq, STM Team, NTH Grilon, repuesto, transmision industrial, industrial, industria, cadenas, pinones, poleas, correas, acoples, conos, motovibradores, reductores, motores, bandas, bandas transportadoras, plastico industrial, ntn, grillon, fluidos y sellados, sellados, neumatica, valvulas, sellados, adhesivos, mangueras, retenes, manometros, termometro, valvulas, bombas, soldadura, soldador, consumibles, alambres, electrodos, varillas, equipos, plasma, corte, fresado, metales, corte de madera, corte de metal, ferreteria, bulloneria, torrnillos, prisioneros, varillas roscadas, tuercas, anillo de seguridad, tirafondos, arandelas planas, grower, medicion, reglas, calibres, escuadras, micrometro, cinta metrica,  pintureria, pintura por litro, pintura en aerosol, pinceles y rodillos, maquinas para pintar, herramientas, herramientas de mano, HERRAMIENTAS HIDRÁULICAS, HERRAMIENTAS ELÉCTRICAS, HERRAMIENTAS NEUMÁTICAS, lubricantes, limpiadores, fijadores, selladores, compuestos, informatica,impresión, componentes, perifericos, almacenamiento, imagen, FLUKE, repuestos, conectividad, seguridad, conectores, audio, posadas, misiones"/>
+    <meta name="description" content="Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la regi&oacute;n, brindando a nuestros clientes amplia gama de productos, s&oacute;lido asesoramiento t&eacute;cnico y el respaldo de una trayectoria de m&aacute;s de 25 a&ntilde;os de constante trabajo y crecimiento."/>
+    <meta name="keywords" content="proveedor de rodamientos, romisa, Romisa, rodamientos, misiones, sociedad anonima, proveedor de rodamientos, rodamientos misiones sociedad anonima, elite, iwis, RP Poleas, MEGADYNE, Gummi, Acoples, TOLLOK, Vibromaq, STM Team, NTH Grilon, repuesto, transmision industrial, industrial, industria, cadenas, pinones, poleas, correas, acoples, conos, motovibradores, reductores, motores, bandas, bandas transportadoras, plastico industrial, ntn, grillon, fluidos y sellados, sellados, neumatica, valvulas, sellados, adhesivos, mangueras, retenes, manometros, termometro, valvulas, bombas, soldadura, soldador, consumibles, alambres, electrodos, varillas, equipos, plasma, corte, fresado, metales, corte de madera, corte de metal, ferreteria, bulloneria, torrnillos, prisioneros, varillas roscadas, tuercas, anillo de seguridad, tirafondos, arandelas planas, grower, medicion, reglas, calibres, escuadras, micrometro, cinta metrica,  pintureria, pintura por litro, pintura en aerosol, pinceles y rodillos, maquinas para pintar, herramientas, herramientas de mano, HERRAMIENTAS HIDR&Iacute;ULICAS, HERRAMIENTAS EL&Eacute;CTRICAS, HERRAMIENTAS NEUM&Iacute;TICAS, lubricantes, limpiadores, fijadores, selladores, compuestos, informatica,impresi&oacute;n, componentes, perifericos, almacenamiento, imagen, FLUKE, repuestos, conectividad, seguridad, conectores, audio, posadas, misiones"/>
 <!-- CSS del sitio + FontAwesome para Iconos -->
     <link rel="stylesheet" href="./assets/css/custom.css" />
     <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/css/whatsapp-enhanced.css" />
+    <link rel="stylesheet" href="./assets/css/whatsapp-popup-fix.css" />
     <script src="https://kit.fontawesome.com/a5c59cf2a1.js" crossorigin="anonymous"></script>
 
 <!-- Iconos Favicon -->
@@ -40,13 +44,13 @@
   </head>
   <body onLoad="redireccionar()">
     <!-- Inicio Boton Float Whatsapp -->
-    <a href="https://api.whatsapp.com/send?phone=5493764280451&text=Hola!!!,%20necesito%20consultar:%20" class="whatsapp-float" target="_blank" id="hiddenWhatsapp">
+    <a href="https://api.whatsapp.com/send?phone=5493764280451&text=Hola!!!,%20necesito%20consultar%20sobre%20sus%20productos:%20" class="whatsapp-float" target="_blank" id="hiddenWhatsapp">
       <i class="fa fa-whatsapp my-float"></i>
       </a>
     <!-- Fin Boton Float WhatsApp -->
 
     <!-- Inicio Boton Float recordatorio -->
-         <a href="romisa.html#sec-f286" data-page-id="224234906" class="btn-flotante ocultar" id="ocultar">ingresa a nuestra tienda virtual</a>
+         <a href="https://ecommerce.romisa.com.ar/new/public/productos.php" data-page-id="224234906" class="btn-flotante ocultar" id="ocultar" target="_blank">INGRESA A NUESTRA TIENDA VIRTUAL</a>
           <!-- Fin Boton Float recordatorio -->
           <div id="navbar-container"></div>
 
@@ -55,7 +59,7 @@
           .then(response => response.text())
           .then(data => {
               document.getElementById('navbar-container').innerHTML = data;
-              jQuery('ul.sf-menu').superfish();  // Inicializar después de cargar el menú
+              jQuery('ul.sf-menu').superfish();  // Inicializar despu&eacute;s de cargar el men&uacute;
           });
   </script>
             <!-- Fin de Barra de Navegacion -->
@@ -89,7 +93,7 @@
       <img src="./assets/img/romisa-logo-original.png" width="200" height="35" alt=""/>
       <div class="row">
         <div class="col-lg-12">
-          <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento.</p>
+          <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la regi&oacute;n, brindando a nuestros clientes amplia gama de productos, s&oacute;lido asesoramiento t&eacute;cnico y el respaldo de una trayectoria de m&aacute;s de 25 a&ntilde;os de constante trabajo y crecimiento.</p>
         </div>
       </div>
     </div>
@@ -168,7 +172,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"
   ></script>
-<!-- jQuery & Scripts de la Página  -->
+<!-- jQuery & Scripts de la P&aacute;gina  -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./assets/plugins/glide/dist/glide.min.js"></script>
   <script src="./assets/plugins/glide/dist/glide.js"></script>
@@ -196,3 +200,10 @@
 </body>
 <!-- Fin de contenido del sitio web. -->
 </html>
+
+
+
+
+
+
+

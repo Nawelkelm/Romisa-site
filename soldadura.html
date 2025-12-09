@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
 <!-- Meta tags requeridos. Aptos para SEO-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento."/>
-    <meta name="keywords" content="insumos de soldadura industrial, máquinas de soldar MIG, tipos de electrodos de soldadura, soldadura para acero inoxidable, proveedor de rodamientos, romisa, Romisa, rodamientos, misiones, sociedad anonima, proveedor de rodamientos, rodamientos misiones sociedad anonima, elite, iwis, RP Poleas, MEGADYNE, Gummi, Acoples, TOLLOK, Vibromaq, STM Team, NTH Grilon, repuesto, transmision industrial, industrial, industria, cadenas, pinones, poleas, correas, acoples, conos, motovibradores, reductores, motores, bandas, bandas transportadoras, plastico industrial, ntn, grillon, fluidos y sellados, sellados, neumatica, valvulas, sellados, adhesivos, mangueras, retenes, manometros, termometro, valvulas, bombas, soldadura, soldador, consumibles, alambres, electrodos, varillas, equipos, plasma, corte, fresado, metales, corte de madera, corte de metal, ferreteria, bulloneria, torrnillos, prisioneros, varillas roscadas, tuercas, anillo de seguridad, tirafondos, arandelas planas, grower, medicion, reglas, calibres, escuadras, micrometro, cinta metrica,  pintureria, pintura por litro, pintura en aerosol, pinceles y rodillos, maquinas para pintar, herramientas, herramientas de mano, HERRAMIENTAS HIDRÁULICAS, HERRAMIENTAS ELÉCTRICAS, HERRAMIENTAS NEUMÁTICAS, lubricantes, limpiadores, fijadores, selladores, compuestos, informatica,impresión, componentes, perifericos, almacenamiento, imagen, FLUKE, repuestos, conectividad, seguridad, conectores, audio, posadas, misiones"/>
+    <meta name="description" content="Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la regi&oacute;n, brindando a nuestros clientes amplia gama de productos, s&oacute;lido asesoramiento t&eacute;cnico y el respaldo de una trayectoria de m&aacute;s de 25 a&ntilde;os de constante trabajo y crecimiento."/>
+    <meta name="keywords" content="insumos de soldadura industrial, m&aacute;quinas de soldar MIG, tipos de electrodos de soldadura, soldadura para acero inoxidable, proveedor de rodamientos, romisa, Romisa, rodamientos, misiones, sociedad anonima, proveedor de rodamientos, rodamientos misiones sociedad anonima, elite, iwis, RP Poleas, MEGADYNE, Gummi, Acoples, TOLLOK, Vibromaq, STM Team, NTH Grilon, repuesto, transmision industrial, industrial, industria, cadenas, pinones, poleas, correas, acoples, conos, motovibradores, reductores, motores, bandas, bandas transportadoras, plastico industrial, ntn, grillon, fluidos y sellados, sellados, neumatica, valvulas, sellados, adhesivos, mangueras, retenes, manometros, termometro, valvulas, bombas, soldadura, soldador, consumibles, alambres, electrodos, varillas, equipos, plasma, corte, fresado, metales, corte de madera, corte de metal, ferreteria, bulloneria, torrnillos, prisioneros, varillas roscadas, tuercas, anillo de seguridad, tirafondos, arandelas planas, grower, medicion, reglas, calibres, escuadras, micrometro, cinta metrica,  pintureria, pintura por litro, pintura en aerosol, pinceles y rodillos, maquinas para pintar, herramientas, herramientas de mano, HERRAMIENTAS HIDR&Iacute;ULICAS, HERRAMIENTAS EL&Eacute;CTRICAS, HERRAMIENTAS NEUM&Iacute;TICAS, lubricantes, limpiadores, fijadores, selladores, compuestos, informatica,impresi&oacute;n, componentes, perifericos, almacenamiento, imagen, FLUKE, repuestos, conectividad, seguridad, conectores, audio, posadas, misiones"/>
 <!-- CSS del sitio + FontAwesome para Iconos -->
     <link rel="stylesheet" href="./assets/css/custom.css" />
     <link rel="stylesheet" href="./assets/css/responsive.css">
       <link rel="stylesheet" href="./assets/css/loader.css" />
+    <link rel="stylesheet" href="./assets/css/whatsapp-enhanced.css" />
+    <link rel="stylesheet" href="./assets/css/whatsapp-popup-fix.css" />
     <script src="https://kit.fontawesome.com/a5c59cf2a1.js" crossorigin="anonymous"></script>
 
 <!-- Iconos Favicon -->
@@ -51,10 +53,10 @@
           <div id="contenedor_carga"></div>
           <div id="carga"></div>
       <!-- Inicio Boton Float recordatorio -->
-         <a href="romisa.html#sec-f286" data-page-id="224234906" class="btn-flotante ocultar" id="ocultar">ingresa a nuestra tienda virtual</a>
+         <a href="https://ecommerce.romisa.com.ar/new/public/productos.php" data-page-id="224234906" class="btn-flotante ocultar" id="ocultar" target="_blank">INGRESA A NUESTRA TIENDA VIRTUAL</a>
           <!-- Fin Boton Float recordatorio -->
     <!-- Inicio Boton Float Whatsapp -->
-    <a href="https://api.whatsapp.com/send?phone=5493764280451&text=Hola!!!,%20necesito%20consultar:%20" class="whatsapp-float" target="_blank" id="hiddenWhatsapp">
+    <a href="https://api.whatsapp.com/send?phone=5493764280451&text=Hola!!!,%20necesito%20consultar%20sobre%20sus%20productos:%20" class="whatsapp-float" target="_blank" id="hiddenWhatsapp">
       <i class="fa fa-whatsapp my-float"></i>
       </a>
     <!-- Fin Boton Float WhatsApp -->
@@ -65,7 +67,7 @@
           .then(response => response.text())
           .then(data => {
               document.getElementById('navbar-container').innerHTML = data;
-              jQuery('ul.sf-menu').superfish();  // Inicializar después de cargar el menú
+              jQuery('ul.sf-menu').superfish();  // Inicializar despu&eacute;s de cargar el men&uacute;
           });
   </script>
         <!-- Fin de Barra de Navegacion -->
@@ -587,7 +589,7 @@
 
                     <!---fin de CORTE Y FRESADO DE METALES----->
 
-                    <!-----carousel MÁQUINAS DE CORTE---------->
+                    <!-----carousel M&Iacute;QUINAS DE CORTE---------->
 <div class="container-fluid p-0">
     <div class="mainCarousel3 box11">
         <div id="carouselExampleCaptions" class="carousel carousel-dark slide carousel-fade" data-bs-interval="true" data-bs-ride="carousel" data-bs-pause="false">
@@ -603,7 +605,7 @@
                                 <div class="row">
                                     <div class="mb-3">
                                         <div class="marcas-below-img-text3">
-                                            MÁQUINAS DE CORTE
+                                            M&Iacute;QUINAS DE CORTE
                                         </div>
                                     </div>
                                 </div>
@@ -613,7 +615,7 @@
                                     <div class="marcas-grid-img7"><img src="assets/img/marcas/starret.png"></div>
                                     <div class="marcas-grid-text7">
                                         <h2 class="marcas-text3 hvr-underline-from-center-absolute2">
-                                            <a href="https://www.boschherramientas.com.ar/" target="_blank">VER CATÁLOGO OFICIAL</a>
+                                            <a href="https://www.boschherramientas.com.ar/" target="_blank">VER CAT&Iacute;LOGO OFICIAL</a>
                                         </h2>
                                     </div>
                                 </div>
@@ -632,7 +634,7 @@
                                 <div class="row">
                                     <div class="mb-3">
                                         <div class="marcas-below-img-text3">
-                                            MÁQUINAS DE CORTE
+                                            M&Iacute;QUINAS DE CORTE
                                         </div>
                                     </div>
                                 </div>
@@ -642,7 +644,7 @@
                                     <div class="marcas-grid-img7"><img src="assets/img/marcas/starret.png"></div>
                                     <div class="marcas-grid-text7">
                                         <h2 class="marcas-text3 hvr-underline-from-center-absolute2">
-                                            <a href="https://www.boschherramientas.com.ar/" target="_blank">VER CATÁLOGO OFICIAL</a>
+                                            <a href="https://www.boschherramientas.com.ar/" target="_blank">VER CAT&Iacute;LOGO OFICIAL</a>
                                         </h2>
                                     </div>
                                 </div>
@@ -655,7 +657,7 @@
         </div>
     </div>
 </div>
-<!---fin de MÁQUINAS DE CORTE----->
+<!---fin de M&Iacute;QUINAS DE CORTE----->
 
 <div class="box10">
     <div id="maquinas" class="row separador">
@@ -666,7 +668,7 @@
             <div class="row">
                 <div class="mb-3">
                     <div class="marcas-below-img-text">
-                        MÁQUINAS DE CORTE
+                        M&Iacute;QUINAS DE CORTE
                     </div>
                 </div>
             </div>
@@ -675,7 +677,7 @@
             <div class="marcas-grid-img2"><img src="assets/img/marcas/starret.png"></div>
             <div class="marcas-grid-text3">
                 <h2 class="marcas-text2 hvr-underline-from-center-absolute">
-                    <a href="https://www.boschherramientas.com.ar/" target="_blank">VER CATÁLOGO OFICIAL</a>
+                    <a href="https://www.boschherramientas.com.ar/" target="_blank">VER CAT&Iacute;LOGO OFICIAL</a>
                 </h2>
             </div>
         </div>
@@ -829,7 +831,7 @@
           <div class="tyf-grid">
             <div class="row">
               <div class="col-lg-12">
-                <h6 class="modal-sub-title">Trabajamos con una amplia cartera de transportes para brindarle la mejor atención y entrega.</h6>
+                <h6 class="modal-sub-title">Trabajamos con una amplia cartera de transportes para brindarle la mejor atenci&oacute;n y entrega.</h6>
               </div>
             </div>
             <div class="row">
@@ -840,7 +842,7 @@
                       <li>Tel. 376 - 4483300</li>
                       <li>posadas@rutasmisioneras.net</li>
                       <li>
-                        <a href='https://drrsystemas2.azurewebsites.net/Logistica/NumeroGuia' target='_blank'>Seguimiento de Envío</a>
+                        <a href='https://drrsystemas2.azurewebsites.net/Logistica/NumeroGuia' target='_blank'>Seguimiento de Env&iacute;o</a>
                       </li>"><img src="./assets/img/transporte/rm.jpg" class="productos-img" alt=""></a>
                   </div>
                 </div>
@@ -851,14 +853,14 @@
                       <li>Tel. 3765 250999</li>
                       <li>posadas@credifinexpress.com.ar</li>
                       <li>
-                        <a href='https://www.credifinexpress.com.ar/' target='_blank'>Seguimiento de Envío</a>
+                        <a href='https://www.credifinexpress.com.ar/' target='_blank'>Seguimiento de Env&iacute;o</a>
                       </li>"><img src="./assets/img/transporte/credifin.png" class="productos-img" alt=""></a>
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="products-img-grid">
                     <a href="" class="btn"></a>
-                    <a tabindex="0" class="btn" role="button" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-trigger="focus" title="Mandados El Correcaminos" data-bs-content="<li>Int. Warenycia 173, Apóstoles, Misiones</li>
+                    <a tabindex="0" class="btn" role="button" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-html="true" data-bs-trigger="focus" title="Mandados El Correcaminos" data-bs-content="<li>Int. Warenycia 173, Ap&oacute;stoles, Misiones</li>
                       <li>Tel. 03758 424390</li>"><img src="./assets/img/transporte/correcaminos.jpg" class="productos-img" alt=""></a>
                   </div>
                 </div>
@@ -872,7 +874,7 @@
                       <li>Tel. 0810 555 0002 / 3764 549414</li>
                       <li>info@expresojet.com.ar</li>
                       <li>
-                        <a href='http://expresojet.digitaltres.com.ar/' target='_blank'>Seguimiento de Envío</a>
+                        <a href='http://expresojet.digitaltres.com.ar/' target='_blank'>Seguimiento de Env&iacute;o</a>
                       </li>"><img src="./assets/img/transporte/expresojet.jpg" class="productos-img" alt=""></a>
                   </div>
                 </div>
@@ -924,7 +926,7 @@
           <div class="col-lg-12">
             <div class="clients-area-btn">
               <a href="#" target="_blank" class="btn btn-dark">INICIAR SESI&Oacute;N</a>
-              <a href="#" target="_blank" class="btn btn-secondary">¿NUEVO USUARIO?</a>
+              <a href="#" target="_blank" class="btn btn-secondary">Â¿NUEVO USUARIO?</a>
             </div>
           </div>
         </div>
@@ -942,7 +944,7 @@
       <img src="./assets/img/romisa-logo-original.png" width="200" height="35" alt=""/>
       <div class="row">
         <div class="col-lg-12">
-          <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento.</p>
+          <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la regi&oacute;n, brindando a nuestros clientes amplia gama de productos, s&oacute;lido asesoramiento t&eacute;cnico y el respaldo de una trayectoria de m&aacute;s de 25 a&ntilde;os de constante trabajo y crecimiento.</p>
         </div>
       </div>
     </div>
@@ -1021,7 +1023,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"
   ></script>
-<!-- jQuery & Scripts de la Página  -->
+<!-- jQuery & Scripts de la P&aacute;gina  -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./assets/plugins/glide/dist/glide.min.js"></script>
   <script src="./assets/plugins/glide/dist/glide.js"></script>
@@ -1049,6 +1051,27 @@
     });
   </script>
     <script src="./assets/js/custom.js"></script>
-</body>
+  <!-- Script para efecto del botón flotante -->
+  <script src="assets/js/buttonEffect.js"></script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV3ZHF0P11"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FV3ZHF0P11');
+  </script>
+  
+  <!-- Web Vitals Reporter -->
+  <script defer src="./assets/js/web-vitals-reporter.js"></script>
+
+  </body>
 <!-- Fin de contenido del sitio web. -->
 </html>
+
+
+
+
+
+

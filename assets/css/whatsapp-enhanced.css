@@ -1,0 +1,286 @@
+/* Estilos mejorados para el botón de WhatsApp */
+
+/* Estilo base para el botón flotante */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999; /* Valor menor que el pop-up (1030) */
+    display: flex !important; /* Siempre visible y usando flexbox */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative; /* Aseguramos que tenga posición relativa para el posicionamiento absoluto de la notificación */
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp-float .my-float {
+    margin: 0; /* Eliminar márgenes para centrar correctamente */
+}
+
+/* Chat bubble base */
+.whatsapp-chat-bubble {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    background: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 15px;
+    z-index: 998; /* Valor menor que el botón y que el pop-up */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    border-bottom-right-radius: 5px;
+}
+
+/* Flecha de la burbuja apuntando al botón */
+.whatsapp-chat-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 24px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    transform: rotate(45deg);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animación destacada para el botón */
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Animación más pronunciada para el botón */
+.bounce-animation, .attention-animation {
+    animation: bounce 1s cubic-bezier(.28, .84, .42, 1) infinite;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Mejoras para el chat bubble */
+.whatsapp-chat-bubble {
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-chat-bubble.show {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.whatsapp-chat-bubble .btn-whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-chat-bubble .btn-whatsapp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-chat-bubble .btn-whatsapp i {
+    margin-left: 5px;
+}
+
+/* Estilo para el contador de notificaciones */
+.whatsapp-notification {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff3b30;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(0) translate(30%, -30%); /* Ajustamos la posición usando transform */
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-notification.show {
+    opacity: 1;
+    transform: scale(1) translate(30%, -30%);
+    animation: notification-pulse 2s infinite;
+}
+
+@keyframes notification-pulse {
+    0% { transform: scale(1) translate(30%, -30%); }
+    50% { transform: scale(1.2) translate(30%, -30%); }
+    100% { transform: scale(1) translate(30%, -30%); }
+}
+
+/* Estilo para el botón de cierre */
+.chat-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.chat-close-btn:hover {
+    color: #555;
+}
+
+/* Estilos para el encabezado del chat */
+.chat-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.chat-header img {
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.chat-header strong {
+    font-size: 15px;
+    color: #075e54;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.online-status {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.online-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Estilos para el mensaje del chat */
+.chat-message {
+    margin-bottom: 15px;
+}
+
+.chat-message strong {
+    color: #075e54;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.chat-message p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* Estilo para el botón de WhatsApp */
+.btn-whatsapp {
+    background-color: #25d366;
+    color: white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none !important;
+    box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    margin: 10px 0;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Estilo para el pie del chat */
+.chat-footer {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Texto promocional para generar confianza */
+.chat-prompt {
+    margin-top: 10px;
+    color: #4a4a4a;
+    font-style: italic;
+}
+
+/* Efecto de brillo para destacar */
+.highlight-animation {
+    animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}

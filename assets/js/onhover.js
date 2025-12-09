@@ -53,10 +53,6 @@ $(function () { // Shorthand for $(document).ready()
     });
   };
 
-  const funcion2 = () => {
-    alert('Que tenga un Excelente día!');
-  };
-
   const funcion3 = () => {
     boxesData.forEach(({ box, boxi }) => {
       handleHoverMobile(box, boxi);
@@ -65,7 +61,6 @@ $(function () { // Shorthand for $(document).ready()
 
   const updateBehavior = () => {
     anchoVentana = $window.width();
-    console.log(anchoVentana);
 
     // Remove existing event handlers before applying new ones
     boxesData.forEach(({ box, boxi }) => {
@@ -75,8 +70,6 @@ $(function () { // Shorthand for $(document).ready()
 
     if (anchoVentana > 1000) {
       funcion1();
-    } else if (anchoVentana > 750 && anchoVentana < 1000) {
-      funcion2();
     } else {
       funcion3();
     }

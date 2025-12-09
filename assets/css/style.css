@@ -1,3 +1,7 @@
+/* Google Fonts - Deben estar al inicio del archivo */
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,100&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -166,9 +170,8 @@ button {
     display: none;
   }
 }
-@import 'compass/css3';
 
-@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+/* Nota: @import 'compass/css3' eliminado - es una librería de Sass que no funciona en CSS puro */
 
 body {
   background: white;
@@ -184,7 +187,8 @@ body {
   margin: 0 auto;
   background: white;
 }
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,100&display=swap');
+
+/* Font Kanit ya importada al inicio del archivo */
 
 .styleglobal {
   margin: -278px 140px 40px auto;

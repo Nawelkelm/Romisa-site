@@ -1,6 +1,43 @@
 <?php
   
 if($_POST) {
+    // Validar reCAPTCHA
+    $recaptcha_secret = "6Lc0iQ8sAAAAAPSgwRU0l2qumL6Aca4_SkCxdcmX";
+    $recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
+    
+    // Verificar que el reCAPTCHA fue completado
+    if (empty($recaptcha_response)) {
+        header("Location: contacto.html?error=captcha");
+        exit;
+    }
+    
+    // Verificar el reCAPTCHA con Google
+    $verify_url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = array(
+        'secret' => $recaptcha_secret,
+        'response' => $recaptcha_response,
+        'remoteip' => $_SERVER['REMOTE_ADDR']
+    );
+    
+    $options = array(
+        'http' => array(
+            'method' => 'POST',
+            'header' => 'Content-Type: application/x-www-form-urlencoded',
+            'content' => http_build_query($data)
+        )
+    );
+    
+    $context = stream_context_create($options);
+    $verify_response = file_get_contents($verify_url, false, $context);
+    $response_data = json_decode($verify_response);
+    
+    // Si la verificación falla, redirigir con error
+    if (!$response_data->success) {
+        header("Location: contacto.html?error=captcha_invalid");
+        exit;
+    }
+    
+    // Continuar con el procesamiento del formulario
     $nombre_cliente = "";
     $nombre_solicitante = "";
     $email_cliente = "";

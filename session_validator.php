@@ -1,24 +1,42 @@
 <?php
-session_start();
-// Actualizar tiempo de actividad
-$_SESSION['last_activity'] = time();
+/**
+ * Validador de Sesión ROMISA
+ * Usa el middleware de autenticación centralizado
+ */
 
-// Responder con éxito si la sesión es válida
-echo json_encode(['status' => 'success', 'user' => $_SESSION['usuario']]);
-exit();
+header('Content-Type: application/json; charset=utf-8');
 
-// Si no hay sesión, responder con error
-if (!isset($_SESSION['usuario'])) {
-    echo json_encode(['status' => 'error', 'message' => 'No autorizado']);
-    exit();
-}                                
+require_once 'auth_middleware.php';
 
-// Verificar inactividad (30 minutos)
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 1800)) {
-    session_unset();
-    session_destroy();
-    echo json_encode(['status' => 'expired', 'message' => 'Sesión expirada']);
+iniciarSesionSegura();
+
+// Verificar si hay sesión activa
+if (!estaAutenticado()) {
+    // Determinar si expiró o nunca existió
+    if (isset($_SESSION['logged_in'])) {
+        echo json_encode([
+            'status' => 'expired', 
+            'message' => 'Sesión expirada por inactividad'
+        ]);
+    } else {
+        echo json_encode([
+            'status' => 'error', 
+            'message' => 'No autorizado'
+        ]);
+    }
     exit();
 }
 
+// Obtener información del usuario
+$usuario = obtenerUsuarioActual();
+
+// Responder con éxito
+echo json_encode([
+    'status' => 'success', 
+    'user' => $usuario['username'],
+    'rol' => $usuario['rol'],
+    'es_admin' => esAdmin(),
+    'es_editor' => esEditor()
+]);
+exit();
 ?>

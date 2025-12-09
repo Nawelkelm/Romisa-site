@@ -11,7 +11,11 @@ const config = {
   },
 };
 
-new Glide('.glide', config).mount();
+// Only initialize Glide if the element exists
+const glideElement = document.querySelector('.glide');
+if (glideElement) {
+  new Glide('.glide', config).mount();
+}
 
 //   Mostrar logo pequeño al scrollear hacia arriba
 $(window).scroll(function () {
@@ -98,10 +102,13 @@ const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
 );
 const marqueeContent = document.querySelector('ul.marquee-content');
 
-root.style.setProperty('--marquee-elements', marqueeContent.children.length);
+// Solo ejecutar si existe el elemento marquee en la página
+if (marqueeContent) {
+  root.style.setProperty('--marquee-elements', marqueeContent.children.length);
 
-for (let i = 0; i < marqueeElementsDisplayed; i++) {
-  marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+  for (let i = 0; i < marqueeElementsDisplayed; i++) {
+    marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+  }
 }
 //button recordatorio
 

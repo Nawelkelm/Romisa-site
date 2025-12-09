@@ -1,0 +1,19 @@
+/* Estilos para arreglar la interacción entre el botón de WhatsApp y el popup */
+
+/* Clase para ocultar el botón de WhatsApp cuando se muestra el popup */
+.whatsapp-hidden {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Reforzar el z-index del popup para asegurar que esté por encima de todo */
+.pop-up {
+    z-index: 1050 !important; /* Mayor que cualquier otro elemento en la página */
+}
+
+/* Asegurar que el fondo negro del popup cubra todo */
+.pop-up.show {
+    visibility: visible !important;
+}

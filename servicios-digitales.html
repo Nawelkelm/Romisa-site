@@ -1,0 +1,1326 @@
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Propuesta de valor: Sistema de Noticias, Gestión de PDFs y Control de Usuarios para ROMISA. ROI, ahorro de costos y autonomía operativa.">
+    <title>Propuesta de Valor - Sistemas Digitales | ROMISA</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <link rel="stylesheet" href="./assets/css/loader.css">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a5c59cf2a1.js" crossorigin="anonymous"></script>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/img/android-chrome-256x256.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --romisa-primary: #1a1a2e;
+            --romisa-secondary: #16213e;
+            --romisa-accent: #e94560;
+            --romisa-light: #f8f9fa;
+            --romisa-gold: #f4a261;
+            --gradient-primary: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --gradient-accent: linear-gradient(135deg, #e94560 0%, #f4a261 100%);
+            --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --gradient-info: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--romisa-light);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--gradient-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(233, 69, 96, 0.2);
+            color: var(--romisa-accent);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero-title span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--romisa-accent);
+        }
+
+        .hero-stat-label {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .hero-card-title {
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-card-text {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .floating-card {
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-card:nth-child(1) { animation-delay: 0s; }
+        .floating-card:nth-child(2) { animation-delay: 0.5s; }
+        .floating-card:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Section Titles */
+        .section-badge {
+            display: inline-block;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--romisa-primary);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        /* System Cards */
+        .system-section {
+            padding: 100px 0;
+        }
+
+        .system-section:nth-child(even) {
+            background: white;
+        }
+
+        .system-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .system-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+        }
+
+        .system-card-header {
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .system-card-header.news { background: var(--gradient-accent); }
+        .system-card-header.pdf { background: var(--gradient-info); }
+        .system-card-header.users { background: var(--gradient-purple); }
+
+        .system-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .system-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .system-desc {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .system-card-body {
+            padding: 40px;
+        }
+
+        /* Benefit Items */
+        .benefit-category {
+            margin-bottom: 30px;
+        }
+
+        .benefit-category-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--romisa-primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .benefit-category-title i {
+            color: var(--romisa-accent);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-check {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            background: var(--gradient-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.7rem;
+        }
+
+        .benefit-text {
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .benefit-text strong {
+            color: var(--romisa-primary);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--gradient-primary);
+            padding: 100px 0;
+            color: white;
+        }
+
+        .comparison-table {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .comparison-table table {
+            width: 100%;
+            margin: 0;
+        }
+
+        .comparison-table th {
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            font-weight: 700;
+            text-align: left;
+            border: none;
+        }
+
+        .comparison-table td {
+            padding: 18px 20px;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            vertical-align: middle;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table .aspect {
+            font-weight: 600;
+            color: var(--romisa-gold);
+        }
+
+        .comparison-before {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .comparison-after {
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        /* Metrics Section */
+        .metrics-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .metric-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: var(--romisa-light);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            background: white;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .metric-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 20px;
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+
+        /* Use Cases */
+        .use-cases-section {
+            padding: 100px 0;
+            background: var(--romisa-light);
+        }
+
+        .use-case-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            height: 100%;
+            border-left: 4px solid var(--romisa-accent);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .use-case-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .use-case-number {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-accent);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .use-case-title {
+            font-weight: 700;
+            color: var(--romisa-primary);
+            margin-bottom: 10px;
+        }
+
+        .use-case-desc {
+            color: #6c757d;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .use-case-action {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--romisa-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Database Benefits */
+        .database-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+            color: white;
+        }
+
+        .database-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .database-feature:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateX(10px);
+        }
+
+        .database-feature-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .database-feature-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .database-feature-text {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--gradient-accent);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .btn-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background: white;
+            color: var(--romisa-accent);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            color: var(--romisa-accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 991.98px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .hero-stats {
+                gap: 20px;
+            }
+            .hero-stat-number {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .hero-section {
+                padding: 80px 0;
+                min-height: auto;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-stats {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-visual {
+                margin-top: 50px;
+            }
+            .comparison-table {
+                overflow-x: auto;
+            }
+            .comparison-table table {
+                min-width: 600px;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body onload="contenedorCarga();">
+
+    <div id="contenedor_carga"></div>
+    <div id="carga"></div>
+
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <span class="hero-badge">
+                        <i class="fas fa-briefcase me-2"></i>Propuesta de Valor
+                    </span>
+                    <h1 class="hero-title">
+                        Inversión en <span>Autonomía y Eficiencia</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Sistema que permite al equipo de ROMISA publicar contenido sin esperar disponibilidad 
+                        ni interrumpir otras tareas. Más agilidad para promocionar, informar y posicionar la marca.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">0</div>
+                            <div class="hero-stat-label">Interrupciones necesarias</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">5 min</div>
+                            <div class="hero-stat-label">Para publicar cualquier novedad</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">∞</div>
+                            <div class="hero-stat-label">Actualizaciones incluidas</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-visual">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="hero-card floating-card">
+                                <div class="hero-card-icon" style="background: var(--gradient-accent);">
+                                    <i class="fas fa-hand-holding-usd"></i>
+                                </div>
+                                <div class="hero-card-title">Ahorro</div>
+                                <div class="hero-card-text">Sin costo de tiempo por cada cambio</div>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-5">
+                            <div class="hero-card floating-card">
+                                <div class="hero-card-icon" style="background: var(--gradient-info);">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="hero-card-title">Autonomía</div>
+                                <div class="hero-card-text">Control total interno</div>
+                            </div>
+                        </div>
+                        <div class="col-6 offset-3">
+                            <div class="hero-card floating-card">
+                                <div class="hero-card-icon" style="background: var(--gradient-purple);">
+                                    <i class="fas fa-tachometer-alt"></i>
+                                </div>
+                                <div class="hero-card-title">Velocidad</div>
+                                <div class="hero-card-text">Reacción inmediata de los clientes</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema de Noticias -->
+    <section class="system-section" id="noticias">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge">Módulo 1</span>
+                <h2 class="section-title">Sistema de Novedades</h2>
+                <p class="section-subtitle">Publicar contenido sin necesidad de subir archivos al cPanel. El equipo puede actuar cuando lo necesite.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="system-card h-100 fade-in-up">
+                        <div class="system-card-header news">
+                            <i class="fas fa-clock system-icon"></i>
+                            <h3 class="system-title">Ahorro de Tiempo</h3>
+                            <p class="system-desc">Cada actualización que antes llevaba días, ahora toma minutos</p>
+                        </div>
+                        <div class="system-card-body">
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Sin interrupciones</strong> - No es necesario esperar a que alguien suba archivos al cPanel</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Correcciones inmediatas</strong> - Un error de tipeo se corrige en segundos, sin molestar a nadie</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Autonomía controlada</strong> - El equipo puede publicar, pero el contenido siempre pasa por aprobación</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Más tiempo para vender</strong> - El equipo comercial puede generar contenido sin depender de IT</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Reacción inmediata</strong> - Promociones y novedades publicadas cuando se necesitan, no cuando hay disponibilidad</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="system-card h-100 fade-in-up">
+                        <div class="system-card-header news">
+                            <i class="fas fa-chart-line system-icon"></i>
+                            <h3 class="system-title">Impacto en Ventas</h3>
+                            <p class="system-desc">Una web activa genera más consultas y cierra más ventas</p>
+                        </div>
+                        <div class="system-card-body">
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Reacción inmediata</strong> - Festo lanza producto → ROMISA lo publica el mismo día</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Promociones al instante</strong> - ofertas o liquidaciones visible en minutos, no en días</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Ventaja competitiva</strong> - Mientras la competencia espera, ROMISA ya publicó</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Más visitas = Más ventas</strong> - Google premia las webs que se actualizan seguido</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Imagen profesional</strong> - Clientes ven una empresa activa y actualizada</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema de PDFs -->
+    <section class="system-section" id="pdfs">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge">Módulo 2</span>
+                <h2 class="section-title">Gestión de PDFs</h2>
+                <p class="section-subtitle">Catálogos y fichas técnicas disponibles 24/7. El cliente se informa solo, el vendedor cierra.</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="system-card h-100 fade-in-up">
+                        <div class="system-card-header pdf">
+                            <i class="fas fa-users-cog system-icon"></i>
+                            <h3 class="system-title">Eficiencia Operativa</h3>
+                            <p class="system-desc">Menos trabajo repetitivo, más tiempo para vender</p>
+                        </div>
+                        <div class="system-card-body">
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Menos consultas repetitivas</strong> - "¿Me mandás el catálogo?" → Ya está en la web</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Vendedores más productivos</strong> - En vez de buscar PDFs, cierran ventas</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Información centralizada</strong> - Un solo lugar para todos los catálogos</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Actualización inmediata</strong> - Nuevo catálogo de proveedor → Online en 2 minutos</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Sin impresiones</strong> - Ahorro en papel, tinta y tiempo de armado</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="system-card h-100 fade-in-up">
+                        <div class="system-card-header pdf">
+                            <i class="fas fa-funnel-dollar system-icon"></i>
+                            <h3 class="system-title">Acelerador de Ventas</h3>
+                            <p class="system-desc">Cliente informado = Decisión más rápida = Venta cerrada</p>
+                        </div>
+                        <div class="system-card-body">
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Cliente se auto-educa</strong> - Llega a la consulta sabiendo lo que quiere</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Disponible 24/7</strong> - El cliente investiga a las 11pm, llama a las 9am listo para comprar</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Herramienta de venta</strong> - Vendedor en visita muestra catálogo en tablet</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Links compartibles</strong> - WhatsApp con link directo al PDF específico</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Menos errores</strong> - Cliente ve especificaciones exactas, menos devoluciones</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sistema de Usuarios -->
+    <section class="system-section" id="usuarios">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge">Módulo 3</span>
+                <h2 class="section-title">Control de Usuarios</h2>
+                <p class="section-subtitle">Protección de información sensible y control de quién accede a qué</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-5 mb-4">
+                    <div class="system-card h-100 fade-in-up">
+                        <div class="system-card-header users">
+                            <i class="fas fa-shield-alt system-icon"></i>
+                            <h3 class="system-title">Protección del Negocio</h3>
+                            <p class="system-desc">Información comercial segura</p>
+                        </div>
+                        <div class="system-card-body">
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Acceso controlado</strong> - Solo personal autorizado modifica contenido</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Niveles de permiso</strong> - Definir quién puede qué cosa</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Empleado se va</strong> - Se elimina acceso inmediatamente</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Sin riesgos</strong> - Nadie externo tiene acceso a los sistemas</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Sesiones seguras</strong> - Cierre automático por inactividad</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 mb-4">
+                    <div class="system-card h-100 fade-in-up">
+                        <div class="system-card-header users">
+                            <i class="fas fa-building system-icon"></i>
+                            <h3 class="system-title">Escalabilidad</h3>
+                            <p class="system-desc">Preparado para crecer</p>
+                        </div>
+                        <div class="system-card-body">
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Múltiples administradores</strong> - Más de una persona puede gestionar</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Delegación segura</strong> - Dar acceso sin dar contraseña maestra</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Futuro: Clientes VIP</strong> - Posibilidad de área exclusiva para distribuidores</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Futuro: Listas de precios</strong> - Precios mayoristas solo para autorizados</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-check"><i class="fas fa-check"></i></div>
+                                <div class="benefit-text"><strong>Base preparada</strong> - Infraestructura lista para nuevas funciones</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge" style="background: white; color: var(--romisa-accent);">El Cambio Real</span>
+                <h2 class="section-title" style="color: white;">Antes vs Después</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Cómo cambia la operación diaria de ROMISA</p>
+            </div>
+            
+            <div class="comparison-table fade-in-up">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Situación</th>
+                            <th style="width: 37.5%;">❌ Antes (Dependencia)</th>
+                            <th style="width: 37.5%;">✅ Ahora (Autonomía)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="aspect">Publicar promoción</td>
+                            <td class="comparison-before">Pedir que suban archivos al cPanel → Esperar disponibilidad → Días de demora</td>
+                            <td class="comparison-after">Abrir gestor → Escribir → Publicar (5 minutos, sin molestar a nadie)</td>
+                        </tr>
+                        <tr>
+                            <td class="aspect">Corregir un error</td>
+                            <td class="comparison-before">Avisar → Esperar a que puedan acceder al cPanel → Corregir</td>
+                            <td class="comparison-after">Editar → Guardar (30 segundos, sin interrumpir)</td>
+                        </tr>
+                        <tr>
+                            <td class="aspect">Subir catálogo nuevo</td>
+                            <td class="comparison-before">Enviar PDF → Esperar que lo suban al hosting → Días</td>
+                            <td class="comparison-after">Arrastrar PDF → Publicar (1 minuto)</td>
+                        </tr>
+                        <tr>
+                            <td class="aspect">Cliente pide ficha técnica</td>
+                            <td class="comparison-before">Buscar PDF en la PC → Adjuntar email → Enviar</td>
+                            <td class="comparison-after">Copiar link de la web → Pegar en WhatsApp (10 segundos)</td>
+                        </tr>
+                        <tr>
+                            <td class="aspect">Festo lanza producto</td>
+                            <td class="comparison-before">Esperar a coordinar subida → Semanas de demora</td>
+                            <td class="comparison-after">Noticia + PDF publicados el mismo día</td>
+                        </tr>
+                        <tr>
+                            <td class="aspect">Interrupciones al año</td>
+                            <td class="comparison-before">Cada actualización requiere coordinar y esperar</td>
+                            <td class="comparison-after">El equipo publica de forma autónoma, sin interrumpir otras tareas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics -->
+    <section class="metrics-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge">Números Concretos</span>
+                <h2 class="section-title">El Tiempo que se Gana</h2>
+                <p class="section-subtitle">El impacto medible en la operación diaria de ROMISA</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="metric-card fade-in-up">
+                        <div class="metric-icon" style="background: var(--gradient-accent);">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="metric-value">0</div>
+                        <div class="metric-label">Interrupciones para publicar contenido</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="metric-card fade-in-up">
+                        <div class="metric-icon" style="background: var(--gradient-info);">
+                            <i class="fas fa-stopwatch"></i>
+                        </div>
+                        <div class="metric-value">5 min</div>
+                        <div class="metric-label">Tiempo para publicar una novedad</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="metric-card fade-in-up">
+                        <div class="metric-icon" style="background: var(--gradient-success);">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div class="metric-value">∞</div>
+                        <div class="metric-label">Actualizaciones incluidas por año</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="metric-card fade-in-up">
+                        <div class="metric-icon" style="background: var(--gradient-purple);">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Control interno de la web</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Database Benefits -->
+    <section class="database-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <span class="section-badge" style="background: white; color: var(--romisa-accent);">Único Requisito</span>
+                    <h2 class="section-title" style="color: white;">Base de Datos en su Propio Hosting</h2>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; line-height: 1.8;">
+                        El sistema utiliza una base de datos MySQL dentro del cPanel que ROMISA ya tiene contratado. 
+                        Solo se necesita <strong>crear la base de datos una vez</strong> para que todo funcione.
+                    </p>
+                </div>
+                <div class="col-lg-7">
+                    <div class="database-feature fade-in-up">
+                        <div class="database-feature-icon"><i class="fas fa-check-double"></i></div>
+                        <div>
+                            <div class="database-feature-title">Configuración única</div>
+                            <div class="database-feature-text">Se crea la base de datos una vez desde el cPanel. Después funciona automáticamente.</div>
+                        </div>
+                    </div>
+                    <div class="database-feature fade-in-up">
+                        <div class="database-feature-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <div>
+                            <div class="database-feature-title">Sin costo adicional</div>
+                            <div class="database-feature-text">Ya está incluido en el hosting que ROMISA paga. No hay gasto extra.</div>
+                        </div>
+                    </div>
+                    <div class="database-feature fade-in-up">
+                        <div class="database-feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <div class="database-feature-title">Backup automático</div>
+                            <div class="database-feature-text">Los datos se respaldan automáticamente. Si algo falla, se recupera sin problemas.</div>
+                        </div>
+                    </div>
+                    <div class="database-feature fade-in-up">
+                        <div class="database-feature-icon"><i class="fas fa-lock"></i></div>
+                        <div>
+                            <div class="database-feature-title">Seguridad empresarial</div>
+                            <div class="database-feature-text">Encriptación y protección de nivel profesional. Datos seguros.</div>
+                        </div>
+                    </div>
+                    <div class="database-feature fade-in-up">
+                        <div class="database-feature-icon"><i class="fas fa-globe"></i></div>
+                        <div>
+                            <div class="database-feature-title">Acceso desde cualquier lugar</div>
+                            <div class="database-feature-text">El equipo puede gestionar contenido desde la oficina, casa o donde estén.</div>
+                        </div>
+                    </div>
+                    <div class="database-feature fade-in-up">
+                        <div class="database-feature-icon"><i class="fas fa-server"></i></div>
+                        <div>
+                            <div class="database-feature-title">Todo en su hosting</div>
+                            <div class="database-feature-text">Los datos quedan en el servidor de ROMISA. Sin depender de servicios externos.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-badge">Escenarios Reales</span>
+                <h2 class="section-title">Situaciones del Día a Día</h2>
+                <p class="section-subtitle">Cómo el sistema resuelve problemas concretos de ROMISA</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="use-case-card fade-in-up">
+                        <div class="use-case-number">1</div>
+                        <h4 class="use-case-title">Festo lanza el MS6-LWS</h4>
+                        <p class="use-case-desc">Antes: Esperar a que suban los archivos al cPanel. Ahora: El equipo lo publica el mismo día sin molestar a nadie.</p>
+                        <div class="use-case-action">
+                            <i class="fas fa-arrow-right"></i> Ser primeros en el mercado
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="use-case-card fade-in-up">
+                        <div class="use-case-number">2</div>
+                        <h4 class="use-case-title">Liquidación de fin de año</h4>
+                        <p class="use-case-desc">Antes: Esperar disponibilidad para subir la promo. Ahora: Publicada en 5 minutos y compartida por WhatsApp.</p>
+                        <div class="use-case-action">
+                            <i class="fas fa-arrow-right"></i> Mover stock rápido
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="use-case-card fade-in-up">
+                        <div class="use-case-number">3</div>
+                        <h4 class="use-case-title">Error en una publicación</h4>
+                        <p class="use-case-desc">Antes: Avisar y esperar a que puedan corregirlo. Ahora: El equipo lo corrige en 30 segundos sin interrumpir.</p>
+                        <div class="use-case-action">
+                            <i class="fas fa-arrow-right"></i> Sin demoras por errores menores
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="use-case-card fade-in-up">
+                        <div class="use-case-number">4</div>
+                        <h4 class="use-case-title">Cliente pide catálogo</h4>
+                        <p class="use-case-desc">Antes: Buscar PDF en la PC, adjuntar email. Ahora: Copiar link de la web, pegar en WhatsApp. 10 segundos.</p>
+                        <div class="use-case-action">
+                            <i class="fas fa-arrow-right"></i> Respuesta instantánea
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="use-case-card fade-in-up">
+                        <div class="use-case-number">5</div>
+                        <h4 class="use-case-title">Nuevo catálogo de proveedor</h4>
+                        <p class="use-case-desc">Antes: Enviar PDF y esperar que lo suban al hosting. Ahora: Arrastrar y publicar en 1 minuto.</p>
+                        <div class="use-case-action">
+                            <i class="fas fa-arrow-right"></i> Siempre actualizado
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="use-case-card fade-in-up">
+                        <div class="use-case-number">6</div>
+                        <h4 class="use-case-title">Más contenido = Mejor SEO</h4>
+                        <p class="use-case-desc">Con autonomía para publicar, el equipo genera más contenido. Google premia las webs activas con mejor posicionamiento.</p>
+                        <div class="use-case-action">
+                            <i class="fas fa-arrow-right"></i> Mayor visibilidad online
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Note -->
+    <section style="background: linear-gradient(135deg, #1a5f3c 0%, #2d8a57 100%); padding: 60px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; text-align: center; border: 2px solid rgba(255,255,255,0.2);">
+                        <i class="fas fa-user-shield" style="font-size: 3rem; color: #90EE90; margin-bottom: 20px;"></i>
+                        <h3 style="color: white; font-size: 1.8rem; margin-bottom: 20px;">El Control Sigue Siendo Tuyo</h3>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 1.15rem; line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                            El sistema da <strong>autonomía al equipo para generar contenido</strong>, pero vos seguís teniendo 
+                            el control total. Podés revisar todo lo que se publica, eliminar lo que no corresponde, y definir 
+                            quién tiene acceso a qué. <strong>La diferencia es que ya no te interrumpen</strong> cada vez que 
+                            hay que subir algo a la web.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Resumen Ejecutivo</h2>
+            <p class="cta-subtitle" style="max-width: 800px; margin: 0 auto 30px;">
+                <strong>Autonomía con control</strong>: el equipo puede generar contenido y posicionar la marca 
+                sin necesidad de esperar ni interrumpir. Todo el contenido sigue pasando por aprobación.
+            </p>
+            <div class="row justify-content-center mb-4">
+                <div class="col-auto">
+                    <div class="d-flex flex-wrap justify-content-center gap-4" style="font-size: 1.1rem;">
+                        <span><i class="fas fa-check-circle me-2"></i>3 sistemas integrados</span>
+                        <span><i class="fas fa-check-circle me-2"></i>Sin subir archivos al cPanel</span>
+                        <span><i class="fas fa-check-circle me-2"></i>Control de contenido mantenido</span>
+                        <span><i class="fas fa-check-circle me-2"></i>Listo para usar</span>
+                    </div>
+                </div>
+            </div>
+            <p style="opacity: 0.9; margin-bottom: 30px; font-style: italic;">
+                <strong>Único requisito:</strong> Crear una base de datos MySQL en el cPanel (5 minutos, una sola vez).
+            </p>
+            <div style="background: rgba(255,255,255,0.1); border-radius: 15px; padding: 25px; max-width: 600px; margin: 0 auto;">
+                <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 1rem;">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>El sistema ya está desarrollado.</strong> Solo falta crear la base de datos en el hosting propio para habilitarlo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid footer-container">
+            <div class="row">
+                <div class="col col-lg-3 mt-3" style="border-right: 1px solid #7D8588;">
+                    <img src="./assets/img/romisa-logo-original.png" width="200" height="35" alt="ROMISA Logo"/>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-md-3 col-12 mt-3">
+                    <p class="footerMainText">Newsletter</p>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="footerContactText">Suscríbase a nuestro portal de noticias y reciba las últimas novedades en productos.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form onsubmit="return doSubscribe();">
+                            <div class="mb-3">
+                                <input type="email" id="subscriberEmail" class="newsletter-control" placeholder="E-mail" required>
+                            </div>
+                            <div class="mb-3">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn btn-primaryg">Suscribirse</button>
+                                    <p id="subscribe-message"></p>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col col-lg-3 mt-3 text-end" style="border-right: 1px solid #7D8588;">
+                    <p class="footerMainText">Navegación</p>
+                    <p class="footerSubLinks"><a href="index.html">INICIO</a></p>
+                    <p class="footerSubLinks"><a href="nosotros.html">QUIÉNES SOMOS</a></p>
+                    <p class="footerSubLinks"><a href="divisiones.html">DIVISIONES</a></p>
+                    <p class="footerSubLinks"><a href="contacto.html">CONTACTO</a></p>
+                    <p class="footerSubLinks"><a href="novedades.html">NOVEDADES</a></p>
+                </div>
+                <div class="col col-lg-3 mt-3">
+                    <p class="footerMainText">Contacto</p>
+                    <div class="row">
+                        <p class="footerContactText"><i class="fas fa-map-marker-alt" style="color: #000000"></i> Av. Lavalle 1569 | Posadas, Misiones</p>
+                        <p class="footerContactText"><i class="fas fa-envelope" style="color: #000000"></i> ventas@romisa.com.ar</p>
+                        <p class="footerContactText"><i class="fas fa-phone" style="color: #000000"></i> +54 (3764) 457900 Líneas Rotativas</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="footer-social-media">
+                        <div class="col-lg-2">
+                            <a href="https://www.facebook.com/romisaferreteriaindustrial"><i class="fab fa-facebook-f fa-lg" style="color: #000000"></i></a>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="https://www.instagram.com/romisaferreteriaindustrial"><i class="fab fa-instagram fa-lg" style="color: #000000"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-footer">
+                <p class="bottom-footer-text">&copy; ROMISA <script>document.write(new Date().getFullYear())</script> - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/plugins/superfish/superfish.js"></script>
+    <script src="./assets/js/sticky-header.js"></script>
+    <script src="./assets/js/custom.js"></script>
+
+    <script>
+        // Load navbar
+        fetch('navbarromisa.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                jQuery('ul.sf-menu').superfish();
+            });
+
+        // Loader function
+        function contenedorCarga() {
+            var contenedor = document.getElementById('contenedor_carga');
+            var conteiner = document.getElementById('carga');
+            contenedor.style.visibility = 'hidden';
+            contenedor.style.opacity = '0';
+            conteiner.style.visibility = 'hidden';
+            conteiner.style.opacity = '0';
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Superfish init
+        jQuery(document).ready(function() {
+            jQuery('ul.sf-menu').superfish();
+        });
+    </script>
+</body>
+</html>

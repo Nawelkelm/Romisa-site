@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const inputs = stepElement.querySelectorAll("input[required], select[required], textarea[required]");
         let valid = true;
 
-        inputs.forEach((input) => {
+        inputs.forEach((input) => { 
             if (!input.value.trim()) {
                 input.classList.add("error"); // Resalta el campo vacío
                 valid = false;

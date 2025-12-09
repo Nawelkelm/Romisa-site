@@ -1,0 +1,30 @@
+# Robots.txt para ROMISA - www.romisa.com.ar
+# Optimizado para SEO
+
+User-agent: *
+Allow: /
+
+# Bloquear archivos administrativos y de sistema
+Disallow: /admin-noticias.html
+Disallow: /login-noticias.html
+Disallow: /login-lista.html
+Disallow: /gestor.html
+Disallow: /usuarios.html
+Disallow: /altacliente.html
+Disallow: /altacuentascorrientes.html
+Disallow: /legajo-impositivo.html
+Disallow: /recibido.html
+Disallow: /recibidoac.html
+Disallow: /recibidocc.html
+Disallow: /*.php$
+
+# Permitir archivos de estilos y scripts
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+
+# Sitemap
+Sitemap: https://www.romisa.com.ar/sitemap.xml
+
+# Crawl-delay para no sobrecargar el servidor
+Crawl-delay: 1

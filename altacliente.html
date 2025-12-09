@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Meta tags requeridos. Aptos para SEO-->
@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="title" content="RO.MI.SA - Formulario de alta de clientes"/>
     <meta name="description" content="Date de Alta con nosotros y disfruta de los beneficios de ser nuestro Cliente"/>
-    <meta name="keywords" content="proveedor de rodamientos, romisa, Romisa, rodamientos, misiones, sociedad anonima, proveedor de rodamientos, rodamientos misiones sociedad anonima, elite, iwis, RP Poleas, MEGADYNE, Gummi, Acoples, TOLLOK, Vibromaq, STM Team, NTH Grilon, repuesto, transmision industrial, industrial, industria, cadenas, pinones, poleas, correas, acoples, conos, motovibradores, reductores, motores, bandas, bandas transportadoras, plastico industrial, ntn, grillon, fluidos y sellados, sellados, neumatica, valvulas, sellados, adhesivos, mangueras, retenes, manometros, termometro, valvulas, bombas, soldadura, soldador, consumibles, alambres, electrodos, varillas, equipos, plasma, corte, fresado, metales, corte de madera, corte de metal, ferreteria, bulloneria, torrnillos, prisioneros, varillas roscadas, tuercas, anillo de seguridad, tirafondos, arandelas planas, grower, medicion, reglas, calibres, escuadras, micrometro, cinta metrica,  pintureria, pintura por litro, pintura en aerosol, pinceles y rodillos, maquinas para pintar, herramientas, herramientas de mano, HERRAMIENTAS HIDRÁULICAS" />
+    <meta name="keywords" content="proveedor de rodamientos, romisa, Romisa, rodamientos, misiones, sociedad anonima, proveedor de rodamientos, rodamientos misiones sociedad anonima, elite, iwis, RP Poleas, MEGADYNE, Gummi, Acoples, TOLLOK, Vibromaq, STM Team, NTH Grilon, repuesto, transmision industrial, industrial, industria, cadenas, pinones, poleas, correas, acoples, conos, motovibradores, reductores, motores, bandas, bandas transportadoras, plastico industrial, ntn, grillon, fluidos y sellados, sellados, neumatica, valvulas, sellados, adhesivos, mangueras, retenes, manometros, termometro, valvulas, bombas, soldadura, soldador, consumibles, alambres, electrodos, varillas, equipos, plasma, corte, fresado, metales, corte de madera, corte de metal, ferreteria, bulloneria, torrnillos, prisioneros, varillas roscadas, tuercas, anillo de seguridad, tirafondos, arandelas planas, grower, medicion, reglas, calibres, escuadras, micrometro, cinta metrica,  pintureria, pintura por litro, pintura en aerosol, pinceles y rodillos, maquinas para pintar, herramientas, herramientas de mano, HERRAMIENTAS HIDR&Iacute;ULICAS" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="./assets/css/nuevo.css"/> 
     <link rel="stylesheet" href="./assets/css/responsive.css">
       <link rel="stylesheet" href="./assets/css/loader.css" />
+    <link rel="stylesheet" href="./assets/css/whatsapp-enhanced.css" />
+    <link rel="stylesheet" href="./assets/css/whatsapp-popup-fix.css" />
     <script src="https://kit.fontawesome.com/a5c59cf2a1.js" crossorigin="anonymous"></script>
 
     <!-- Iconos Favicon -->
@@ -40,7 +42,7 @@
  <link rel="canonical" href="https://www.romisa.com.ar/altaclientes.html" />
 
     <!-- Inicio Contenido web -->
-    <title>RO.MI.SA - Formulario de alta / modificación de clientes</title>
+    <title>RO.MI.SA - Formulario de alta / modificaci&oacute;n de clientes</title>
   </head>
   <div id="navbar-container"></div>
 
@@ -49,7 +51,7 @@
           .then(response => response.text())
           .then(data => {
               document.getElementById('navbar-container').innerHTML = data;
-              jQuery('ul.sf-menu').superfish();  // Inicializar después de cargar el menú
+              jQuery('ul.sf-menu').superfish();  // Inicializar despu&eacute;s de cargar el men&uacute;
           });
   </script>
     <!-- Fin de Barra de Navegacion -->
@@ -60,11 +62,11 @@
           
        
       <!-- Inicio Boton Float recordatorio -->
-         <a href="romisa.html#sec-f286" data-page-id="224234906" class="btn-flotante ocultar" id="ocultar">ingresa a nuestra tienda virtual</a>
+         <a href="https://ecommerce.romisa.com.ar/new/public/productos.php" data-page-id="224234906" class="btn-flotante ocultar" id="ocultar" target="_blank">INGRESA A NUESTRA TIENDA VIRTUAL</a>
       <!-- Fin Boton Float recordatorio -->
  
 <!-- Inicio Boton Float Whatsapp -->
-    <a href="https://api.whatsapp.com/send?phone=5493764280451&text=Hola!!!,%20necesito%20consultar:%20" class="whatsapp-float" target="_blank" id="hiddenWhatsapp">
+    <a href="https://api.whatsapp.com/send?phone=5493764280451&text=Hola!!!,%20necesito%20consultar%20sobre%20sus%20productos:%20" class="whatsapp-float" target="_blank" id="hiddenWhatsapp">
       <i class="fa fa-whatsapp my-float"></i>
       </a>	
     <!-- Fin Boton Float WhatsApp -->
@@ -79,11 +81,11 @@
 </head>
 <body>
   <div class="body">
-    <h6>Formulario Alta / Modificación de Clientes</h6>
+    <h6>Formulario Alta / Modificaci&oacute;n de Clientes</h6>
 
-    <!-- Nueva sección de selección de tipo de cliente -->
+    <!-- Nueva secci&oacute;n de selecci&oacute;n de tipo de cliente -->
     <div class="client-type-section">
-      <h5 class="text-center mb-4">¿YA SOS CLIENTE EN ROMISA? <span class="required-field">*</span></h5>
+      <h5 class="text-center mb-4">&iquest;YA SOS CLIENTE EN ROMISA? <span class="required-field">*</span></h5>
       <div class="client-type-buttons">
         <button type="button" id="newClient" class="client-btn" onclick="setClientType('nuevo')"> No soy Cliente</button>
         <button type="button" id="existingClient" class="client-btn" onclick="setClientType('registrado')">Ya soy Cliente</button>
@@ -97,7 +99,7 @@
         <div class="section">
             <div class="section-title">1. DATOS DEL CLIENTE</div>
             <div class="fields-note"><i class="fas fa-info-circle"></i> Campos obligatorios (*)</div>
-            <label for="razon_social">(*) Razón Social:</label>
+            <label for="razon_social">(*) Raz&oacute;n Social:</label>
             <input class="text-box" type="text" id="razon_social" name="razon_social" required>
             <label class="labeldoc" for="cuit">(*) CUIT/CUIL/DNI:</label>
             <div class="text-box-tipo">
@@ -109,13 +111,13 @@
             </select>
             <input type="text" id="cuit" name="cuit" placeholder="SIN GUIONES/PUNTOS" required> 
             </div>
-            <label for="nombre_comercial">(*) Nombre comercial (Fantasía):</label>
+            <label for="nombre_comercial">(*) Nombre comercial (Fantas&iacute;a):</label>
             <input class="text-box" type="text" id="nombre_comercial" name="nombre_comercial" required>
             <label class="" for="otro_rubro">(*) Actividad a la que se dedica:</label>
             
             <input class="text-box" type="text" id="otro_rubro" name="otro_rubro" required>
-            <label for="direccion_comercial">(*) Dirección Comercial:</label>
-            <input  class="text-box" type="text" id="direccion_comercial" name="direccion_comercial" placeholder="Dirección" required>
+            <label for="direccion_comercial">(*) Direcci&oacute;n Comercial:</label>
+            <input  class="text-box" type="text" id="direccion_comercial" name="direccion_comercial" placeholder="Direcci&oacute;n" required>
             <div class="address-fields">
                 <input type="text" id="localidad_comercial" name="localidad_comercial" placeholder="Localidad" required>
                 
@@ -125,17 +127,17 @@
                     <option value="Catamarca"> Catamarca </option>  
                     <option value="Chaco"> Chaco </option>  
                     <option value="Chubut"> Chubut </option>
-                    <option value="C&oacute;rdoba"> Córdoba </option>
+                    <option value="C&oacute;rdoba"> C&oacute;rdoba </option>
                     <option value="Corrientes"> Corrientes </option>
-                    <option value="Entre R&iacute;os"> Entre Ríos </option>
+                    <option value="Entre R&iacute;os"> Entre R&iacute;os </option>
                     <option value="Formosa"> Formosa </option>
                     <option value="Jujuy"> Jujuy </option>
                     <option value="La Pampa"> La Pampa </option>
                     <option value="La Rioja"> La Rioja </option>
                     <option value="Mendoza"> Mendoza </option>
                     <option value="Misiones"> Misiones </option>
-                    <option value="Neuqu&eacute;n"> Neuquén </option>
-                    <option value="R&iacute;o Negro"> Río Negro </option>  
+                    <option value="Neuqu&eacute;n"> Neuqu&eacute;n </option>
+                    <option value="R&iacute;o Negro"> R&iacute;o Negro </option>  
                     <option value="Salta"> Salta </option>  
                     <option value="San Juan"> San Juan </option>  
                     <option value="San Luis"> San Luis </option>  
@@ -143,14 +145,14 @@
                     <option value="Santa Fe"> Santa Fe </option>  
                     <option value="Santiago del Estero"> Santiago del Estero </option>  
                     <option value="Tierra del Fuego"> Tierra del Fuego </option>  
-                    <option value="Tucum&aacute;n"> Tucumán </option>  
+                    <option value="Tucum&aacute;n"> Tucum&aacute;n </option>  
                   </select>  
-                  <input type="text" name="codigo_postal_comercial" placeholder="Código Postal" required>
+                  <input type="text" name="codigo_postal_comercial" placeholder="C&oacute;digo Postal" required>
             </div>  
            
-            <label for="direccion_entrega">(*) Dirección de entrega de mercadería:</label>
+            <label for="direccion_entrega">(*) Direcci&oacute;n de entrega de mercader&iacute;a:</label>
             
-                <input class="text-box" type="text" id="direccion_entrega" name="direccion_entrega" placeholder="Dirección de entrega" required>
+                <input class="text-box" type="text" id="direccion_entrega" name="direccion_entrega" placeholder="Direcci&oacute;n de entrega" required>
                 
                 <div class="address-fields">
                 <input type="text" id="localidad_entrega" name="localidad_entrega" placeholder="Localidad" required>
@@ -160,17 +162,17 @@
                   <option value="Catamarca"> Catamarca </option>  
                   <option value="Chaco"> Chaco </option>  
                   <option value="Chubut"> Chubut </option>
-                  <option value="C&oacute;rdoba"> Córdoba </option>
+                  <option value="C&oacute;rdoba"> C&oacute;rdoba </option>
                   <option value="Corrientes"> Corrientes </option>
-                  <option value="Entre R&iacute;os"> Entre Ríos </option>
+                  <option value="Entre R&iacute;os"> Entre R&iacute;os </option>
                   <option value="Formosa"> Formosa </option>
                   <option value="Jujuy"> Jujuy </option>
                   <option value="La Pampa"> La Pampa </option>
                   <option value="La Rioja"> La Rioja </option>
                   <option value="Mendoza"> Mendoza </option>
                   <option value="Misiones"> Misiones </option>
-                  <option value="Neuqu&eacute;n"> Neuquén </option>
-                  <option value="R&iacute;o Negro"> Río Negro </option>  
+                  <option value="Neuqu&eacute;n"> Neuqu&eacute;n </option>
+                  <option value="R&iacute;o Negro"> R&iacute;o Negro </option>  
                   <option value="Salta"> Salta </option>  
                   <option value="San Juan"> San Juan </option>  
                   <option value="San Luis"> San Luis </option>  
@@ -178,16 +180,16 @@
                   <option value="Santa Fe"> Santa Fe </option>  
                   <option value="Santiago del Estero"> Santiago del Estero </option>  
                   <option value="Tierra del Fuego"> Tierra del Fuego </option>  
-                  <option value="Tucum&aacute;n"> Tucumán </option>  
+                  <option value="Tucum&aacute;n"> Tucum&aacute;n </option>  
                   </select>  
-                <input type="text" name="codigo_postal_entrega" placeholder="Código Postal" required>
+                <input type="text" name="codigo_postal_entrega" placeholder="C&oacute;digo Postal" required>
             </div>
             
             
             <label for="correo">(*) Correo:</label>
             <input class="text-box" type="text" id="correo" name="correo" required>
             
-            <label for="telefono">(*) Teléfono:</label>
+            <label for="telefono">(*) Tel&eacute;fono:</label>
             <input class="text-box" type="tel" id="telefono" name="telefono" required>
             
             <label for="persona_solicitante">(*) Persona Solicitante:</label>
@@ -215,7 +217,7 @@
           <div class="col-lg-12">
             <div class="clients-area-btn">
               <a href="https://ecommerce.romisa.com.ar/public/login.php" target="_blank" class="btn btn-dark">INICIAR SESI&Oacute;N</a>
-              <a href="https://ecommerce.romisa.com.ar/public/contactenos.php" target="_blank" class="btn btn-secondary">¿NO SOS CLIENTE?</a>
+              <a href="https://ecommerce.romisa.com.ar/public/contactenos.php" target="_blank" class="btn btn-secondary">Â¿NO SOS CLIENTE?</a>
             </div>
           </div>
         </div>
@@ -232,7 +234,7 @@
             <img src="./assets/img/romisa-logo-original.png" width="200" height="35" alt=""/>
             <div class="row">
               <div class="col-lg-12">
-                <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la región, brindando a nuestros clientes amplia gama de productos, sólido asesoramiento técnico y el respaldo de una trayectoria de más de 25 años de constante trabajo y crecimiento.</p>
+                <p class="footerSecondaryText">Somos una empresa que tiene como objetivo satisfacer las necesidades y expectativas de las industrias de la regi&oacute;n, brindando a nuestros clientes amplia gama de productos, s&oacute;lido asesoramiento t&eacute;cnico y el respaldo de una trayectoria de m&aacute;s de 25 a&ntilde;os de constante trabajo y crecimiento.</p>
               </div>
             </div>
           </div>
@@ -312,7 +314,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"
   ></script>
-<!-- jQuery & Scripts de la Página  -->
+<!-- jQuery & Scripts de la P&aacute;gina  -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./assets/plugins/glide/dist/glide.min.js"></script>
   <script src="./assets/plugins/glide/dist/glide.js"></script>
@@ -359,11 +361,11 @@ function validateForm() {
         errorDiv.style.display = 'block';
         // Hace scroll hacia el error para que el usuario lo vea
         errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        // Detiene el envío del formulario
+        // Detiene el env&iacute;o del formulario
         return false; 
     }
     
-    // Si todo está bien, oculta el error y permite el envío
+    // Si todo est&aacute; bien, oculta el error y permite el env&iacute;o
     errorDiv.style.display = 'none';
     return true; 
 }
@@ -391,7 +393,7 @@ function validateForm() {
         btn.classList.remove('selected');
     });
     
-    // Agregar clase selected al botón clickeado
+    // Agregar clase selected al bot&oacute;n clickeado
     if (type === 'nuevo') {
         document.getElementById('newClient').classList.add('selected');
         messageDiv.innerHTML = 'Voy a registrarme por primera vez';
@@ -639,8 +641,14 @@ function validateForm() {
   </body>  
   <!-- Fin de contenido del sitio web. -->
 </html>
-<!--------──█─▄▀█──█▀▄─█──
-          ─▐▌──────────▐▌─
-          ─█▌▀▄──▄▄──▄▀▐█─
-          ▐██──▀▀──▀▀──██▌
-          ████▄──▐▌──▄████ - Nagel---->
+<!--------â”€â”€â–ˆâ”€â–„â–€â–ˆâ”€â”€â–ˆâ–€â–„â”€â–ˆâ”€â”€
+          â”€â–â–Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–â–Œâ”€
+          â”€â–ˆâ–Œâ–€â–„â”€â”€â–„â–„â”€â”€â–„â–€â–â–ˆâ”€
+          â–â–ˆâ–ˆâ”€â”€â–€â–€â”€â”€â–€â–€â”€â”€â–ˆâ–ˆâ–Œ
+          â–ˆâ–ˆâ–ˆâ–ˆâ–„â”€â”€â–â–Œâ”€â”€â–„â–ˆâ–ˆâ–ˆâ–ˆ - Nagel---->
+
+
+
+
+
+
