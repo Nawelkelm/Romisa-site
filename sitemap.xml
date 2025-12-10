@@ -5,88 +5,126 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+<!-- PÁGINA PRINCIPAL -->
 <url>
   <loc>https://www.romisa.com.ar/</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
   <priority>1.00</priority>
 </url>
+
+<!-- PÁGINAS INSTITUCIONALES -->
+<url>
+  <loc>https://www.romisa.com.ar/nosotros.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.romisa.com.ar/contacto.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.romisa.com.ar/divisiones.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<!-- CATÁLOGOS Y RECURSOS -->
+<url>
+  <loc>https://www.romisa.com.ar/Catalogos.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.romisa.com.ar/novedades.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<!-- DIVISIONES COMERCIALES -->
+<url>
+  <loc>https://www.romisa.com.ar/transmision.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.romisa.com.ar/fluidos.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.romisa.com.ar/soldadura.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.romisa.com.ar/ferreteria.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.romisa.com.ar/informatica.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://www.romisa.com.ar/mantenimiento.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<!-- PRODUCTOS DESTACADOS - RODAMIENTOS -->
 <url>
   <loc>https://www.romisa.com.ar/ntn-rodamientos.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
 <url>
   <loc>https://www.romisa.com.ar/rodamientos-rulemanes.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
-<url>
-  <loc>https://www.romisa.com.ar/nosotros.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.romisa.com.ar/divisiones.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.romisa.com.ar/transmision.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.85</priority>
-</url>
-<url>
-  <loc>https://www.romisa.com.ar/fluidos.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.romisa.com.ar/soldadura.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.romisa.com.ar/ferreteria.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.romisa.com.ar/informatica.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.romisa.com.ar/mantenimiento.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.romisa.com.ar/novedades.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.romisa.com.ar/contacto.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
-</url>
+
+<!-- PRODUCTOS DESTACADOS - FESTO -->
 <url>
   <loc>https://www.romisa.com.ar/Festo-Automatizacion-electrica.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.romisa.com.ar/festo-SavingEnergy.html</loc>
-  <lastmod>2025-11-28T00:00:00+00:00</lastmod>
-  <priority>0.70</priority>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.romisa.com.ar/festo-ms6-lws.html</loc>
-  <lastmod>2025-12-02T00:00:00+00:00</lastmod>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
+
+<!-- LEGALES -->
+<url>
+  <loc>https://www.romisa.com.ar/legajo-impositivo.html</loc>
+  <lastmod>2025-12-09T00:00:00+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.50</priority>
+</url>
+
 </urlset>
