@@ -182,12 +182,14 @@ Sistema para administrar catálogos y fichas técnicas en formato PDF. Permite s
 ```
 assets/files/
 ├── catalogos/        → Catálogos de productos
-│   ├── ATLAS.pdf
 │   ├── BOVENAU.pdf
+│   ├── PENETRIT.pdf
+│   ├── Loctite LB 8608 SUPER LUB_SP.pdf
 │   └── ...
 └── info-tecnica/     → Fichas técnicas
     ├── Acoples.pdf
-    ├── PENETRIT.pdf
+    ├── CADENA 81X ELITE.pdf
+    ├── VBFCLOVERPINONES.pdf
     └── ...
 ```
 
